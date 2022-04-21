@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_clients"
+            android:icon="@drawable/cliente"
+            android:title="Clientes" />
+        <item
+            android:id="@+id/nav_unidadesM"
+            android:icon="@drawable/balanza"
+            android:title="Unidades de Medida" />
+        <item
+            android:id="@+id/nav_category"
+            android:icon="@drawable/pie"
+            android:title="Categorias de productos" />
+        <item
+            android:id="@+id/nav_product"
+            android:icon="@drawable/cake"
+            android:title="Productos" />
+
+        <item
+            android:id="@+id/nav_facturar"
+            android:icon="@drawable/fact"
+            android:title="Facturacion" />
+
+        <item
+            android:id="@+id/nav_loses"
+            android:icon="@drawable/money"
+            android:title="Perdidas" />
+
+        <item
+            android:id="@+id/nav_users"
+            android:icon="@drawable/users"
+            android:title="Usuarios" />
+
+    </group>
+</menu>
