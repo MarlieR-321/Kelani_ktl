@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import uca.ni.edu.kelani.R
 import uca.ni.edu.kelani.databinding.FragmentFacturacionBinding
 import uca.ni.edu.kelani.databinding.FragmentInicioSecionBinding
 
@@ -19,6 +21,14 @@ class FacturacionFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentFacturacionBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.btnAdd.setOnClickListener {
+            findNavController().navigate(R.id.frmFacturaFragment)
+        }
     }
 
 

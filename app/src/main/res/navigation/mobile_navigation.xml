@@ -14,6 +14,24 @@
         android:id="@+id/nav_facturar"
         android:name="uca.ni.edu.kelani.fragments.system.FacturacionFragment"
         android:label="Facturas Registradas"
-        tools:layout="@layout/fragment_facturacion" />
+        tools:layout="@layout/fragment_facturacion" >
+        <action
+            android:id="@+id/fact_to_frmFact"
+            app:destination="@id/frmFacturaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/frmFacturaFragment"
+        android:name="uca.ni.edu.kelani.fragments.system.FrmFacturaFragment"
+        android:label="Facturacion"
+        tools:layout="@layout/fragment_frm_factura" >
+        <action
+            android:id="@+id/frmFact_to_Det"
+            app:destination="@id/frmFacturaDetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/frmFacturaDetFragment"
+        android:name="uca.ni.edu.kelani.fragments.system.FrmFacturaDetFragment"
+        android:label="Facturacion"
+        tools:layout="@layout/fragment_frm_factura_det" />
 
 </navigation>
