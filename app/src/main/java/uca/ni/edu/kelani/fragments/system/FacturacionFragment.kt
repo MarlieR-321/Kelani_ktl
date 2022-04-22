@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import uca.ni.edu.kelani.databinding.FragmentFacturacionBinding
-import uca.ni.edu.kelani.databinding.FragmentFirstBinding
+import uca.ni.edu.kelani.databinding.FragmentInicioSecionBinding
 
 
 class FacturacionFragment : Fragment() {

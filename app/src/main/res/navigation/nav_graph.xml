@@ -3,26 +3,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/PresentacionFragment">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="uca.ni.edu.kelani.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        android:id="@+id/PresentacionFragment"
+        android:name="uca.ni.edu.kelani.PresentacionFragment"
+        android:label="@string/presentacion_fragment_label"
+        tools:layout="@layout/fragment_presetacion">
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_PresentacionFragment_to_InicioSesionFragment"
+            app:destination="@id/InicioSesionFragment" />
     </fragment>
+
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="uca.ni.edu.kelani.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        android:id="@+id/InicioSesionFragment"
+        android:name="uca.ni.edu.kelani.InicioSesionFragment"
+        android:label="@string/inicio_sesion_fragment_label"
+        tools:layout="@layout/fragment_inicio_secion">
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_InicioSesionFragment_to_PresentacionFragment"
+            app:destination="@id/PresentacionFragment" />
     </fragment>
+
 </navigation>

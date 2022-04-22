@@ -4,27 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FirstFragment">
+    tools:context=".PresentacionFragment">
 
-    <TextView
-        android:id="@+id/textview_first"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TODO: Pantalla principal corresponde a esta pantalla"
-        android:textSize="30sp"
-        android:lineSpacingExtra="10sp"
-        app:layout_constraintBottom_toTopOf="@id/button_first"
+
+    <ImageView
+        android:id="@+id/imgLogoPasteleria"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:src="@drawable/pasteleria_kelani_2"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.359" />
 
     <Button
-        android:id="@+id/button_first"
+        android:id="@+id/button_second"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Iniciar Sesion"
+        android:text="IR a aplicacion"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_first" />
+        android:backgroundTint="#63401A"
+        app:layout_constraintTop_toBottomOf="@+id/imgLogoPasteleria"
+        app:layout_constraintVertical_bias="0.407" />
 </androidx.constraintlayout.widget.ConstraintLayout>

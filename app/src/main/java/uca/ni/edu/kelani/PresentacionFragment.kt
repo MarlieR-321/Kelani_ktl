@@ -6,16 +6,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import uca.ni.edu.kelani.databinding.FragmentSecondBinding
+import androidx.navigation.fragment.findNavController
+import uca.ni.edu.kelani.databinding.FragmentPresetacionBinding
 import uca.ni.edu.kelani.fragments.system.MainActivity
 
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
  */
-class SecondFragment : Fragment() {
+class PresentacionFragment : Fragment() {
 
-    private var _binding: FragmentSecondBinding? = null
+    private var _binding: FragmentPresetacionBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -26,7 +27,7 @@ class SecondFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View? {
 
-        _binding = FragmentSecondBinding.inflate(inflater, container, false)
+        _binding = FragmentPresetacionBinding.inflate(inflater, container, false)
         return binding.root
 
     }
@@ -35,9 +36,9 @@ class SecondFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.buttonSecond.setOnClickListener {
-            val intent = Intent(activity, MainActivity::class.java)
-            startActivity(intent)
-            //findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
+            /*val intent = Intent(activity, MainActivity::class.java)
+            startActivity(intent)*/
+            findNavController().navigate(R.id.action_PresentacionFragment_to_InicioSesionFragment)
         }
     }
 
