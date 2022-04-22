@@ -33,5 +33,41 @@
         android:name="uca.ni.edu.kelani.fragments.system.FrmFacturaDetFragment"
         android:label="Facturacion"
         tools:layout="@layout/fragment_frm_factura_det" />
+    <fragment
+        android:id="@+id/nav_users"
+        android:name="uca.ni.edu.kelani.fragments.system.UsuariosFragment"
+        android:label="Usuarios Registrados"
+        tools:layout="@layout/fragment_usuarios" >
+        <action
+            android:id="@+id/action_nav_users_to_agregarUsuarioFragment"
+            app:destination="@id/agregarUsuarioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/agregarUsuarioFragment"
+        android:name="uca.ni.edu.kelani.fragments.system.AgregarUsuarioFragment"
+        android:label="Creacion usuario"
+        tools:layout="@layout/fragment_agregar_usuario" >
+        <action
+            android:id="@+id/action_agregarUsuarioFragment_to_nav_users"
+            app:destination="@id/nav_users" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_clients"
+        android:name="uca.ni.edu.kelani.fragments.system.ClienteFragment"
+        android:label="Clientes Registrados"
+        tools:layout="@layout/fragment_cliente" >
+        <action
+            android:id="@+id/action_nav_clients_to_agregarClientesFragment"
+            app:destination="@id/agregarClientesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/agregarClientesFragment"
+        android:name="uca.ni.edu.kelani.fragments.system.AgregarClientesFragment"
+        android:label="Creacion clientes"
+        tools:layout="@layout/fragment_agregar_clientes" >
+        <action
+            android:id="@+id/action_agregarClientesFragment_to_nav_clients"
+            app:destination="@id/nav_clients" />
+    </fragment>
 
 </navigation>
