@@ -69,5 +69,10 @@
             android:id="@+id/action_agregarClientesFragment_to_nav_clients"
             app:destination="@id/nav_clients" />
     </fragment>
+    <fragment
+        android:id="@+id/fragment_categoria"
+        android:name="uca.ni.edu.kelani.fragment_categoria"
+        android:label="fragment_categoria"
+        tools:layout="@layout/fragment_categoria" />
 
 </navigation>
