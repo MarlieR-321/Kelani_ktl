@@ -87,5 +87,23 @@
             android:id="@+id/action_fragment_categoria2_to_categoriaFragment"
             app:destination="@id/categoriaFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/nav_product"
+        android:name="uca.ni.edu.kelani.fragments.system.ProductosFragment"
+        android:label="fragment_productos"
+        tools:layout="@layout/fragment_productos" >
+        <action
+            android:id="@+id/action_productosFragment_to_agregarProductosFragment"
+            app:destination="@id/agregarProductosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/agregarProductosFragment"
+        android:name="uca.ni.edu.kelani.fragments.system.AgregarProductosFragment"
+        android:label="fragment_agregar_productos"
+        tools:layout="@layout/fragment_agregar_productos" >
+        <action
+            android:id="@+id/action_agregarProductosFragment_to_productosFragment"
+            app:destination="@id/nav_product" />
+    </fragment>
 
 </navigation>
