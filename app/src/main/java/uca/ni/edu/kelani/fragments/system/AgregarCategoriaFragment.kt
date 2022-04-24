@@ -26,7 +26,7 @@ class AgregarCategoriaFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnGuardarCategoria.setOnClickListener {
-            findNavController().navigate(R.id.action_categoriaFragment_to_fragment_categoria2)
+            findNavController().navigate(R.id.action_agregarCategoriaFragment_to_categoriaFragment2)
         }
     }
 }

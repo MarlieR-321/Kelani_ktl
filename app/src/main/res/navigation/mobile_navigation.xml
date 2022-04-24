@@ -70,22 +70,40 @@
             app:destination="@id/nav_clients" />
     </fragment>
     <fragment
-        android:id="@+id/categoriaFragment"
-        android:name="uca.ni.edu.kelani.fragments.system.CategoriaFragment"
+        android:id="@+id/agregarCategoriaFragment"
+        android:name="uca.ni.edu.kelani.fragments.system.AgregarCategoriaFragment"
         android:label="fragment_agregar_categoria"
         tools:layout="@layout/fragment_agregar_categoria" >
         <action
-            android:id="@+id/action_categoriaFragment_to_fragment_categoria2"
-            app:destination="@id/fragment_categoria2" />
+            android:id="@+id/action_agregarCategoriaFragment_to_categoriaFragment2"
+            app:destination="@id/categoriaFragment2" />
     </fragment>
     <fragment
-        android:id="@+id/fragment_categoria2"
-        android:name="uca.ni.edu.kelani.fragment_categoria"
+        android:id="@+id/categoriaFragment2"
+        android:name="uca.ni.edu.kelani.fragments.system.CategoriaFragment"
         android:label="fragment_categoria"
         tools:layout="@layout/fragment_categoria" >
         <action
-            android:id="@+id/action_fragment_categoria2_to_categoriaFragment"
-            app:destination="@id/categoriaFragment" />
+            android:id="@+id/action_categoriaFragment2_to_agregarCategoriaFragment"
+            app:destination="@id/agregarCategoriaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/unidadDeMedidaFragment2"
+        android:name="uca.ni.edu.kelani.fragments.system.UnidadmedidaFragment"
+        android:label="fragment_unidad_medida"
+        tools:layout="@layout/fragment_unidad_medida" >
+        <action
+            android:id="@+id/action_unidadDeMedidaFragment2_to_agregarUnidadDeMedidaFragment"
+            app:destination="@id/agregarUnidadDeMedidaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/agregarUnidadDeMedidaFragment"
+        android:name="uca.ni.edu.kelani.fragments.system.AgregarUnidadDeMedidaFragment"
+        android:label="fragment_agregar_unidad"
+        tools:layout="@layout/fragment_agregar_unidad" >
+        <action
+            android:id="@+id/action_agregarUnidadDeMedidaFragment_to_unidadDeMedidaFragment22"
+            app:destination="@id/unidadDeMedidaFragment2" />
     </fragment>
     <fragment
         android:id="@+id/nav_product"
