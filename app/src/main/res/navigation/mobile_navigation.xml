@@ -18,6 +18,9 @@
         <action
             android:id="@+id/fact_to_frmFact"
             app:destination="@id/frmFacturaFragment" />
+        <action
+            android:id="@+id/action_nav_facturar_to_facturacionDetFragment"
+            app:destination="@id/facturacionDetFragment" />
     </fragment>
     <fragment
         android:id="@+id/frmFacturaFragment"
@@ -32,7 +35,11 @@
         android:id="@+id/frmFacturaDetFragment"
         android:name="uca.ni.edu.kelani.fragments.system.FrmFacturaDetFragment"
         android:label="Facturacion"
-        tools:layout="@layout/fragment_frm_factura_det" />
+        tools:layout="@layout/fragment_frm_factura_det" >
+        <action
+            android:id="@+id/action_frmFacturaDetFragment_to_facturacionDetFragment"
+            app:destination="@id/facturacionDetFragment" />
+    </fragment>
     <fragment
         android:id="@+id/nav_users"
         android:name="uca.ni.edu.kelani.fragments.system.UsuariosFragment"
@@ -76,10 +83,10 @@
         tools:layout="@layout/fragment_agregar_categoria" >
         <action
             android:id="@+id/action_agregarCategoriaFragment_to_categoriaFragment2"
-            app:destination="@id/categoriaFragment2" />
+            app:destination="@id/nav_category" />
     </fragment>
     <fragment
-        android:id="@+id/categoriaFragment2"
+        android:id="@+id/nav_category"
         android:name="uca.ni.edu.kelani.fragments.system.CategoriaFragment"
         android:label="fragment_categoria"
         tools:layout="@layout/fragment_categoria" >
@@ -88,7 +95,7 @@
             app:destination="@id/agregarCategoriaFragment" />
     </fragment>
     <fragment
-        android:id="@+id/unidadDeMedidaFragment2"
+        android:id="@+id/nav_unidadesM"
         android:name="uca.ni.edu.kelani.fragments.system.UnidadmedidaFragment"
         android:label="fragment_unidad_medida"
         tools:layout="@layout/fragment_unidad_medida" >
@@ -103,7 +110,7 @@
         tools:layout="@layout/fragment_agregar_unidad" >
         <action
             android:id="@+id/action_agregarUnidadDeMedidaFragment_to_unidadDeMedidaFragment22"
-            app:destination="@id/unidadDeMedidaFragment2" />
+            app:destination="@id/nav_unidadesM" />
     </fragment>
     <fragment
         android:id="@+id/nav_product"
@@ -122,6 +129,15 @@
         <action
             android:id="@+id/action_agregarProductosFragment_to_productosFragment"
             app:destination="@id/nav_product" />
+    </fragment>
+    <fragment
+        android:id="@+id/facturacionDetFragment"
+        android:name="uca.ni.edu.kelani.fragments.system.FacturacionDetFragment"
+        android:label="fragment_factutacion_det"
+        tools:layout="@layout/fragment_factutacion_det" >
+        <action
+            android:id="@+id/action_facturacionDetFragment_to_frmFacturaDetFragment"
+            app:destination="@id/frmFacturaDetFragment" />
     </fragment>
 
 </navigation>
