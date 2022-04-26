@@ -3,22 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Android_DAMO2/Kelani_ktl/app/src/main/res/layout/activity_inicio.xml" value="0.11865942028985507" />
-        <entry key="..\:/Android_DAMO2/Kelani_ktl/app/src/main/res/layout/activity_main.xml" value="0.11865942028985507" />
-        <entry key="..\:/Android_DAMO2/Kelani_ktl/app/src/main/res/layout/app_bar_main.xml" value="0.176" />
-        <entry key="..\:/Android_DAMO2/Kelani_ktl/app/src/main/res/layout/content_inicio.xml" value="0.20416666666666666" />
-        <entry key="..\:/Android_DAMO2/Kelani_ktl/app/src/main/res/layout/content_main.xml" value="0.20416666666666666" />
-        <entry key="..\:/Android_DAMO2/Kelani_ktl/app/src/main/res/layout/fragment_agregar_categoria.xml" value="0.20416666666666666" />
-        <entry key="..\:/Android_DAMO2/Kelani_ktl/app/src/main/res/layout/fragment_agregar_unidad.xml" value="0.20416666666666666" />
-        <entry key="..\:/Android_DAMO2/Kelani_ktl/app/src/main/res/layout/fragment_home.xml" value="0.11865942028985507" />
-        <entry key="..\:/Android_DAMO2/Kelani_ktl/app/src/main/res/layout/fragment_inicio_secion.xml" value="0.11865942028985507" />
-        <entry key="..\:/Android_DAMO2/Kelani_ktl/app/src/main/res/layout/fragment_presetacion.xml" value="0.1" />
-        <entry key="..\:/Android_DAMO2/Kelani_ktl/app/src/main/res/layout/item_factura_detalle.xml" value="0.20416666666666666" />
-        <entry key="..\:/Android_DAMO2/Kelani_ktl/app/src/main/res/layout/item_productos.xml" value="0.20416666666666666" />
-        <entry key="..\:/Android_DAMO2/Kelani_ktl/app/src/main/res/layout/item_usuarios.xml" value="0.11865942028985507" />
-        <entry key="..\:/Android_DAMO2/Kelani_ktl/app/src/main/res/layout/nav_header_main.xml" value="0.20416666666666666" />
-        <entry key="..\:/Android_DAMO2/Kelani_ktl/app/src/main/res/menu/activity_main_drawer.xml" value="0.20416666666666666" />
-        <entry key="..\:/Android_DAMO2/Kelani_ktl/app/src/main/res/menu/main.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Marlon Ramirez/Documents/2022_1S/Moviles/Kelani/app/src/main/res/drawable/side_nav_bar.xml" value="0.289" />
         <entry key="..\:/Users/Marlon Ramirez/Documents/2022_1S/Moviles/Kelani/app/src/main/res/layout/activity_inicio.xml" value="0.2259963768115942" />
         <entry key="..\:/Users/Marlon Ramirez/Documents/2022_1S/Moviles/Kelani/app/src/main/res/layout/activity_main.xml" value="0.33" />
@@ -29,6 +13,7 @@
         <entry key="..\:/Users/Marlon Ramirez/Documents/2022_1S/Moviles/Kelani/app/src/main/res/layout/fragment_second.xml" value="0.2259963768115942" />
         <entry key="..\:/Users/Marlon Ramirez/Documents/2022_1S/Moviles/Kelani/app/src/main/res/layout/nav_header_main.xml" value="0.33" />
         <entry key="..\:/Users/Marlon Ramirez/Documents/2022_1S/Moviles/Kelani/app/src/main/res/menu/activity_main_drawer.xml" value="0.5" />
+        <entry key="..\:/Users/Marlon Ramirez/Documents/2022_1S/Moviles/Kelani_ktl/app/src/main/res/font/font.xml" value="0.2526041666666667" />
         <entry key="..\:/Users/Marlon Ramirez/Documents/2022_1S/Moviles/Kelani_ktl/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Marlon Ramirez/Documents/2022_1S/Moviles/Kelani_ktl/app/src/main/res/layout/app_bar_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Marlon Ramirez/Documents/2022_1S/Moviles/Kelani_ktl/app/src/main/res/layout/fragment_agregar_categoria.xml" value="0.22" />
@@ -39,12 +24,14 @@
         <entry key="..\:/Users/Marlon Ramirez/Documents/2022_1S/Moviles/Kelani_ktl/app/src/main/res/layout/fragment_frm__factura.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/Marlon Ramirez/Documents/2022_1S/Moviles/Kelani_ktl/app/src/main/res/layout/fragment_frm_factura.xml" value="0.21" />
         <entry key="..\:/Users/Marlon Ramirez/Documents/2022_1S/Moviles/Kelani_ktl/app/src/main/res/layout/fragment_frm_factura_det.xml" value="0.25" />
-        <entry key="..\:/Users/Marlon Ramirez/Documents/2022_1S/Moviles/Kelani_ktl/app/src/main/res/layout/fragment_home.xml" value="0.22" />
+        <entry key="..\:/Users/Marlon Ramirez/Documents/2022_1S/Moviles/Kelani_ktl/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/Users/Marlon Ramirez/Documents/2022_1S/Moviles/Kelani_ktl/app/src/main/res/layout/fragment_inicio_secion.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/Marlon Ramirez/Documents/2022_1S/Moviles/Kelani_ktl/app/src/main/res/layout/fragment_presetacion.xml" value="0.22239583333333332" />
         <entry key="..\:/Users/Marlon Ramirez/Documents/2022_1S/Moviles/Kelani_ktl/app/src/main/res/layout/item_cliente.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/Marlon Ramirez/Documents/2022_1S/Moviles/Kelani_ktl/app/src/main/res/layout/item_factura.xml" value="0.5" />
         <entry key="..\:/Users/Marlon Ramirez/Documents/2022_1S/Moviles/Kelani_ktl/app/src/main/res/layout/item_factura_detalle.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/Marlon Ramirez/Documents/2022_1S/Moviles/Kelani_ktl/app/src/main/res/menu/activity_main_drawer.xml" value="0.22239583333333332" />
+        <entry key="..\:/Users/Marlon Ramirez/Documents/2022_1S/Moviles/Kelani_ktl/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.196" />
       </map>
     </option>
   </component>

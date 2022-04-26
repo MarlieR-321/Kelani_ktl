@@ -8,6 +8,12 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="red">#EF9494</color>
-    <color name="brown">#3D2920</color>
+
+    <!--COLORES PROPIOS-->
+    <color name="dark_brown">#3D2920</color>
+    <color name="brown">#5A3D30</color>
+    <color name="clear_brown">#8E6B5B</color>
+    <color name="cream">#FFF9EF</color>
+
 
 </resources>
