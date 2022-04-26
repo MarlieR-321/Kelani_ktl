@@ -12,7 +12,7 @@
         <activity
             android:name=".Inicio"
             android:exported="true"
-            android:label="@string/title_activity_inicio"
+            android:label="@string/app_name"
             android:theme="@style/Theme.Kelani.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
