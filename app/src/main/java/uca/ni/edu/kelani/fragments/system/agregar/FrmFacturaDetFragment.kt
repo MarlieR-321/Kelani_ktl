@@ -1,4 +1,4 @@
-package uca.ni.edu.kelani.fragments.system
+package uca.ni.edu.kelani.fragments.system.agregar
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,29 +7,27 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import uca.ni.edu.kelani.R
-import uca.ni.edu.kelani.databinding.FragmentFactutacionDetBinding
+import uca.ni.edu.kelani.databinding.FragmentFrmFacturaDetBinding
 
-// TODO: Rename parameter arguments, choose names that match
+class FrmFacturaDetFragment : Fragment() {
 
-class FacturacionDetFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-
-    private lateinit var binding: FragmentFactutacionDetBinding
+    private lateinit var binding: FragmentFrmFacturaDetBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentFactutacionDetBinding.inflate(inflater,container,false)
+        binding =  FragmentFrmFacturaDetBinding.inflate(inflater,container,false)
         return binding.root
     }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btnAdd.setOnClickListener {
-            findNavController().navigate(R.id.frmFacturaDetFragment)
+        binding.btnNew.setOnClickListener {
+            findNavController().navigate(R.id.facturacionDetFragment)
         }
     }
+
+
 }

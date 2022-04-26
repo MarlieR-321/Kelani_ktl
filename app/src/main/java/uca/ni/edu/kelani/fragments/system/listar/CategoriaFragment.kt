@@ -1,25 +1,30 @@
-package uca.ni.edu.kelani.fragments.system
+package uca.ni.edu.kelani.fragments.system.listar
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import uca.ni.edu.kelani.R
+import uca.ni.edu.kelani.databinding.FragmentCategoriaBinding
 import uca.ni.edu.kelani.databinding.FragmentFacturacionBinding
-import uca.ni.edu.kelani.databinding.FragmentInicioSecionBinding
+import uca.ni.edu.kelani.databinding.FragmentUsuariosBinding
 
 
-class FacturacionFragment : Fragment() {
-    private lateinit var binding:FragmentFacturacionBinding
+class CategoriaFragment : Fragment() {
+    private lateinit var _binding: FragmentCategoriaBinding
+
+    // This property is only valid between onCreateView and
+    // onDestroyView.
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentFacturacionBinding.inflate(inflater, container, false)
+        _binding = FragmentCategoriaBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -27,9 +32,7 @@ class FacturacionFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnAdd.setOnClickListener {
-            findNavController().navigate(R.id.frmFacturaFragment)
+            findNavController().navigate(R.id.action_categoriaFragment2_to_agregarCategoriaFragment)
         }
     }
-
-
 }

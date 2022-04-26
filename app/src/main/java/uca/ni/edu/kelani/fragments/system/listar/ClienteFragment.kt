@@ -1,19 +1,18 @@
-package uca.ni.edu.kelani.fragments.system
+package uca.ni.edu.kelani.fragments.system.listar
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import uca.ni.edu.kelani.R
-import uca.ni.edu.kelani.databinding.FragmentCategoriaBinding
-import uca.ni.edu.kelani.databinding.FragmentFacturacionBinding
+import uca.ni.edu.kelani.databinding.FragmentClienteBinding
 import uca.ni.edu.kelani.databinding.FragmentUsuariosBinding
 
 
-class CategoriaFragment : Fragment() {
-    private lateinit var _binding: FragmentCategoriaBinding
+class ClienteFragment : Fragment() {
+    private  lateinit var  _binding: FragmentClienteBinding
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -24,7 +23,7 @@ class CategoriaFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
-        _binding = FragmentCategoriaBinding.inflate(inflater, container, false)
+        _binding = FragmentClienteBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -32,7 +31,14 @@ class CategoriaFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnAdd.setOnClickListener {
-            findNavController().navigate(R.id.action_categoriaFragment2_to_agregarCategoriaFragment)
+            findNavController().navigate(R.id.action_nav_clients_to_agregarClientesFragment)
         }
     }
+
+    /*override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }*/
+
+
 }

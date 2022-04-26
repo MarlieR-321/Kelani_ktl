@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/nav_facturar"
-        android:name="uca.ni.edu.kelani.fragments.system.FacturacionFragment"
+        android:name="uca.ni.edu.kelani.fragments.system.listar.FacturacionFragment"
         android:label="Facturas Registradas"
         tools:layout="@layout/fragment_facturacion" >
         <action
@@ -24,7 +24,7 @@
     </fragment>
     <fragment
         android:id="@+id/frmFacturaFragment"
-        android:name="uca.ni.edu.kelani.fragments.system.FrmFacturaFragment"
+        android:name="uca.ni.edu.kelani.fragments.system.agregar.FrmFacturaFragment"
         android:label="Facturacion"
         tools:layout="@layout/fragment_frm_factura" >
         <action
@@ -33,7 +33,7 @@
     </fragment>
     <fragment
         android:id="@+id/frmFacturaDetFragment"
-        android:name="uca.ni.edu.kelani.fragments.system.FrmFacturaDetFragment"
+        android:name="uca.ni.edu.kelani.fragments.system.agregar.FrmFacturaDetFragment"
         android:label="Facturacion"
         tools:layout="@layout/fragment_frm_factura_det" >
         <action
@@ -42,7 +42,7 @@
     </fragment>
     <fragment
         android:id="@+id/nav_users"
-        android:name="uca.ni.edu.kelani.fragments.system.UsuariosFragment"
+        android:name="uca.ni.edu.kelani.fragments.system.listar.UsuariosFragment"
         android:label="Usuarios Registrados"
         tools:layout="@layout/fragment_usuarios" >
         <action
@@ -51,7 +51,7 @@
     </fragment>
     <fragment
         android:id="@+id/agregarUsuarioFragment"
-        android:name="uca.ni.edu.kelani.fragments.system.AgregarUsuarioFragment"
+        android:name="uca.ni.edu.kelani.fragments.system.agregar.AgregarUsuarioFragment"
         android:label="Creacion usuario"
         tools:layout="@layout/fragment_agregar_usuario" >
         <action
@@ -60,7 +60,7 @@
     </fragment>
     <fragment
         android:id="@+id/nav_clients"
-        android:name="uca.ni.edu.kelani.fragments.system.ClienteFragment"
+        android:name="uca.ni.edu.kelani.fragments.system.listar.ClienteFragment"
         android:label="Clientes Registrados"
         tools:layout="@layout/fragment_cliente" >
         <action
@@ -69,7 +69,7 @@
     </fragment>
     <fragment
         android:id="@+id/agregarClientesFragment"
-        android:name="uca.ni.edu.kelani.fragments.system.AgregarClientesFragment"
+        android:name="uca.ni.edu.kelani.fragments.system.agregar.AgregarClientesFragment"
         android:label="Creacion clientes"
         tools:layout="@layout/fragment_agregar_clientes" >
         <action
@@ -78,7 +78,7 @@
     </fragment>
     <fragment
         android:id="@+id/agregarCategoriaFragment"
-        android:name="uca.ni.edu.kelani.fragments.system.AgregarCategoriaFragment"
+        android:name="uca.ni.edu.kelani.fragments.system.agregar.AgregarCategoriaFragment"
         android:label="Crear Categoria"
         tools:layout="@layout/fragment_agregar_categoria" >
         <action
@@ -87,7 +87,7 @@
     </fragment>
     <fragment
         android:id="@+id/nav_category"
-        android:name="uca.ni.edu.kelani.fragments.system.CategoriaFragment"
+        android:name="uca.ni.edu.kelani.fragments.system.listar.CategoriaFragment"
         android:label="Categorias Registradas"
         tools:layout="@layout/fragment_categoria" >
         <action
@@ -96,7 +96,7 @@
     </fragment>
     <fragment
         android:id="@+id/nav_unidadesM"
-        android:name="uca.ni.edu.kelani.fragments.system.UnidadmedidaFragment"
+        android:name="uca.ni.edu.kelani.fragments.system.listar.UnidadmedidaFragment"
         android:label="Unidades de Medida Registradas"
         tools:layout="@layout/fragment_unidad_medida" >
         <action
@@ -105,7 +105,7 @@
     </fragment>
     <fragment
         android:id="@+id/agregarUnidadDeMedidaFragment"
-        android:name="uca.ni.edu.kelani.fragments.system.AgregarUnidadDeMedidaFragment"
+        android:name="uca.ni.edu.kelani.fragments.system.agregar.AgregarUnidadDeMedidaFragment"
         android:label="Creación de Unidades de Medida"
         tools:layout="@layout/fragment_agregar_unidad" >
         <action
@@ -114,7 +114,7 @@
     </fragment>
     <fragment
         android:id="@+id/nav_product"
-        android:name="uca.ni.edu.kelani.fragments.system.ProductosFragment"
+        android:name="uca.ni.edu.kelani.fragments.system.listar.ProductosFragment"
         android:label="Productos Registrados"
         tools:layout="@layout/fragment_productos" >
         <action
@@ -123,7 +123,7 @@
     </fragment>
     <fragment
         android:id="@+id/agregarProductosFragment"
-        android:name="uca.ni.edu.kelani.fragments.system.AgregarProductosFragment"
+        android:name="uca.ni.edu.kelani.fragments.system.agregar.AgregarProductosFragment"
         android:label="Creacion de Productos"
         tools:layout="@layout/fragment_agregar_productos" >
         <action
@@ -132,7 +132,7 @@
     </fragment>
     <fragment
         android:id="@+id/facturacionDetFragment"
-        android:name="uca.ni.edu.kelani.fragments.system.FacturacionDetFragment"
+        android:name="uca.ni.edu.kelani.fragments.system.listar.FacturacionDetFragment"
         android:label="Facturacion"
         tools:layout="@layout/fragment_factutacion_det" >
         <action

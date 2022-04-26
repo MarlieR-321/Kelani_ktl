@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.system.UsuariosFragment">
+    tools:context=".fragments.system.listar.UsuariosFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
