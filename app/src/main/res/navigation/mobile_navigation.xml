@@ -24,18 +24,18 @@
     </fragment>
     <fragment
         android:id="@+id/frmFacturaFragment"
-        android:name="uca.ni.edu.kelani.fragments.system.agregar.FrmFacturaFragment"
+        android:name="uca.ni.edu.kelani.fragments.system.agregar.AddFacturaFragment"
         android:label="Facturacion"
-        tools:layout="@layout/fragment_frm_factura" >
+        tools:layout="@layout/fragment_add_factura" >
         <action
             android:id="@+id/frmFact_to_Det"
             app:destination="@id/frmFacturaDetFragment" />
     </fragment>
     <fragment
         android:id="@+id/frmFacturaDetFragment"
-        android:name="uca.ni.edu.kelani.fragments.system.agregar.FrmFacturaDetFragment"
+        android:name="uca.ni.edu.kelani.fragments.system.agregar.AddFacturaDetFragment"
         android:label="Facturacion"
-        tools:layout="@layout/fragment_frm_factura_det" >
+        tools:layout="@layout/fragment_add_factura_det" >
         <action
             android:id="@+id/action_frmFacturaDetFragment_to_facturacionDetFragment"
             app:destination="@id/facturacionDetFragment" />

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.system.agregar.FrmFacturaDetFragment">
+    tools:context=".fragments.system.agregar.AddFacturaFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,15 +16,34 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:text="Ingrese un los productos adquiridos y su cantidad"
+            android:text="Ingrese un nuevo Encabezado de Factura"
             android:gravity="center"
             android:textSize="30sp"
             android:textStyle="bold"
             android:lineSpacingExtra="10sp"
             android:textColor="@color/black"/>
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tvFechaLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginHorizontal="50dp"
+            android:hint="Fecha de Facturación"
+            android:clickable="true"
+            android:focusable="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/itFecha"
+                android:layout_width="match_parent"
+                android:layout_height="60sp"
+                android:editable="false"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
         <Spinner
-            android:id="@+id/spProducto"
+            android:id="@+id/spCliente"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -34,45 +53,43 @@
             />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tvCantidad"
+            android:id="@+id/tvTelefono"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="10dp"
             android:layout_marginHorizontal="50dp"
-            android:hint="Cantidad"
+            android:hint="Telefono del Cliente"
             android:clickable="true"
             android:focusable="true">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/itCantidad"
+                android:id="@+id/itTelefono"
                 android:layout_width="match_parent"
-                android:layout_height="60sp"
-                android:inputType="number"/>
+                android:layout_height="60sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tvSubtotal"
+            android:id="@+id/tvDireccion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="10dp"
             android:layout_marginHorizontal="50dp"
-            android:hint="Subtotal"
+            android:hint="Direccion del Cliente"
             android:clickable="true"
             android:focusable="true">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/itSubtotal"
+                android:id="@+id/itDireccion"
                 android:layout_width="match_parent"
-                android:layout_height="60sp"
-                android:editable="false"/>
+                android:layout_height="60sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_new"
+            android:id="@+id/btn_save"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"

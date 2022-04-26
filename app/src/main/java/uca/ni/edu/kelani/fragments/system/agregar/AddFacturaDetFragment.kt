@@ -9,7 +9,7 @@ import androidx.navigation.fragment.findNavController
 import uca.ni.edu.kelani.R
 import uca.ni.edu.kelani.databinding.FragmentFrmFacturaDetBinding
 
-class FrmFacturaDetFragment : Fragment() {
+class AddFacturaDetFragment : Fragment() {
 
     private lateinit var binding: FragmentFrmFacturaDetBinding
     override fun onCreateView(

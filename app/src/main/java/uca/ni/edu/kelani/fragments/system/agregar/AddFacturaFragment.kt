@@ -15,7 +15,7 @@ import uca.ni.edu.kelani.databinding.FragmentFrmFacturaBinding
 import java.util.*
 
 
-class FrmFacturaFragment : Fragment() {
+class AddFacturaFragment : Fragment() {
     private lateinit var binding: FragmentFrmFacturaBinding
     private lateinit var mDateSetListener: DatePickerDialog.OnDateSetListener
 
