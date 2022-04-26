@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import uca.ni.edu.kelani.R
 import uca.ni.edu.kelani.databinding.FragmentAgregarUsuarioBinding
-import uca.ni.edu.kelani.databinding.FragmentUsuariosBinding
 
 class AgregarUsuarioFragment : Fragment() {
     private  lateinit var  binding: FragmentAgregarUsuarioBinding

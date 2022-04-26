@@ -7,17 +7,18 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import uca.ni.edu.kelani.R
-import uca.ni.edu.kelani.databinding.FragmentFrmFacturaDetBinding
+import uca.ni.edu.kelani.databinding.FragmentAddFacturaDetBinding
+
 
 class AddFacturaDetFragment : Fragment() {
 
-    private lateinit var binding: FragmentFrmFacturaDetBinding
+    private lateinit var binding: FragmentAddFacturaDetBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
-        binding =  FragmentFrmFacturaDetBinding.inflate(inflater,container,false)
+        binding =  FragmentAddFacturaDetBinding.inflate(inflater,container,false)
         return binding.root
     }
 

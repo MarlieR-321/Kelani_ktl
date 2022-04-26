@@ -10,13 +10,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import uca.ni.edu.kelani.R
-import uca.ni.edu.kelani.databinding.FragmentFacturacionBinding
-import uca.ni.edu.kelani.databinding.FragmentFrmFacturaBinding
+import uca.ni.edu.kelani.databinding.FragmentAddFacturaBinding
 import java.util.*
 
 
 class AddFacturaFragment : Fragment() {
-    private lateinit var binding: FragmentFrmFacturaBinding
+    private lateinit var binding: FragmentAddFacturaBinding
     private lateinit var mDateSetListener: DatePickerDialog.OnDateSetListener
 
     override fun onCreateView(
@@ -24,7 +23,7 @@ class AddFacturaFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentFrmFacturaBinding.inflate(inflater, container, false)
+        binding = FragmentAddFacturaBinding.inflate(inflater, container, false)
         return binding.root
     }
 

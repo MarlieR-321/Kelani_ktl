@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import uca.ni.edu.kelani.R
 import uca.ni.edu.kelani.databinding.FragmentUnidadMedidaBinding
-import uca.ni.edu.kelani.databinding.FragmentUsuariosBinding
 
 class UnidadmedidaFragment : Fragment() {
     private  lateinit var  _binding: FragmentUnidadMedidaBinding

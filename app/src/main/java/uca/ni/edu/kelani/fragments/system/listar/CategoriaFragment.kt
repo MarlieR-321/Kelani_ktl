@@ -8,8 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import uca.ni.edu.kelani.R
 import uca.ni.edu.kelani.databinding.FragmentCategoriaBinding
-import uca.ni.edu.kelani.databinding.FragmentFacturacionBinding
-import uca.ni.edu.kelani.databinding.FragmentUsuariosBinding
 
 
 class CategoriaFragment : Fragment() {

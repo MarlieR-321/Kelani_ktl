@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import uca.ni.edu.kelani.R
 import uca.ni.edu.kelani.databinding.FragmentClienteBinding
-import uca.ni.edu.kelani.databinding.FragmentUsuariosBinding
 
 
 class ClienteFragment : Fragment() {
