@@ -29,7 +29,7 @@ class UnidadmedidaFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnAdd.setOnClickListener {
-            findNavController().navigate(R.id.action_nav_users_to_agregarUsuarioFragment)
+            findNavController().navigate(R.id.action_unidadDeMedidaFragment2_to_agregarUnidadDeMedidaFragment)
         }
     }
 
