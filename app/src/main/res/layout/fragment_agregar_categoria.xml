@@ -22,16 +22,7 @@
             android:textSize="30sp"
             android:textStyle="bold"
             android:textColor="@color/black"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="Categoria:"
-            android:gravity="center"
-            android:textSize="16sp"
-            android:textStyle="italic"
-            android:lineSpacingExtra="10sp"
-            android:textColor="@color/black"/>
+        
 
 
         <Spinner
