@@ -6,19 +6,20 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import uca.ni.edu.kelani.R
 import uca.ni.edu.kelani.bd.entidades.FacturaEnc
+import uca.ni.edu.kelani.bd.entidades.views.vw_FacturaEnc
 import uca.ni.edu.kelani.databinding.ItemFacturaBinding
 
-class FacturaEncAdapter( var lista: List<FacturaEnc>):RecyclerView.Adapter<FacturaEncAdapter.FacturaEncHolder>() {
+class FacturaEncAdapter( var lista: List<vw_FacturaEnc>):RecyclerView.Adapter<FacturaEncAdapter.FacturaEncHolder>() {
    // var lista: List<FacturaEnc> = emptyList()
 
     inner class FacturaEncHolder(val binding: ItemFacturaBinding):RecyclerView.ViewHolder(binding.root)
     {
-        fun bind(fe:FacturaEnc){
+        fun bind(fe:vw_FacturaEnc){
 
             with(binding){
                 itemIdFactura.text = fe.id_factura.toString()
                 itemDireccionClientes.text = fe.direccion
-                itemNombClientes.text = fe.id_cliente.toString()
+                itemNombClientes.text = fe.nombre_cliente
                 itemTelefClientes.text = fe.telefono
                 txtTotal.text = fe.total.toString()
                 txtFecha.text = fe.fecha

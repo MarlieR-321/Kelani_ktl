@@ -2,7 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    >
+    android:clickable="true"
+    android:focusable="true"
+    android:id="@+id/ll">
 
     <TextView
         android:id="@+id/item_IdFactura"
@@ -11,6 +13,7 @@
         android:text="1"
         android:textAlignment="center"
         android:textSize="64sp"
+        android:textColor="@color/grey"
         android:textStyle="bold"
         />
 
@@ -33,12 +36,14 @@
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:text="Productos: "
+                android:textColor="@color/grey"
                 android:textStyle="bold"
                 />
             <TextView
                 android:id="@+id/txtProd"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:textColor="@color/grey"
                 android:textSize="20sp"
                 android:text="2"/>
         </LinearLayout>
@@ -52,6 +57,7 @@
                 android:id="@+id/tvCant"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/grey"
                 android:textSize="20sp"
                 android:text="Cantidad: "
                 android:textStyle="bold"
@@ -60,6 +66,7 @@
                 android:id="@+id/txtCantidad"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:textColor="@color/grey"
                 android:textSize="20sp"
                 android:text="2"/>
         </LinearLayout>
@@ -75,12 +82,14 @@
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:text="Precio: "
+                android:textColor="@color/grey"
                 android:textStyle="bold"
                 />
             <TextView
                 android:id="@+id/txtPrecio"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:textColor="@color/grey"
                 android:textSize="20sp"
                 android:text="$ 23"/>
         </LinearLayout>
@@ -94,6 +103,7 @@
             <TextView
                 android:id="@+id/tvTotal"
                 android:layout_width="wrap_content"
+                android:textColor="@color/grey"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:text="Sub-total: "
@@ -103,6 +113,7 @@
                 android:id="@+id/txtTotal"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:textColor="@color/grey"
                 android:textSize="20sp"
                 android:text="2090 C$"/>
         </LinearLayout>

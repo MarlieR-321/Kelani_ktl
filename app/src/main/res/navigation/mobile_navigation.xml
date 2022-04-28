@@ -138,14 +138,11 @@
     <fragment
         android:id="@+id/facturacionDetFragment"
         android:name="uca.ni.edu.kelani.fragments.system.listar.FacturacionDetFragment"
-        android:label="Facturacion"
+        android:label="Productos Facturados"
         tools:layout="@layout/fragment_factutacion_det" >
         <action
             android:id="@+id/action_facturacionDetFragment_to_frmFacturaDetFragment"
             app:destination="@id/addFacturaDetFragment" />
-        <action
-            android:id="@+id/action_facturacionDetFragment_self"
-            app:destination="@id/facturacionDetFragment" />
         <action
             android:id="@+id/action_facturacionDetFragment_to_upDelFacturaFragment"
             app:destination="@id/upDelFacturaFragment" />
