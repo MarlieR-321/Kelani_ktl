@@ -33,7 +33,7 @@ class AddFacturaFragment : Fragment() {
         datePicker()
 
         binding.btnSave.setOnClickListener {
-            findNavController().navigate(R.id.frmFacturaDetFragment)
+            findNavController().navigate(R.id.addFacturaDetFragment)
         }
     }
 

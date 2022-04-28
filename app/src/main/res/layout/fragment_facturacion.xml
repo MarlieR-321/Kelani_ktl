@@ -19,13 +19,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Facturas"
-            android:textAlignment="center"
-            android:textSize="30sp" />
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvFacturas"

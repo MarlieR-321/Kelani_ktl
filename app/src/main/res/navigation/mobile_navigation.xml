@@ -10,6 +10,7 @@
         android:name="uca.ni.edu.kelani.fragments.system.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
+
     <fragment
         android:id="@+id/nav_facturar"
         android:name="uca.ni.edu.kelani.fragments.system.listar.FacturacionFragment"
@@ -17,22 +18,26 @@
         tools:layout="@layout/fragment_facturacion" >
         <action
             android:id="@+id/fact_to_frmFact"
-            app:destination="@id/frmFacturaFragment" />
+            app:destination="@id/addFacturaFragment" />
         <action
             android:id="@+id/action_nav_facturar_to_facturacionDetFragment"
             app:destination="@id/facturacionDetFragment" />
+        <action
+            android:id="@+id/action_nav_facturar_to_upDelFacturaDetFragment"
+            app:destination="@id/upDelFacturaDetFragment" />
     </fragment>
+
     <fragment
-        android:id="@+id/frmFacturaFragment"
+        android:id="@+id/addFacturaFragment"
         android:name="uca.ni.edu.kelani.fragments.system.agregar.AddFacturaFragment"
         android:label="Facturacion"
         tools:layout="@layout/fragment_add_factura" >
         <action
             android:id="@+id/frmFact_to_Det"
-            app:destination="@id/frmFacturaDetFragment" />
+            app:destination="@id/addFacturaDetFragment" />
     </fragment>
     <fragment
-        android:id="@+id/frmFacturaDetFragment"
+        android:id="@+id/addFacturaDetFragment"
         android:name="uca.ni.edu.kelani.fragments.system.agregar.AddFacturaDetFragment"
         android:label="Facturacion"
         tools:layout="@layout/fragment_add_factura_det" >
@@ -137,7 +142,31 @@
         tools:layout="@layout/fragment_factutacion_det" >
         <action
             android:id="@+id/action_facturacionDetFragment_to_frmFacturaDetFragment"
-            app:destination="@id/frmFacturaDetFragment" />
+            app:destination="@id/addFacturaDetFragment" />
+        <action
+            android:id="@+id/action_facturacionDetFragment_self"
+            app:destination="@id/facturacionDetFragment" />
+        <action
+            android:id="@+id/action_facturacionDetFragment_to_upDelFacturaFragment"
+            app:destination="@id/upDelFacturaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/upDelFacturaFragment"
+        android:name="uca.ni.edu.kelani.fragments.system.update_delete.UpDelFacturaFragment"
+        android:label="fragment_up_del_factura"
+        tools:layout="@layout/fragment_up_del_factura" >
+        <action
+            android:id="@+id/action_upDelFacturaFragment_to_facturacionDetFragment"
+            app:destination="@id/facturacionDetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/upDelFacturaDetFragment"
+        android:name="uca.ni.edu.kelani.fragments.system.update_delete.UpDelFacturaDetFragment"
+        android:label="fragment_up_del_factura_det"
+        tools:layout="@layout/fragment_up_del_factura_det" >
+        <action
+            android:id="@+id/action_upDelFacturaDetFragment_to_nav_facturar"
+            app:destination="@id/nav_facturar" />
     </fragment>
 
 </navigation>

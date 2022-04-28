@@ -29,7 +29,7 @@ class FacturacionDetFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnAdd.setOnClickListener {
-            findNavController().navigate(R.id.frmFacturaDetFragment)
+            findNavController().navigate(R.id.addFacturaDetFragment)
         }
     }
 }

@@ -5,7 +5,7 @@
         <item name="android:gravity">center_horizontal</item>
         <item name="android:layout_height">48dp</item>
         <item name="backgroundTint">#7CB5B1</item>
-        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textColor">#FFFF</item>
         <item name="android:layout_marginTop">20dp</item>
         <item name="android:layout_marginLeft">20dp</item>
         <item name="android:layout_marginRight">20dp</item>
