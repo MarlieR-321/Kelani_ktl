@@ -111,7 +111,7 @@
                 android:textColor="@color/grey"/>
         </LinearLayout>
 
-        <LinearLayout
+        <!--<LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -133,7 +133,7 @@
                 android:text="ACTIVO"
                 android:textStyle="italic"
                 android:textColor="@color/grey"/>
-        </LinearLayout>
+        </LinearLayout>-->
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -163,21 +163,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginBottom="10sp">
-            <ImageView
-                android:layout_marginTop="20sp"
-                android:textColor="@color/grey"
-                android:id="@+id/ivDetalles"
-                android:layout_width="144dp"
-                android:layout_height="69dp"
-                app:srcCompat="@drawable/view"
-                android:background="#D6D3D3"
-                android:paddingVertical="10sp"
-                android:layout_marginEnd="20sp"/>
+            android:layout_marginBottom="10sp"
+            android:layout_marginStart="80dp"
+            >
+
 
             <ImageView
                 android:layout_marginTop="20sp"
-                android:id="@+id/ivEdit"
+                android:id="@+id/ivEditCliente"
                 android:layout_width="144dp"
                 android:layout_height="69dp"
                 app:srcCompat="@drawable/edit"

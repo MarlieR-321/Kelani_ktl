@@ -68,17 +68,21 @@
         android:name="uca.ni.edu.kelani.fragments.system.listar.ClienteFragment"
         android:label="Clientes Registrados"
         tools:layout="@layout/fragment_cliente" >
+
         <action
-            android:id="@+id/action_nav_clients_to_agregarClientesFragment"
-            app:destination="@id/agregarClientesFragment" />
+            android:id="@+id/nav_clients_to_upDeClienteFragment"
+            app:destination="@id/upDeClienteFragment" />
+        <action
+            android:id="@+id/addCliente"
+            app:destination="@id/agregarClienteFragment" />
     </fragment>
     <fragment
-        android:id="@+id/agregarClientesFragment"
+        android:id="@+id/agregarClienteFragment"
         android:name="uca.ni.edu.kelani.fragments.system.agregar.AgregarClientesFragment"
         android:label="Creacion clientes"
         tools:layout="@layout/fragment_agregar_clientes" >
         <action
-            android:id="@+id/action_agregarClientesFragment_to_nav_clients"
+            android:id="@+id/ir_nav_clients"
             app:destination="@id/nav_clients" />
     </fragment>
     <fragment
@@ -164,6 +168,15 @@
         <action
             android:id="@+id/action_upDelFacturaDetFragment_to_nav_facturar"
             app:destination="@id/nav_facturar" />
+    </fragment>
+    <fragment
+        android:id="@+id/upDeClienteFragment"
+        android:name="uca.ni.edu.kelani.fragments.system.update_delete.UpDeClienteFragment"
+        android:label="Actualizacion del Cliente"
+        tools:layout="@layout/fragment_up_de_cliente" >
+        <action
+            android:id="@+id/action_upDeClienteFragment_to_nav_clients"
+            app:destination="@id/nav_clients" />
     </fragment>
 
 </navigation>

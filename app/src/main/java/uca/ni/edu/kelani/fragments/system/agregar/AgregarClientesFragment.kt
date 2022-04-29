@@ -25,7 +25,7 @@ class AgregarClientesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnGuardarClient.setOnClickListener {
-            findNavController().navigate(R.id.action_agregarClientesFragment_to_nav_clients)
+            findNavController().navigate(R.id.ir_nav_clients)
         }
     }
 
