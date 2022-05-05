@@ -22,7 +22,7 @@ interface MainDataBaseProvider{
 @Database(
     entities = [Categoria::class, UnidadMedida::class,Producto::class,Cliente::class,Usuario::class,Factura::class,FacturaDet::class],
     views=[vw_Factura::class,vw_FacturaDet::class],
-    version =2)
+    version =3)
 abstract class bdKealni: RoomDatabase(), MainDataBaseProvider {
 
     abstract override fun facturaDao(): FacturaDao
