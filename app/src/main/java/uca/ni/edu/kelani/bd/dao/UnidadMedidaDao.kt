@@ -16,7 +16,7 @@ interface UnidadMedidaDao {
     @Query("SELECT * FROM UnidadMedida")
     suspend fun getAll(): List<UnidadMedida>
 
-    @Query("SELECT * FROM Categoria")
+    @Query("SELECT * FROM UnidadMedida")
     fun getAllRealData(): LiveData<List<UnidadMedida>>
 
     @Query("SELECT * FROM UnidadMedida WHERE id_unidad = :id")
