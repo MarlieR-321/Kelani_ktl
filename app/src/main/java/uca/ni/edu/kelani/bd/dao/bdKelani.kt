@@ -5,21 +5,24 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import uca.ni.edu.kelani.bd.dao.FacturaDao
+import uca.ni.edu.kelani.bd.dao.FacturaDetDao
 import uca.ni.edu.kelani.bd.entidades.*
 import uca.ni.edu.kelani.bd.entidades.views.vw_Factura
 import uca.ni.edu.kelani.bd.entidades.views.vw_FacturaDet
 
 interface MainDataBaseProvider{
     fun facturaDao():FacturaDao
+    fun facturaDetDao(): FacturaDetDao
 }
 
 @Database(
     entities = [Categoria::class, UnidadMedida::class,Producto::class,Cliente::class,Usuario::class,Factura::class,FacturaDet::class],
     views=[vw_Factura::class,vw_FacturaDet::class],
-    version =1)
+    version =2)
 abstract class bdKealni: RoomDatabase(), MainDataBaseProvider {
 
     abstract override fun facturaDao(): FacturaDao
+    abstract override fun facturaDetDao(): FacturaDetDao
 
     companion object {
         @Volatile

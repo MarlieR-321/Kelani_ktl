@@ -8,8 +8,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import uca.ni.edu.kelani.R
+import uca.ni.edu.kelani.bd.entidades.Cliente
+import uca.ni.edu.kelani.bd.viewmodel.FacturaViewModel
 import uca.ni.edu.kelani.databinding.FragmentAddFacturaBinding
 import java.util.*
 
@@ -17,13 +21,15 @@ import java.util.*
 class AddFacturaFragment : Fragment() {
     private lateinit var binding: FragmentAddFacturaBinding
     private lateinit var mDateSetListener: DatePickerDialog.OnDateSetListener
+    private lateinit var viewModel: FacturaViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentAddFacturaBinding.inflate(inflater, container, false)
+        binding = FragmentAddFacturaBinding.inflate(layoutInflater)
+        viewModel = ViewModelProvider(this)[FacturaViewModel::class.java]
         return binding.root
     }
 
@@ -31,10 +37,29 @@ class AddFacturaFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         datePicker()
+        initSpinners()
+
 
         binding.btnSave.setOnClickListener {
             findNavController().navigate(R.id.addFacturaDetFragment)
         }
+    }
+
+    private fun guardar(){
+
+    }
+
+    private fun initSpinners(){
+        var listClientes = arrayListOf("Seleccione...")
+        lateinit var cl: List<Cliente>
+        viewModel.listaClientes.observe(viewLifecycleOwner, androidx.lifecycle.Observer { cl-> })
+
+        viewModel.listaClientes.value!!.forEach {
+            listClientes.add("${it.nombre} ${it.apellido}")
+        }
+
+        val adapterC: ArrayAdapter<String> = ArrayAdapter<String>(requireContext(),R.layout.sp_item, listClientes)
+        binding.spCliente.adapter = adapterC
     }
 
     private fun datePicker(){
