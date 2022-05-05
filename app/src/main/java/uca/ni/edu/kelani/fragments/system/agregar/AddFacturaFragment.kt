@@ -9,6 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Toast
+import android.widget.Toast.LENGTH_SHORT
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import kotlinx.coroutines.CoroutineScope
@@ -43,27 +45,18 @@ class AddFacturaFragment : Fragment() {
         initSpinners()
 
         binding.spCliente.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(
-                parentView: AdapterView<*>?,
-                selectedItemView: View?,
-                position: Int,
-                id: Long,
-            ) {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+
                 val full = binding.spCliente.selectedItem.toString()
                 val id = getIdCliente(full)
-                if(id!=0){
-                    val cl:Cliente = getCliente(id)
-                    if (cl != null){
-                        initTextView(cl)
-                    }
+                if (id != 0) {
+                    getCliente(id)
                 }
-            }
 
-            override fun onNothingSelected(parentView: AdapterView<*>?) {
-                // your code here
-            }
+            } // to close the onItemSelected
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {}
         }
-
         binding.btnSave.setOnClickListener {
             findNavController().navigate(R.id.addFacturaDetFragment)
         }
@@ -73,31 +66,28 @@ class AddFacturaFragment : Fragment() {
 
     }
 
-    private fun getCliente(id:Int):Cliente{
+    private fun getCliente(id:Int){
         val dbinstance =bdKealni.getDataBase(requireContext().applicationContext)
         val dao:FacturaDao = dbinstance.facturaDao()
-        var cliente: Cliente = Cliente(0,"","","","","",0)
 
         CoroutineScope(Dispatchers.Main).launch {
             val cl = dao.getClienteById(id)
-            //cliente.id_cliente = cl.id_cliente
-
+            initTextView(cl)
         }
-
-        return cliente
     }
 
     private fun getIdCliente(full:String):Int{
-        if(full == "Seleccione..."){
-            return 0
+        return if(full == "Seleccione..."){
+            0
         }else{
             val id = full.split("-")
-            return id[0].toInt()
+            id[0].toInt()
         }
     }
 
     private fun initTextView(cl: Cliente){
         with(binding){
+            tvDireccion.placeholderText="AAAAAAAAAAA"
             itDireccion.setText(cl.direccion)
             itTelefono.setText(cl.telefono)
         }
