@@ -12,7 +12,6 @@ class ClienteRepository(private val daoCl: ClienteDao) {
     suspend fun addCliente(cli: Cliente){
         daoCl.isert(cli)
     }
-
     suspend fun updateCliente(cli: Cliente){
         daoCl.update(cli)
     }
