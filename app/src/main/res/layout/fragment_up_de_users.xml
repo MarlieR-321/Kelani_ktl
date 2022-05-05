@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.system.agregar.AgregarUsuarioFragment">
+    tools:context=".fragments.system.update_delete.UpDeUsersFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:text="Ingrese un nuevo Usuario"
+            android:text="Edicion del Usuario"
             android:gravity="center"
             android:textSize="30sp"
             android:textStyle="bold"
@@ -85,14 +85,36 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_GuardarUser"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:backgroundTint="#63401A"
-            android:text="Guardar"
-            android:textAllCaps="true" />
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btn_modUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="#63401A"
+                android:text="Modificar"
+                android:textAllCaps="true"
+                android:padding="15sp"
+                android:layout_weight="1"
+                android:layout_marginEnd="10sp"
+                />
+            <Button
+                android:id="@+id/delUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/brown"
+                android:backgroundTint="#FFFF"
+                android:text="Eliminar"
+                android:textAllCaps="true"
+                android:padding="15sp"
+                android:layout_weight="1"
+                android:layout_marginStart="10sp"
+                />
+        </LinearLayout>
 
 
     </LinearLayout>

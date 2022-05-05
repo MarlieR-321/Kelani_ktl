@@ -10,7 +10,8 @@
         android:text="1"
         android:textAlignment="center"
         android:textSize="64sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:textColor="@color/grey"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,14 +29,16 @@
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:text="Usuario: "
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="@color/grey"/>
             <TextView
                 android:id="@+id/item_NombUsuarios"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:text="Nombre Usuario"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="@color/grey"/>
         </LinearLayout>
 
         <LinearLayout
@@ -50,13 +53,15 @@
                 android:textSize="20sp"
                 android:text="Nombre Real: "
                 android:textStyle="bold"
+                android:textColor="@color/grey"
                 />
             <TextView
                 android:id="@+id/item_NombReal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
-                android:text="Roberto Gomez"/>
+                android:text="Roberto Gomez"
+                android:textColor="@color/grey"/>
         </LinearLayout>
 
         <LinearLayout
@@ -71,16 +76,18 @@
                 android:textSize="20sp"
                 android:text="Email: "
                 android:textStyle="bold"
+                android:textColor="@color/grey"
                 />
             <TextView
                 android:id="@+id/item_Email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:text="aaaaaaaaaaaa@gmail.com"/>
+                android:text="aaaaaaaaaaaa@gmail.com"
+                android:textColor="@color/grey" />
         </LinearLayout>
 
-        <LinearLayout
+        <!--<LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -92,6 +99,7 @@
                 android:textSize="20sp"
                 android:text="Estado: "
                 android:textStyle="bold"
+                android:textColor="@color/grey"
                 />
             <TextView
                 android:id="@+id/item_EstadoUsuario"
@@ -99,8 +107,9 @@
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
                 android:text="ACTIVO"
-                android:textStyle="italic"/>
-        </LinearLayout>
+                android:textStyle="italic"
+                android:textColor="@color/grey"/>
+        </LinearLayout>-->
 
     </LinearLayout>
 

@@ -159,7 +159,7 @@
                 android:textColor="@color/grey"/>
         </LinearLayout>
 
-        <LinearLayout
+        <!--<LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -177,9 +177,7 @@
                 android:background="#D6D3D3"
                 android:paddingVertical="10sp"
                 app:tint="#434040" />
-        </LinearLayout>
-
-
+        </LinearLayout>-->
 
     </LinearLayout>
 
