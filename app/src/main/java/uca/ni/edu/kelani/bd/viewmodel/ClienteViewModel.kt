@@ -12,7 +12,7 @@ import uca.ni.edu.kelani.bd.repository.ClienteRepository
 
 
 class ClienteViewModel(application: Application): AndroidViewModel(application) {
-    val listaClientes: LiveData<List<Cliente>>
+    val listaCliente: LiveData<List<Cliente>>
 
     private val repository: ClienteRepository
 
@@ -20,7 +20,7 @@ class ClienteViewModel(application: Application): AndroidViewModel(application) 
         val clienteDao = bdKealni.getDataBase(application).clienteDao()
 
         repository = ClienteRepository(clienteDao)
-        listaClientes = repository.listAllData
+        listaCliente = repository.listAllData
 
     }
 
