@@ -103,7 +103,7 @@
         android:label="Crear Categoria"
         tools:layout="@layout/fragment_agregar_categoria" >
         <action
-            android:id="@+id/action_agregarCategoriaFragment_to_nav_Category"
+            android:id="@+id/ir_a_nav_category"
             app:destination="@id/nav_category" />
     </fragment>
     <fragment
@@ -112,7 +112,7 @@
         android:label="Categorias Registradas"
         tools:layout="@layout/fragment_categoria" >
         <action
-            android:id="@+id/action_categoriaFragment2_to_agregarCategoriaFragment"
+            android:id="@+id/add_Categoria"
             app:destination="@id/agregarCategoriaFragment" />
         <action
             android:id="@+id/action_nav_category_to_upDeCategoriaFragment"

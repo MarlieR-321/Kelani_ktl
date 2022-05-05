@@ -54,8 +54,10 @@
         <entry key="..\:/Users/Marlon Ramirez/Documents/2022_1S/Moviles/Kelani_ktl/app/src/main/res/menu/activity_main_drawer.xml" value="0.22239583333333332" />
         <entry key="..\:/Users/Marlon Ramirez/Documents/2022_1S/Moviles/Kelani_ktl/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.196" />
         <entry key="..\:/Users/Marlon Ramirez/Documents/2022_1S/Moviles/Kelani_ktl/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.227" />
-        <entry key="..\:/Users/admin/Desktop/Kelani_ktl/app/src/main/res/layout/fragment_agregar_clientes.xml" value="0.1796875" />
+        <entry key="..\:/Users/admin/Desktop/Kelani_ktl/app/src/main/res/layout/fragment_agregar_categoria.xml" value="0.1" />
+        <entry key="..\:/Users/admin/Desktop/Kelani_ktl/app/src/main/res/layout/fragment_agregar_clientes.xml" value="0.1" />
         <entry key="..\:/Users/admin/Desktop/Kelani_ktl/app/src/main/res/layout/fragment_categoria.xml" value="0.1796875" />
+        <entry key="..\:/Users/admin/Desktop/Kelani_ktl/app/src/main/res/layout/fragment_cliente.xml" value="0.1796875" />
         <entry key="..\:/Users/admin/Desktop/Kelani_ktl/app/src/main/res/layout/fragment_up_categoria.xml" value="0.1796875" />
         <entry key="..\:/Users/admin/Desktop/Kelani_ktl/app/src/main/res/layout/fragment_up_de_cliente.xml" value="0.1796875" />
         <entry key="..\:/Users/admin/Desktop/Kelani_ktl/app/src/main/res/layout/item_categoria.xml" value="0.1" />

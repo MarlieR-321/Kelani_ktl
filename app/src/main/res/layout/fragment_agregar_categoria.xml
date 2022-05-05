@@ -22,32 +22,36 @@
             android:textSize="30sp"
             android:textStyle="bold"
             android:textColor="@color/black"/>
-        
 
-
-        <Spinner
-            android:id="@+id/spCategoria"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="50dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="10dp"
-            android:contentDescription="@string/spinCat"
-            android:padding="30sp" />
 
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/item_passwordUser_label"
-            android:layout_width="266dp"
+            android:id="@+id/item_nombCategoria_label"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:hint="Descripcion"
-            android:inputType="textPassword">
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:hint="Nombre de la Categoria">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/item_passwordUser"
-                android:layout_width="265dp"
+                android:id="@+id/item_nombCategoria"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/item_descripcion_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:hint="Descripcion">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/item_descripcion"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
         </com.google.android.material.textfield.TextInputLayout>
