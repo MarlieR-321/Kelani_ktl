@@ -5,11 +5,12 @@ import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import uca.ni.edu.kelani.R
+import uca.ni.edu.kelani.bd.entidades.views.vw_Factura
 import uca.ni.edu.kelani.bd.entidades.views.vw_FacturaDet
 import uca.ni.edu.kelani.databinding.ItemFacturaDetalleBinding
 
-class FacturaDetAdapter(var lista: List<vw_FacturaDet>):RecyclerView.Adapter<FacturaDetAdapter.FacturaDetHolder>() {
-   // var lista: List<FacturaDet> = emptyList()
+class FacturaDetAdapter():RecyclerView.Adapter<FacturaDetAdapter.FacturaDetHolder>() {
+    var lista: List<vw_FacturaDet> = emptyList()
 
     inner class FacturaDetHolder(val binding: ItemFacturaDetalleBinding):RecyclerView.ViewHolder(binding.root)
     {
@@ -34,6 +35,10 @@ class FacturaDetAdapter(var lista: List<vw_FacturaDet>):RecyclerView.Adapter<Fac
         return FacturaDetHolder(binding)
     }
 
+    fun setDataFactura(f: List<vw_FacturaDet>) {
+        this.lista = f
+        notifyDataSetChanged()
+    }
     override fun onBindViewHolder(holder: FacturaDetHolder, position: Int) {
         holder.bind(
             lista[position]

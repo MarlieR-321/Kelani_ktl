@@ -20,7 +20,7 @@
             android:id="@+id/fact_to_frmFact"
             app:destination="@id/addFacturaFragment" />
         <action
-            android:id="@+id/action_nav_facturar_to_facturacionDetFragment"
+            android:id="@+id/nav_to_FacDet"
             app:destination="@id/facturacionDetFragment" />
         <action
             android:id="@+id/action_nav_facturar_to_upDelFacturaDetFragment"
@@ -33,8 +33,8 @@
         android:label="Facturacion"
         tools:layout="@layout/fragment_add_factura" >
         <action
-            android:id="@+id/frmFact_to_Det"
-            app:destination="@id/addFacturaDetFragment" />
+            android:id="@+id/addFacturatoListDet"
+            app:destination="@id/facturacionDetFragment" />
     </fragment>
     <fragment
         android:id="@+id/addFacturaDetFragment"
@@ -44,6 +44,9 @@
         <action
             android:id="@+id/action_frmFacturaDetFragment_to_facturacionDetFragment"
             app:destination="@id/facturacionDetFragment" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/nav_users"
@@ -157,11 +160,14 @@
         android:label="Productos Facturados"
         tools:layout="@layout/fragment_factutacion_det" >
         <action
-            android:id="@+id/action_facturacionDetFragment_to_frmFacturaDetFragment"
+            android:id="@+id/factura_det_to_add"
             app:destination="@id/addFacturaDetFragment" />
         <action
             android:id="@+id/action_facturacionDetFragment_to_upDelFacturaFragment"
             app:destination="@id/upDelFacturaFragment" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/upDelFacturaFragment"

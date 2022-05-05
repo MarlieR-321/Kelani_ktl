@@ -11,7 +11,9 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -22,6 +24,7 @@ import uca.ni.edu.kelani.bd.entidades.Cliente
 import uca.ni.edu.kelani.bd.entidades.Factura
 import uca.ni.edu.kelani.bd.viewmodel.FacturaViewModel
 import uca.ni.edu.kelani.databinding.FragmentAddFacturaBinding
+import uca.ni.edu.kelani.fragments.system.listar.FacturacionDetFragmentArgs
 import java.util.*
 
 
@@ -36,7 +39,7 @@ class AddFacturaFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentAddFacturaBinding.inflate(layoutInflater)
-
+        viewModel = ViewModelProvider(this)[FacturaViewModel::class.java]
         return binding.root
     }
 
@@ -60,7 +63,7 @@ class AddFacturaFragment : Fragment() {
             override fun onNothingSelected(parent: AdapterView<*>?) {}
         }
         binding.btnSave.setOnClickListener {
-
+            guardar()
         }
     }
 
@@ -73,7 +76,7 @@ class AddFacturaFragment : Fragment() {
 
             if (ncliente != "Seleccione...")
             {
-                if (fecha.isNotEmpty()||telefono.isNotEmpty()||direccion.isNotEmpty())
+                if (fecha.isNotEmpty() && telefono.isNotEmpty() && direccion.isNotEmpty())
                 {
                     val id = getIdCliente(ncliente)
 
@@ -81,12 +84,31 @@ class AddFacturaFragment : Fragment() {
                     viewModel.agregarFactura(fc)
 
                     Toast.makeText(requireContext(), "Registro guardado", Toast.LENGTH_LONG).show()
-                    findNavController().navigate(R.id.addFacturaDetFragment)
+                    val action = AddFacturaFragmentDirections.addFacturatoListDet(getIdLast())
+                    findNavController().navigate(action)
                 }
+                else
+                {
+                    Toast.makeText(requireContext(), "Complete todos los datos por favor", Toast.LENGTH_LONG).show()
+                }
+            }
+            else
+            {
+                Toast.makeText(requireContext(), "Elija un Cliente", Toast.LENGTH_LONG).show()
             }
 
 
         }
+    }
+
+    private fun getIdLast():Int{
+        val dbinstance =bdKealni.getDataBase(requireContext().applicationContext)
+        val dao:FacturaDao = dbinstance.facturaDao()
+        var id = 0
+        CoroutineScope(Dispatchers.Main).launch {
+            id = dao.getIdLast()
+        }
+        return id
     }
 
     private fun getCliente(id:Int){
@@ -110,7 +132,6 @@ class AddFacturaFragment : Fragment() {
 
     private fun initTextView(cl: Cliente){
         with(binding){
-            tvDireccion.placeholderText="AAAAAAAAAAA"
             itDireccion.setText(cl.direccion)
             itTelefono.setText(cl.telefono)
         }

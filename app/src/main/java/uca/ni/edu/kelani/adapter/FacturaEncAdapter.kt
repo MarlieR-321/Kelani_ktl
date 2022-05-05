@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import uca.ni.edu.kelani.R
 import uca.ni.edu.kelani.bd.entidades.views.vw_Factura
 import uca.ni.edu.kelani.databinding.ItemFacturaBinding
+import uca.ni.edu.kelani.fragments.system.listar.FacturacionFragmentDirections
 
 class FacturaEncAdapter():RecyclerView.Adapter<FacturaEncAdapter.FacturaEncHolder>() {
     var lista: List<vw_Factura> = emptyList()
@@ -27,7 +28,8 @@ class FacturaEncAdapter():RecyclerView.Adapter<FacturaEncAdapter.FacturaEncHolde
                     it.findNavController().navigate(R.id.upDelFacturaFragment)
                 }
                 ivDetalles.setOnClickListener {
-                    it.findNavController().navigate(R.id.facturacionDetFragment)
+                    val action = FacturacionFragmentDirections.navToFacDet(fe.id_factura)
+                    it.findNavController().navigate(action)
                 }
             }
         }
