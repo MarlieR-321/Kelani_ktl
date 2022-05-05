@@ -147,6 +147,9 @@
         <action
             android:id="@+id/action_productosFragment_to_agregarProductosFragment"
             app:destination="@id/agregarProductosFragment" />
+        <action
+            android:id="@+id/action_nav_product_to_upDelProductoFragment"
+            app:destination="@id/upDelProductoFragment" />
     </fragment>
     <fragment
         android:id="@+id/agregarProductosFragment"
@@ -207,6 +210,15 @@
         <action
             android:id="@+id/action_upDeCategoriaFragment_to_nav_category"
             app:destination="@id/nav_category" />
+    </fragment>
+    <fragment
+        android:id="@+id/upDelProductoFragment"
+        android:name="uca.ni.edu.kelani.fragments.system.update_delete.UpDelProductoFragment"
+        android:label="fragment_up_del_producto"
+        tools:layout="@layout/fragment_up_del_producto" >
+        <action
+            android:id="@+id/action_upDelProductoFragment_to_nav_product"
+            app:destination="@id/nav_product" />
     </fragment>
 
 
