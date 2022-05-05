@@ -23,9 +23,16 @@ interface FacturaDao {
     @Delete
     suspend fun delete(clasificacion: Factura)
 
+    //Editar una vez se tengan los daos correspondientes
     @Query("SELECT * FROM Cliente where estado<>3")
     suspend fun getClientes():List<Cliente>
 
     @Query("SELECT * FROM Cliente where id_cliente = :id")
     suspend fun getClienteById(id:Int):Cliente
+
+    @Query("SELECT * FROM Producto where estado<>3")
+    suspend fun getProducto():List<Cliente>
+
+    @Query("SELECT * FROM Producto where id_producto = :id")
+    suspend fun getProductoById(id:Int):Cliente
 }

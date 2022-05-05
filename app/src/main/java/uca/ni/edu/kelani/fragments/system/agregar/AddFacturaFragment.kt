@@ -10,7 +10,6 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import android.widget.Toast.LENGTH_SHORT
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import kotlinx.coroutines.CoroutineScope
@@ -20,6 +19,8 @@ import ni.edu.uca.peliculas50.bd.dao.bdKealni
 import uca.ni.edu.kelani.R
 import uca.ni.edu.kelani.bd.dao.FacturaDao
 import uca.ni.edu.kelani.bd.entidades.Cliente
+import uca.ni.edu.kelani.bd.entidades.Factura
+import uca.ni.edu.kelani.bd.viewmodel.FacturaViewModel
 import uca.ni.edu.kelani.databinding.FragmentAddFacturaBinding
 import java.util.*
 
@@ -27,6 +28,7 @@ import java.util.*
 class AddFacturaFragment : Fragment() {
     private lateinit var binding: FragmentAddFacturaBinding
     private lateinit var mDateSetListener: DatePickerDialog.OnDateSetListener
+    private lateinit var viewModel : FacturaViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -58,12 +60,33 @@ class AddFacturaFragment : Fragment() {
             override fun onNothingSelected(parent: AdapterView<*>?) {}
         }
         binding.btnSave.setOnClickListener {
-            findNavController().navigate(R.id.addFacturaDetFragment)
+
         }
     }
 
     private fun guardar(){
+        with(binding){
+            val fecha = itFecha.text.toString()
+            val ncliente = spCliente.selectedItem.toString()
+            val telefono = itTelefono.text.toString()
+            val direccion  = itDireccion.text.toString()
 
+            if (ncliente != "Seleccione...")
+            {
+                if (fecha.isNotEmpty()||telefono.isNotEmpty()||direccion.isNotEmpty())
+                {
+                    val id = getIdCliente(ncliente)
+
+                    val fc = Factura(0,fecha,id,telefono,direccion,0.0,1)
+                    viewModel.agregarFactura(fc)
+
+                    Toast.makeText(requireContext(), "Registro guardado", Toast.LENGTH_LONG).show()
+                    findNavController().navigate(R.id.addFacturaDetFragment)
+                }
+            }
+
+
+        }
     }
 
     private fun getCliente(id:Int){
