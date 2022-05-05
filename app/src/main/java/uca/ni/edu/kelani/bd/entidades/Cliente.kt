@@ -10,17 +10,17 @@ import kotlinx.android.parcel.Parcelize
 @Entity(tableName="Cliente")
 data class Cliente (
     @PrimaryKey(autoGenerate = true)
-    val id_cliente:Int,
+    var id_cliente:Int,
     @ColumnInfo(name="nombre")
-    val nombre:String,
+    var nombre:String,
     @ColumnInfo(name="apellido")
-    val apellido:String,
+    var apellido:String,
     @ColumnInfo(name="telefono")
-    val telefono:String,
+    var telefono:String,
     @ColumnInfo(name="cedula")
-    val cedula:String,
+    var cedula:String,
     @ColumnInfo(name="direccion")
-    val direccion:String,
+    var direccion:String,
     @ColumnInfo(name="estado")
-    val estado: Int
+    var estado: Int
     ):Parcelable
