@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/ll_categoria"
+    android:clickable="true">
+
+    <TextView
+        android:id="@+id/item_IdCategoria"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:text="1"
+        android:textAlignment="center"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        android:textColor="@color/grey"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/TxtNombCategoria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre de Categoria: "
+                android:textColor="@color/grey"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/item_NombCategoria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="categoria"
+                android:textAlignment="center"
+                android:textColor="@color/grey"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/TxtDescCategoria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="Descripcion: "
+                android:textStyle="bold"
+                android:textColor="@color/grey"
+                />
+            <TextView
+                android:id="@+id/item_Descripcion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:hint="descripcion"
+                android:textColor="@color/grey"/>
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
