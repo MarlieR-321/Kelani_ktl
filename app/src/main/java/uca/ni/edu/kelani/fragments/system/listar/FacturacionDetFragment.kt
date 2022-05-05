@@ -9,9 +9,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import uca.ni.edu.kelani.R
 import uca.ni.edu.kelani.adapter.FacturaDetAdapter
-import uca.ni.edu.kelani.adapter.FacturaEncAdapter
 import uca.ni.edu.kelani.bd.entidades.views.vw_FacturaDet
-import uca.ni.edu.kelani.bd.entidades.views.vw_FacturaEnc
 import uca.ni.edu.kelani.databinding.FragmentFactutacionDetBinding
 
 // TODO: Rename parameter arguments, choose names that match

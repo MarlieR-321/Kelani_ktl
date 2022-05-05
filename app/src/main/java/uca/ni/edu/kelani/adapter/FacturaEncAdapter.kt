@@ -5,16 +5,15 @@ import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import uca.ni.edu.kelani.R
-import uca.ni.edu.kelani.bd.entidades.FacturaEnc
-import uca.ni.edu.kelani.bd.entidades.views.vw_FacturaEnc
+import uca.ni.edu.kelani.bd.entidades.views.vw_Factura
 import uca.ni.edu.kelani.databinding.ItemFacturaBinding
 
-class FacturaEncAdapter( var lista: List<vw_FacturaEnc>):RecyclerView.Adapter<FacturaEncAdapter.FacturaEncHolder>() {
-   // var lista: List<FacturaEnc> = emptyList()
+class FacturaEncAdapter():RecyclerView.Adapter<FacturaEncAdapter.FacturaEncHolder>() {
+    var lista: List<vw_Factura> = emptyList()
 
     inner class FacturaEncHolder(val binding: ItemFacturaBinding):RecyclerView.ViewHolder(binding.root)
     {
-        fun bind(fe:vw_FacturaEnc){
+        fun bind(fe: vw_Factura){
 
             with(binding){
                 itemIdFactura.text = fe.id_factura.toString()
@@ -37,6 +36,10 @@ class FacturaEncAdapter( var lista: List<vw_FacturaEnc>):RecyclerView.Adapter<Fa
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FacturaEncHolder {
         val binding = ItemFacturaBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return FacturaEncHolder(binding)
+    }
+    fun setDataFactura(f: List<vw_Factura>) {
+        this.lista = f
+        notifyDataSetChanged()
     }
 
     override fun onBindViewHolder(holder: FacturaEncHolder, position: Int) {

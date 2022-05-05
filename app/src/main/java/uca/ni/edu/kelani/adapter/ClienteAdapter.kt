@@ -6,9 +6,7 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import uca.ni.edu.kelani.R
 import uca.ni.edu.kelani.bd.entidades.Cliente
-import uca.ni.edu.kelani.bd.entidades.views.vw_FacturaEnc
 import uca.ni.edu.kelani.databinding.ItemClienteBinding
-import uca.ni.edu.kelani.databinding.ItemFacturaBinding
 
 class ClienteAdapter( var lista: List<Cliente>): RecyclerView.Adapter<ClienteAdapter.ClienteHolder>() {
 
@@ -25,9 +23,10 @@ class ClienteAdapter( var lista: List<Cliente>): RecyclerView.Adapter<ClienteAda
                 itemCedulaClientes.text = cl.cedula
                 itemDireccionClientes.text = cl.direccion
 
-                ivEditCliente.setOnClickListener {
+                llCliente.setOnClickListener {
                     it.findNavController().navigate(R.id.upDeClienteFragment)
                 }
+
             }
         }
     }

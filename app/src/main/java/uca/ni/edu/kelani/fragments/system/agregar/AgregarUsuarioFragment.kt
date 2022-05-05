@@ -25,7 +25,7 @@ class AgregarUsuarioFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnGuardarUser.setOnClickListener {
-            findNavController().navigate(R.id.action_agregarUsuarioFragment_to_nav_users)
+            findNavController().navigate(R.id.nav_clients)
         }
     }
 
