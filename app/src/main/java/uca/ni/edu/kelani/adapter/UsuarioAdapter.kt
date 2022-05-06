@@ -9,6 +9,8 @@ import uca.ni.edu.kelani.bd.entidades.Cliente
 import uca.ni.edu.kelani.bd.entidades.Usuario
 import uca.ni.edu.kelani.databinding.ItemClienteBinding
 import uca.ni.edu.kelani.databinding.ItemUsuariosBinding
+import uca.ni.edu.kelani.fragments.system.listar.ClienteFragmentDirections
+import uca.ni.edu.kelani.fragments.system.listar.UsuariosFragmentDirections
 
 class UsuarioAdapter(): RecyclerView.Adapter<UsuarioAdapter.UsuarioHolder>() {
     var lista: List<Usuario> = emptyList()
@@ -25,7 +27,8 @@ class UsuarioAdapter(): RecyclerView.Adapter<UsuarioAdapter.UsuarioHolder>() {
 
 
                 llUsuarios.setOnClickListener {
-                    it.findNavController().navigate(R.id.upDeUsersFragment)
+                    val action= UsuariosFragmentDirections.navUsersToUpDeUsersFragment(us)
+                    it.findNavController().navigate(action)
                 }
 
             }
