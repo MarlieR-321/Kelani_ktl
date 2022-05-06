@@ -130,6 +130,12 @@
         <action
             android:id="@+id/add_measure"
             app:destination="@id/agregarUnidadDeMedidaFragment" />
+        <action
+            android:id="@+id/action_nav_unidadesM_to_UpDeUnidadMedida"
+            app:destination="@id/UpDeUnidadMedida" />
+        <action
+            android:id="@+id/action_nav_unidadesM_to_upDeUnidadMedidaFragment"
+            app:destination="@id/upDeUnidadMedidaFragment" />
     </fragment>
     <fragment
         android:id="@+id/agregarUnidadDeMedidaFragment"
@@ -203,6 +209,24 @@
         <action
             android:id="@+id/action_upDelProductoFragment_to_nav_product"
             app:destination="@id/nav_product" />
+    </fragment>
+    <fragment
+        android:id="@+id/UpDeUnidadMedida"
+        android:name="uca.ni.edu.kelani.fragment_up_unidadmedida"
+        android:label="fragment_up_unidadmedida"
+        tools:layout="@layout/fragment_up_unidadmedida" >
+        <action
+            android:id="@+id/action_UpDeUnidadMedida_to_nav_unidadesM"
+            app:destination="@id/nav_unidadesM" />
+    </fragment>
+    <fragment
+        android:id="@+id/upDeUnidadMedidaFragment"
+        android:name="uca.ni.edu.kelani.fragments.system.update_delete.UpDeUnidadMedidaFragment"
+        android:label="fragment_up_unidadmedida"
+        tools:layout="@layout/fragment_up_unidadmedida" >
+        <action
+            android:id="@+id/action_upDeUnidadMedidaFragment_to_nav_unidadesM2"
+            app:destination="@id/nav_unidadesM" />
     </fragment>
 
 

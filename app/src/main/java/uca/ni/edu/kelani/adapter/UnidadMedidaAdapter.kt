@@ -22,7 +22,7 @@ class UnidadMedidaAdapter (): RecyclerView.Adapter<UnidadMedidaAdapter.UnidadMed
 
 
                 llUnidadMedida.setOnClickListener {
-                    it.findNavController().navigate(R.id.upDeClienteFragment)
+                    it.findNavController().navigate(R.id.upDeUnidadMedidaFragment)
                 }
 
             }

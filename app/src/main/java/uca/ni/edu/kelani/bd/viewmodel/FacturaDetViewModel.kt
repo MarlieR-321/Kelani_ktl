@@ -6,15 +6,11 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import ni.edu.uca.peliculas50.bd.dao.bdKealni
-import uca.ni.edu.kelani.bd.dao.FacturaDao
+import uca.ni.edu.kelani.bd.dao.bdKealni
 import uca.ni.edu.kelani.bd.dao.FacturaDetDao
-import uca.ni.edu.kelani.bd.entidades.Factura
 import uca.ni.edu.kelani.bd.entidades.FacturaDet
-import uca.ni.edu.kelani.bd.entidades.views.vw_Factura
 import uca.ni.edu.kelani.bd.entidades.views.vw_FacturaDet
 import uca.ni.edu.kelani.bd.repository.FacturaDetRepository
-import uca.ni.edu.kelani.bd.repository.FacturaRepository
 
 class FacturaDetViewModel(application: Application): AndroidViewModel(application) {
 

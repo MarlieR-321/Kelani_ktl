@@ -15,14 +15,12 @@ import androidx.navigation.fragment.navArgs
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import ni.edu.uca.peliculas50.bd.dao.bdKealni
+import uca.ni.edu.kelani.bd.dao.bdKealni
 import uca.ni.edu.kelani.R
 import uca.ni.edu.kelani.bd.dao.FacturaDao
-import uca.ni.edu.kelani.bd.entidades.Cliente
 import uca.ni.edu.kelani.bd.entidades.FacturaDet
 import uca.ni.edu.kelani.bd.entidades.Producto
 import uca.ni.edu.kelani.bd.viewmodel.FacturaDetViewModel
-import uca.ni.edu.kelani.bd.viewmodel.FacturaViewModel
 import uca.ni.edu.kelani.databinding.FragmentAddFacturaDetBinding
 import java.util.ArrayList
 
@@ -136,7 +134,7 @@ class AddFacturaDetFragment : Fragment() {
     }
 
     private fun getProducto(id:Int){
-        val dbinstance =bdKealni.getDataBase(requireContext().applicationContext)
+        val dbinstance = bdKealni.getDataBase(requireContext().applicationContext)
         val dao:FacturaDao = dbinstance.facturaDao()
 
         CoroutineScope(Dispatchers.Main).launch {

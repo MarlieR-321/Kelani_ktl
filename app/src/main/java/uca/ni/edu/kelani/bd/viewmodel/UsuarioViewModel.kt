@@ -6,10 +6,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import ni.edu.uca.peliculas50.bd.dao.bdKealni
-import uca.ni.edu.kelani.bd.entidades.Cliente
+import uca.ni.edu.kelani.bd.dao.bdKealni
 import uca.ni.edu.kelani.bd.entidades.Usuario
-import uca.ni.edu.kelani.bd.repository.ClienteRepository
 import uca.ni.edu.kelani.bd.repository.UsuarioRepository
 
 class UsuarioViewModel(application: Application): AndroidViewModel(application) {

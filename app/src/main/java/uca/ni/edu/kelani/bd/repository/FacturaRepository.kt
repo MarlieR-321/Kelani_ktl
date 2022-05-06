@@ -12,7 +12,6 @@ class FacturaRepository(private val daoF:FacturaDao) {
     suspend fun add(nac: Factura){
         daoF.insert(nac)
     }
-
     suspend fun update(nac: Factura){
         daoF.update(nac)
     }

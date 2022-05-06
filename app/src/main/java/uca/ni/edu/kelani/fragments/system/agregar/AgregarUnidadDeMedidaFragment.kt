@@ -9,11 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import uca.ni.edu.kelani.R
-import uca.ni.edu.kelani.bd.entidades.Cliente
 import uca.ni.edu.kelani.bd.entidades.UnidadMedida
-import uca.ni.edu.kelani.bd.viewmodel.ClienteViewModel
 import uca.ni.edu.kelani.bd.viewmodel.UnidadMedidaViewModel
-import uca.ni.edu.kelani.databinding.FragmentAgregarClientesBinding
 import uca.ni.edu.kelani.databinding.FragmentAgregarUnidadBinding
 
 class AgregarUnidadDeMedidaFragment : Fragment() {

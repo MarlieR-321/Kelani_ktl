@@ -13,18 +13,16 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import ni.edu.uca.peliculas50.bd.dao.bdKealni
+import uca.ni.edu.kelani.bd.dao.bdKealni
 import uca.ni.edu.kelani.R
 import uca.ni.edu.kelani.bd.dao.FacturaDao
 import uca.ni.edu.kelani.bd.entidades.Cliente
 import uca.ni.edu.kelani.bd.entidades.Factura
 import uca.ni.edu.kelani.bd.viewmodel.FacturaViewModel
 import uca.ni.edu.kelani.databinding.FragmentAddFacturaBinding
-import uca.ni.edu.kelani.fragments.system.listar.FacturacionDetFragmentArgs
 import java.util.*
 
 
@@ -100,7 +98,7 @@ class AddFacturaFragment : Fragment() {
     }
 
     private fun getCliente(id:Int){
-        val dbinstance =bdKealni.getDataBase(requireContext().applicationContext)
+        val dbinstance = bdKealni.getDataBase(requireContext().applicationContext)
         val dao:FacturaDao = dbinstance.facturaDao()
 
         CoroutineScope(Dispatchers.Main).launch {
@@ -126,7 +124,7 @@ class AddFacturaFragment : Fragment() {
     }
 
     private fun initSpinners(){
-        val dbinstance =bdKealni.getDataBase(requireContext().applicationContext)
+        val dbinstance = bdKealni.getDataBase(requireContext().applicationContext)
         val dao:FacturaDao = dbinstance.facturaDao()
 
         var listClientes:ArrayList<String> = arrayListOf("Seleccione...")

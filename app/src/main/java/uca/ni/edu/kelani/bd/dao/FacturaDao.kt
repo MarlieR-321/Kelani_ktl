@@ -21,6 +21,9 @@ interface FacturaDao {
     @Update
     suspend fun update(clasificacion: Factura)
 
+    @Query("Update Factura set total=:total where id_factura=:id")
+    suspend fun updateTotal(total:Double,id:Int)
+
     @Delete
     suspend fun delete(clasificacion: Factura)
 

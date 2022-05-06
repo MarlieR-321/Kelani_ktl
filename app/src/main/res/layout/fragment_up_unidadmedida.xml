@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.system.update_delete.UpDeCategoriaFragment">
+    tools:context=".fragments.system.update_delete.UpDeUnidadMedidaFragment">
 
 
 
@@ -19,14 +19,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:text="Edicion de Categoria"
+            android:text="Edicion de Unidad de Medida"
             android:gravity="center"
             android:textSize="30sp"
             android:textStyle="bold"
             android:textColor="@color/black"/>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tvNombCategoriaLabel"
+            android:id="@+id/tvNombUnidadLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -34,14 +34,14 @@
             android:hint="Nombre del la Categoria">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/itNombCategoria"
+                android:id="@+id/item_NombMedida"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tvDescrpCategoria"
+            android:id="@+id/tvDescrpMedida"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -49,7 +49,7 @@
             android:hint="Descripcion de la Categoria">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/itDescCategoria"
+                android:id="@+id/itDescMedida"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 

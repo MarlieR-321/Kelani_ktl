@@ -1,10 +1,9 @@
-package ni.edu.uca.peliculas50.bd.dao
+package uca.ni.edu.kelani.bd.dao
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import uca.ni.edu.kelani.bd.dao.*
 import uca.ni.edu.kelani.bd.entidades.*
 import uca.ni.edu.kelani.bd.entidades.views.vw_Factura
 import uca.ni.edu.kelani.bd.entidades.views.vw_FacturaDet
@@ -21,7 +20,7 @@ interface MainDataBaseProvider{
 @Database(
     entities = [Categoria::class, UnidadMedida::class,Producto::class,Cliente::class,Usuario::class,Factura::class,FacturaDet::class],
     views=[vw_Factura::class,vw_FacturaDet::class],
-    version =3)
+    version =4)
 abstract class bdKealni: RoomDatabase(), MainDataBaseProvider {
 
     abstract override fun facturaDao(): FacturaDao
