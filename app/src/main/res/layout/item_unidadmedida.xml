@@ -10,6 +10,7 @@
         android:layout_width="50dp"
         android:layout_height="89dp"
         android:text="1"
+        android:textColor="@color/grey"
         android:textAlignment="center"
         android:layout_marginTop="23dp"
 
@@ -32,6 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
+                android:textColor="@color/grey"
                 android:text="Unidad de Medida: "
                 android:textStyle="bold" />
             <TextView
@@ -40,6 +42,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:textAlignment="center"
+                android:textColor="@color/grey"
                 android:text="Kilgramos, libras..."
                 />
         </LinearLayout>
@@ -54,6 +57,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
+                android:textColor="@color/grey"
                 android:text="Abreviatura: "
                 android:textStyle="bold"
                 />
@@ -62,6 +66,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
+                android:textColor="@color/grey"
                 android:text="kg, lb, g, onz"/>
         </LinearLayout>
 

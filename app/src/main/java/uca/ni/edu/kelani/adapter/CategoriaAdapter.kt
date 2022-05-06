@@ -24,7 +24,7 @@ class CategoriaAdapter (): RecyclerView.Adapter<CategoriaAdapter.CategoriaHolder
 
 
                 llCategoria.setOnClickListener {
-                    it.findNavController().navigate(R.id.upDeClienteFragment)
+                    it.findNavController().navigate(R.id.upDeCategoriaFragment)
                 }
 
             }
