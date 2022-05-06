@@ -8,13 +8,15 @@
 
     <TextView
         android:id="@+id/item_IdCategoria"
-        android:layout_width="50dp"
-        android:layout_height="match_parent"
+        android:layout_width="53dp"
+        android:layout_height="97dp"
         android:text="1"
+        android:layout_marginTop="23dp"
         android:textAlignment="center"
-        android:textSize="50sp"
-        android:textStyle="bold"
-        android:textColor="@color/grey"/>
+        android:layout_gravity="center"
+        android:textColor="@color/grey"
+        android:textSize="52sp"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,13 +26,15 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginTop="34dp">
 
             <TextView
                 android:id="@+id/TxtNombCategoria"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Nombre de Categoria: "
+                android:layout_gravity="center"
                 android:textColor="@color/grey"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -39,6 +43,8 @@
                 android:id="@+id/item_NombCategoria"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
                 android:hint="categoria"
                 android:textAlignment="center"
                 android:textColor="@color/grey"
@@ -53,6 +59,8 @@
             <TextView
                 android:id="@+id/TxtDescCategoria"
                 android:layout_width="wrap_content"
+                android:layout_gravity="center"
+
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:text="Descripcion: "
@@ -63,6 +71,8 @@
                 android:id="@+id/item_Descripcion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
                 android:textSize="20sp"
                 android:hint="descripcion"
                 android:textColor="@color/grey"/>
