@@ -70,11 +70,14 @@
     <fragment
         android:id="@+id/upDeUsersFragment"
         android:name="uca.ni.edu.kelani.fragments.system.update_delete.UpDeUsersFragment"
-        android:label="fragment_up_de_users"
+        android:label="Actualizacion del Usuario"
         tools:layout="@layout/fragment_up_de_users" >
         <action
             android:id="@+id/action_upDeUsersFragment_to_nav_users"
             app:destination="@id/nav_users" />
+        <argument
+            android:name="currentUsuario"
+            app:argType="uca.ni.edu.kelani.bd.entidades.Usuario" />
     </fragment>
     <fragment
         android:id="@+id/nav_clients"
@@ -179,6 +182,9 @@
         <action
             android:id="@+id/action_upDeClienteFragment_to_nav_clients"
             app:destination="@id/nav_clients" />
+        <argument
+            android:name="currentCliente"
+            app:argType="uca.ni.edu.kelani.bd.entidades.Cliente" />
     </fragment>
     <fragment
         android:id="@+id/upDeCategoriaFragment"

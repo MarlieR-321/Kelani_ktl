@@ -8,6 +8,7 @@ import uca.ni.edu.kelani.R
 import uca.ni.edu.kelani.bd.entidades.Cliente
 import uca.ni.edu.kelani.bd.entidades.views.vw_Factura
 import uca.ni.edu.kelani.databinding.ItemClienteBinding
+import uca.ni.edu.kelani.fragments.system.listar.ClienteFragmentDirections
 
 class ClienteAdapter(): RecyclerView.Adapter<ClienteAdapter.ClienteHolder>() {
     var lista: List<Cliente> = emptyList()
@@ -25,7 +26,8 @@ class ClienteAdapter(): RecyclerView.Adapter<ClienteAdapter.ClienteHolder>() {
                 itemDireccionClientes.text = cl.direccion
 
                 llCliente.setOnClickListener {
-                    it.findNavController().navigate(R.id.upDeClienteFragment)
+                    val action= ClienteFragmentDirections.navClientsToUpDeClienteFragment(cl)
+                    it.findNavController().navigate(action)
                 }
 
             }
