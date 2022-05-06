@@ -15,6 +15,7 @@ interface MainDataBaseProvider{
     fun categoriatDao(): CategoriaDao
     fun unidadtDao(): UnidadMedidaDao
     fun clienteDao(): ClienteDao
+    fun usuarioDao(): UsuarioDao
 }
 
 @Database(
@@ -28,6 +29,7 @@ abstract class bdKealni: RoomDatabase(), MainDataBaseProvider {
     abstract override fun categoriatDao(): CategoriaDao
     abstract override fun unidadtDao(): UnidadMedidaDao
     abstract override fun clienteDao(): ClienteDao
+    abstract override fun usuarioDao(): UsuarioDao
 
     companion object {
         @Volatile

@@ -10,9 +10,10 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import android.widget.Toast.LENGTH_SHORT
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -20,13 +21,17 @@ import ni.edu.uca.peliculas50.bd.dao.bdKealni
 import uca.ni.edu.kelani.R
 import uca.ni.edu.kelani.bd.dao.FacturaDao
 import uca.ni.edu.kelani.bd.entidades.Cliente
+import uca.ni.edu.kelani.bd.entidades.Factura
+import uca.ni.edu.kelani.bd.viewmodel.FacturaViewModel
 import uca.ni.edu.kelani.databinding.FragmentAddFacturaBinding
+import uca.ni.edu.kelani.fragments.system.listar.FacturacionDetFragmentArgs
 import java.util.*
 
 
 class AddFacturaFragment : Fragment() {
     private lateinit var binding: FragmentAddFacturaBinding
     private lateinit var mDateSetListener: DatePickerDialog.OnDateSetListener
+    private lateinit var viewModel : FacturaViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,7 +39,7 @@ class AddFacturaFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentAddFacturaBinding.inflate(layoutInflater)
-
+        viewModel = ViewModelProvider(this)[FacturaViewModel::class.java]
         return binding.root
     }
 
@@ -58,12 +63,52 @@ class AddFacturaFragment : Fragment() {
             override fun onNothingSelected(parent: AdapterView<*>?) {}
         }
         binding.btnSave.setOnClickListener {
-            findNavController().navigate(R.id.addFacturaDetFragment)
+            guardar()
         }
     }
 
     private fun guardar(){
+        with(binding){
+            val fecha = itFecha.text.toString()
+            val ncliente = spCliente.selectedItem.toString()
+            val telefono = itTelefono.text.toString()
+            val direccion  = itDireccion.text.toString()
 
+            if (ncliente != "Seleccione...")
+            {
+                if (fecha.isNotEmpty() && telefono.isNotEmpty() && direccion.isNotEmpty())
+                {
+                    val id = getIdCliente(ncliente)
+
+                    val fc = Factura(0,fecha,id,telefono,direccion,0.0,1)
+                    viewModel.agregarFactura(fc)
+
+                    Toast.makeText(requireContext(), "Registro guardado", Toast.LENGTH_LONG).show()
+                    val action = AddFacturaFragmentDirections.addFacturatoListDet(getIdLast())
+                    findNavController().navigate(action)
+                }
+                else
+                {
+                    Toast.makeText(requireContext(), "Complete todos los datos por favor", Toast.LENGTH_LONG).show()
+                }
+            }
+            else
+            {
+                Toast.makeText(requireContext(), "Elija un Cliente", Toast.LENGTH_LONG).show()
+            }
+
+
+        }
+    }
+
+    private fun getIdLast():Int{
+        val dbinstance =bdKealni.getDataBase(requireContext().applicationContext)
+        val dao:FacturaDao = dbinstance.facturaDao()
+        var id = 0
+        CoroutineScope(Dispatchers.Main).launch {
+            id = dao.getIdLast()
+        }
+        return id
     }
 
     private fun getCliente(id:Int){
@@ -87,7 +132,6 @@ class AddFacturaFragment : Fragment() {
 
     private fun initTextView(cl: Cliente){
         with(binding){
-            tvDireccion.placeholderText="AAAAAAAAAAA"
             itDireccion.setText(cl.direccion)
             itTelefono.setText(cl.telefono)
         }
