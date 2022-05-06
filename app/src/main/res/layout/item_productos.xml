@@ -65,7 +65,7 @@
                 />
 
             <TextView
-                android:id="@+id/item_Email"
+                android:id="@+id/item_Descripcion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -144,14 +144,41 @@
                 android:textColor="@color/grey"
                 android:layout_marginTop="10dp"
                 />
+
             <TextView
                 android:id="@+id/item_Unidad"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
+                android:layout_marginTop="10dp"
                 android:text="Libras"
                 android:textColor="@color/grey"
-                android:layout_marginTop="10dp"/>
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/TxtUnidadAbreviacion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="Abreviación Unidad: "
+                android:textStyle="bold"
+                android:textColor="@color/grey"
+                android:layout_marginTop="10dp"
+                />
+            <TextView
+                android:id="@+id/item_UnidadAbreviacion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="Lb"
+                android:textColor="@color/grey"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -180,30 +207,63 @@
         </LinearLayout>
 
         <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/TxtCategoriaDescripcion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="Descripción de categoria: "
+                android:textStyle="bold"
+                android:textColor="@color/grey"
+                android:layout_marginTop="10dp"
+                />
+            <TextView
+                android:id="@+id/item_CategoriaDescripcion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="Pastel de chocolate"
+                android:textColor="@color/grey"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"/>
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginBottom="10sp">
-            <ImageView
-                android:layout_marginTop="20sp"
-                android:textColor="@color/grey"
-                android:id="@+id/ivDetalles"
-                android:layout_width="144dp"
-                android:layout_height="69dp"
-                app:srcCompat="@drawable/view"
-                android:background="#D6D3D3"
-                android:paddingVertical="10sp"
-                android:layout_marginEnd="20sp"/>
 
-            <ImageView
-                android:layout_marginTop="20sp"
-                android:id="@+id/ivEdit"
-                android:layout_width="144dp"
-                android:layout_height="69dp"
-                app:srcCompat="@drawable/edit"
-                android:background="#D6D3D3"
-                android:paddingVertical="10sp"
-                app:tint="#434040" />
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/ivDetalles"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#434040"
+                android:contentDescription="btn editUser"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:srcCompat="?attr/actionModePasteDrawable"
+                app:tint="@android:color/white" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/ivDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#434040"
+                android:contentDescription="btn editUser"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:srcCompat="@drawable/delete"
+                app:tint="@android:color/white" />
+
         </LinearLayout>
 
     </LinearLayout>

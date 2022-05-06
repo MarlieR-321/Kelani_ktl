@@ -18,16 +18,20 @@ data class Producto (
     val id_producto:Int,
     @ColumnInfo(name="id_unidad")
     val id_unidad:Int,
+    @ColumnInfo(name="abreviacion")
+    val abreviacion:String,
     @ColumnInfo(name="id_categoria")
     val id_categoria:Int,
-    @ColumnInfo(name="nombre")
-    val nombre:String,
+    @ColumnInfo(name="descripcion_categoria")
+    val descripcion_categoria:String,
+    @ColumnInfo(name="nombre_producto")
+    val nombre_producto:String,
+    @ColumnInfo(name="descripcion")
+    val descripcion:String,
     @ColumnInfo(name="precio")
     val precio:Double,
     @ColumnInfo(name="costo")
     val costo:Double,
-    @ColumnInfo(name="descripcion")
-    val descripcion:String,
     @ColumnInfo(name="estado")
     val estado:Int
         ):Parcelable

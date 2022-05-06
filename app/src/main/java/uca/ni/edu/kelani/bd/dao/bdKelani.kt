@@ -7,6 +7,7 @@ import androidx.room.RoomDatabase
 import uca.ni.edu.kelani.bd.entidades.*
 import uca.ni.edu.kelani.bd.entidades.views.vw_Factura
 import uca.ni.edu.kelani.bd.entidades.views.vw_FacturaDet
+import uca.ni.edu.kelani.bd.entidades.views.vw_Producto
 
 interface MainDataBaseProvider{
     fun facturaDao():FacturaDao
@@ -15,12 +16,13 @@ interface MainDataBaseProvider{
     fun unidadtDao(): UnidadMedidaDao
     fun clienteDao(): ClienteDao
     fun usuarioDao(): UsuarioDao
+    fun productoDao(): ProductoDao
 }
 
 @Database(
     entities = [Categoria::class, UnidadMedida::class,Producto::class,Cliente::class,Usuario::class,Factura::class,FacturaDet::class],
-    views=[vw_Factura::class,vw_FacturaDet::class],
-    version =4)
+    views=[vw_Factura::class,vw_FacturaDet::class,vw_Producto::class],
+    version =5)
 abstract class bdKealni: RoomDatabase(), MainDataBaseProvider {
 
     abstract override fun facturaDao(): FacturaDao
@@ -29,6 +31,7 @@ abstract class bdKealni: RoomDatabase(), MainDataBaseProvider {
     abstract override fun unidadtDao(): UnidadMedidaDao
     abstract override fun clienteDao(): ClienteDao
     abstract override fun usuarioDao(): UsuarioDao
+    abstract override fun productoDao(): ProductoDao
 
     companion object {
         @Volatile

@@ -111,7 +111,7 @@ class AddFacturaDetFragment : Fragment() {
 
                 if(listaProductos.isNotEmpty()){
                     listaProductos.forEach {
-                        listProductos.add("${it.id_producto}/  ${it.nombre}")
+                        listProductos.add("${it.id_producto}/  ${it.nombre_producto}")
                     }
                 }
 

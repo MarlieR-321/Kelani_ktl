@@ -155,7 +155,7 @@
             android:id="@+id/action_productosFragment_to_agregarProductosFragment"
             app:destination="@id/agregarProductosFragment" />
         <action
-            android:id="@+id/action_nav_product_to_upDelProductoFragment"
+            android:id="@+id/irUpDelProducto"
             app:destination="@id/upDelProductoFragment" />
     </fragment>
     <fragment
@@ -209,6 +209,9 @@
         <action
             android:id="@+id/action_upDelProductoFragment_to_nav_product"
             app:destination="@id/nav_product" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/UpDeUnidadMedida"

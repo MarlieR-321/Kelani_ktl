@@ -24,7 +24,7 @@
             android:textColor="@color/black"/>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/item_nombProduct_label"
+            android:id="@+id/itNombreProducto_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -33,14 +33,14 @@
             android:hint="Nombre del Producto">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/item_nombProduct"
+                android:id="@+id/itNombreProducto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/item_DescripProduct_label"
+            android:id="@+id/itDescripcionProducto_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -49,41 +49,39 @@
             android:hint="Descripción">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/item_DescripProduct"
+                android:id="@+id/itDescripcionProducto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/item_priceProduct_label"
+            android:id="@+id/itPrecioProducto_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginHorizontal="50dp"
             android:layout_marginBottom="10dp"
-            android:hint="Precio"
-            android:inputType="textPassword">
+            android:hint="Precio">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/item_priceProduct"
+                android:id="@+id/itPrecioProducto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/item_costProduct_label"
+            android:id="@+id/itCostoProducto_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginHorizontal="50dp"
             android:layout_marginBottom="10dp"
-            android:hint="Costo"
-            android:inputType="textPassword">
+            android:hint="Costo">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/item_costProduct"
+                android:id="@+id/itCostoProducto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -110,6 +108,22 @@
             android:focusable="true"
             />
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/itDescripcionCategoeria_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="50dp"
+            android:layout_marginBottom="10dp"
+            android:hint="Descripción de Categoria">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/itDescripcionCategoria"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -131,6 +145,22 @@
             android:layout_marginBottom="16dp"
             android:focusable="true"
             />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/itAbreviacionUnidad_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="50dp"
+            android:layout_marginBottom="10dp"
+            android:hint="Abreviación de la unidad">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/itAbreviacionUnidad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_GuardarProduct"
