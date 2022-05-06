@@ -125,7 +125,7 @@
         android:label="Unidades de Medida Registradas"
         tools:layout="@layout/fragment_unidad_medida" >
         <action
-            android:id="@+id/action_unidadDeMedidaFragment2_to_agregarUnidadDeMedidaFragment"
+            android:id="@+id/add_measure"
             app:destination="@id/agregarUnidadDeMedidaFragment" />
     </fragment>
     <fragment
@@ -134,7 +134,7 @@
         android:label="Creación de Unidades de Medida"
         tools:layout="@layout/fragment_agregar_unidad" >
         <action
-            android:id="@+id/action_agregarUnidadDeMedidaFragment_to_unidadDeMedidaFragment22"
+            android:id="@+id/ir_a_nav_unidad"
             app:destination="@id/nav_unidadesM" />
     </fragment>
     <fragment
