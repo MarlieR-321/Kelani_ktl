@@ -17,16 +17,12 @@ class FacturaEncAdapter():RecyclerView.Adapter<FacturaEncAdapter.FacturaEncHolde
         fun bind(fe: vw_Factura){
 
             with(binding){
-                itemIdFactura.text = fe.id_factura.toString()
                 itemDireccionClientes.text = fe.direccion
                 itemNombClientes.text = fe.nombre_cliente
                 itemTelefClientes.text = fe.telefono
                 txtTotal.text = fe.total.toString()
                 txtFecha.text = fe.fecha
 
-                ivEdit.setOnClickListener {
-                    it.findNavController().navigate(R.id.upDelFacturaFragment)
-                }
                 ivDetalles.setOnClickListener {
                     val action = FacturacionFragmentDirections.navToFacDet(fe.id_factura)
                     it.findNavController().navigate(action)

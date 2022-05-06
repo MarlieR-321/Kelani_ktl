@@ -13,7 +13,6 @@ import uca.ni.edu.kelani.bd.repository.FacturaRepository
 
 class FacturaViewModel(application: Application):AndroidViewModel(application) {
     val listaFactura: LiveData<List<vw_Factura>>
-
     private val repository:FacturaRepository
 
     init {
@@ -21,13 +20,13 @@ class FacturaViewModel(application: Application):AndroidViewModel(application) {
 
         repository = FacturaRepository(facturaDao)
         listaFactura = repository.listAllData
-
     }
 
-    fun agregarFactura(f: Factura) {
+    fun agregarFactura(f: Factura){
         viewModelScope.launch(Dispatchers.IO) {
             repository.add(f)
         }
+
     }
 
     fun actualizarFactura(f: Factura) {

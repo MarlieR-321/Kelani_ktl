@@ -83,9 +83,7 @@ class AddFacturaFragment : Fragment() {
                     val fc = Factura(0,fecha,id,telefono,direccion,0.0,1)
                     viewModel.agregarFactura(fc)
 
-                    Toast.makeText(requireContext(), "Registro guardado", Toast.LENGTH_LONG).show()
-                    val action = AddFacturaFragmentDirections.addFacturatoListDet(getIdLast())
-                    findNavController().navigate(action)
+                    findNavController().navigate(R.id.nav_facturar)
                 }
                 else
                 {
@@ -99,16 +97,6 @@ class AddFacturaFragment : Fragment() {
 
 
         }
-    }
-
-    private fun getIdLast():Int{
-        val dbinstance =bdKealni.getDataBase(requireContext().applicationContext)
-        val dao:FacturaDao = dbinstance.facturaDao()
-        var id = 0
-        CoroutineScope(Dispatchers.Main).launch {
-            id = dao.getIdLast()
-        }
-        return id
     }
 
     private fun getCliente(id:Int){

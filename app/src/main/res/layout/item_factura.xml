@@ -3,186 +3,185 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:orientation="vertical"
     >
-
-    <TextView
-        android:id="@+id/item_IdFactura"
-        android:layout_width="50dp"
-        android:layout_height="match_parent"
-        android:text="1"
-        android:textAlignment="center"
-        android:textSize="64sp"
-        android:textStyle="bold"
-        android:textColor="@color/grey"
-        />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:divider="?android:dividerHorizontal"
         android:textColor="@color/grey"
-        android:showDividers="end">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="30sp">
-
-            <TextView
-                android:id="@+id/tvFecha"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="Fecha de Facturacion: "
-                android:textColor="@color/grey"
-                android:textStyle="bold" />
-            <TextView
-                android:id="@+id/txtFecha"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="dd-mm-yyyy"
-                android:textColor="@color/grey"
-                android:textAlignment="center" />
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/tvCliente"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:text="Cliente: "
-            android:textStyle="bold"
-            android:textColor="@color/grey"
-            android:layout_marginTop="20sp"/>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/TxtNombClientes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="Nombre: "
-                android:textColor="@color/grey"
-                android:textStyle="bold"
-                android:layout_marginStart="20sp"/>
-            <TextView
-                android:id="@+id/item_NombClientes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:textColor="@color/grey"
-                android:text="nombre"
-                android:textAlignment="center" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/TxtTelefClientes"
-                android:textColor="@color/grey"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="Telefono: "
-                android:textStyle="bold"
-                android:layout_marginStart="20sp"
-                />
-            <TextView
-                android:id="@+id/item_TelefClientes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/grey"
-                android:textSize="20sp"
-                android:text="xxxxxxxx"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/TxtDireccionClientes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/grey"
-                android:textSize="20sp"
-                android:text="Dirección: "
-                android:textStyle="bold"
-                android:layout_marginStart="20sp"
-                />
-            <TextView
-                android:id="@+id/item_DireccionClientes"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/grey"
-                android:textSize="20sp"
-                android:text="nnnnnnnnnnaaa\naaaaqaaaa"/>
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_marginTop="10sp"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/tvTotal"
-                android:textColor="@color/grey"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="Total: "
-                android:textStyle="bold"
-                />
-            <TextView
-                android:id="@+id/txtTotal"
-                android:layout_width="wrap_content"
-                android:textColor="@color/grey"
-                android:layout_height="match_parent"
-                android:textSize="20sp"
-                android:text="2090 C$"/>
-        </LinearLayout>
+        android:paddingStart="30sp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="10sp">
-            <ImageView
-                android:layout_marginTop="20sp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="30sp">
+
+                <TextView
+                    android:id="@+id/tvFecha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="Fecha de Facturacion: "
+                    android:textColor="@color/grey"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/txtFecha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="dd-mm-yyyy"
+                    android:textColor="@color/grey"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvCliente"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="Cliente: "
+                android:textStyle="bold"
                 android:textColor="@color/grey"
-                android:id="@+id/ivDetalles"
-                android:layout_width="144dp"
-                android:layout_height="69dp"
-                app:srcCompat="@drawable/view"
-                android:background="#D6D3D3"
-                android:paddingVertical="10sp"
-                android:layout_marginEnd="20sp"/>
+                android:layout_marginTop="20sp"/>
 
-            <ImageView
-                android:layout_marginTop="20sp"
-                android:id="@+id/ivEdit"
-                android:layout_width="144dp"
-                android:layout_height="69dp"
-                app:srcCompat="@drawable/edit"
-                android:background="#D6D3D3"
-                android:paddingVertical="10sp"
-                app:tint="#434040" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/TxtNombClientes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="Nombre: "
+                    android:textColor="@color/grey"
+                    android:textStyle="bold"
+                    android:layout_marginStart="20sp"/>
+                <TextView
+                    android:id="@+id/item_NombClientes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textColor="@color/grey"
+                    android:text="nombre"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/TxtTelefClientes"
+                    android:textColor="@color/grey"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="Telefono: "
+                    android:textStyle="bold"
+                    android:layout_marginStart="20sp"
+                    />
+                <TextView
+                    android:id="@+id/item_TelefClientes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/grey"
+                    android:textSize="20sp"
+                    android:text="xxxxxxxx"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/TxtDireccionClientes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/grey"
+                    android:textSize="20sp"
+                    android:text="Dirección: "
+                    android:textStyle="bold"
+                    android:layout_marginStart="20sp"
+                    />
+                <TextView
+                    android:id="@+id/item_DireccionClientes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/grey"
+                    android:textSize="20sp"
+                    android:text="nnnnnnnnnnaaa\naaaaqaaaa"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_marginTop="10sp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvTotal"
+                    android:textColor="@color/grey"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="Total: "
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/txtTotal"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/grey"
+                    android:layout_height="match_parent"
+                    android:textSize="20sp"
+                    android:text="2090 C$"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10sp">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/ivDetalles"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="20dp"
+                    android:backgroundTint="#434040"
+                    android:contentDescription="btn editUser"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:srcCompat="?attr/actionModePasteDrawable"
+                    app:tint="@android:color/white" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/ivDelete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="20dp"
+                    android:backgroundTint="#434040"
+                    android:contentDescription="btn editUser"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:srcCompat="@drawable/delete"
+                    app:tint="@android:color/white" />
+
+            </LinearLayout>
         </LinearLayout>
-
-
     </LinearLayout>
 
 

@@ -17,14 +17,14 @@ class FacturaDetAdapter():RecyclerView.Adapter<FacturaDetAdapter.FacturaDetHolde
         fun bind(fd: vw_FacturaDet){
 
             with(binding){
-                itemIdFactura.text = fd.id_factura_det.toString()
                 txtProd.text = fd.producto
                 txtCantidad.text = fd.cantidad.toString()
                 txtPrecio.text = fd.precio.toString()
                 txtTotal.text = fd.subtotal.toString()
 
-                ll.setOnClickListener {
-                    it.findNavController().navigate(R.id.upDelFacturaDetFragment)
+                ivDelete.setOnClickListener {
+                    //Mandar delete de un solo
+                    //it.findNavController().navigate(R.id.upDelFacturaDetFragment)
                 }
             }
         }
