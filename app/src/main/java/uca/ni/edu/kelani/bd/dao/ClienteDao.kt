@@ -11,10 +11,10 @@ interface ClienteDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun  isert(cliente: Cliente)
 
-    @Query("SELECT * FROM Cliente")
+    @Query("SELECT * FROM Cliente where estado<>3")
     suspend fun getAll(): List<Cliente>
 
-    @Query("SELECT * FROM Cliente")
+    @Query("SELECT * FROM Cliente where estado<>3")
     fun getAllRealData(): LiveData<List<Cliente>>
 
     @Query("SELECT * FROM Cliente WHERE id_cliente = :id")

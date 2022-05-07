@@ -18,6 +18,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import uca.ni.edu.kelani.bd.dao.bdKealni
 import uca.ni.edu.kelani.R
+import uca.ni.edu.kelani.bd.dao.ClienteDao
 import uca.ni.edu.kelani.bd.dao.FacturaDao
 import uca.ni.edu.kelani.bd.entidades.Cliente
 import uca.ni.edu.kelani.bd.entidades.Factura
@@ -30,6 +31,7 @@ class AddFacturaFragment : Fragment() {
     private lateinit var binding: FragmentAddFacturaBinding
     private lateinit var mDateSetListener: DatePickerDialog.OnDateSetListener
     private lateinit var viewModel : FacturaViewModel
+    private lateinit var listaCliente: List<Cliente>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -98,12 +100,12 @@ class AddFacturaFragment : Fragment() {
     }
 
     private fun getCliente(id:Int){
-        val dbinstance = bdKealni.getDataBase(requireContext().applicationContext)
-        val dao:FacturaDao = dbinstance.facturaDao()
-
-        CoroutineScope(Dispatchers.Main).launch {
-            val cl = dao.getClienteById(id)
-            initTextView(cl)
+        if (listaCliente.isNotEmpty()){
+            listaCliente.forEach {
+                if (it.id_cliente == id){
+                    initTextView(it)
+                }
+            }
         }
     }
 
@@ -125,14 +127,21 @@ class AddFacturaFragment : Fragment() {
 
     private fun initSpinners(){
         val dbinstance = bdKealni.getDataBase(requireContext().applicationContext)
-        val dao:FacturaDao = dbinstance.facturaDao()
+        val dao:ClienteDao = dbinstance.clienteDao()
 
         var listClientes:ArrayList<String> = arrayListOf("Seleccione...")
 
         try {
             CoroutineScope(Dispatchers.Main).launch {
-                val listaCliente:List<Cliente> = dao.getClientes()
+                listaCliente = dao.getAll()
 
+                /*
+                *
+                * viewModel.listaFactura.observe(viewLifecycleOwner, Observer {
+                *   fac->adapter.setDataFactura(fac)
+                *  })
+                *
+                * */
                 if(listaCliente.isNotEmpty()){
                     listaCliente.forEach {
                         listClientes.add("${it.id_cliente}-${it.nombre} ${it.apellido}")
