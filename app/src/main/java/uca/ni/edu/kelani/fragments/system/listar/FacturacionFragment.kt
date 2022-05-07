@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import uca.ni.edu.kelani.R
 import uca.ni.edu.kelani.adapter.FacturaEncAdapter
+import uca.ni.edu.kelani.bd.viewmodel.FacturaDetViewModel
 import uca.ni.edu.kelani.bd.viewmodel.FacturaViewModel
 import uca.ni.edu.kelani.databinding.FragmentFacturacionBinding
 
@@ -18,6 +19,7 @@ import uca.ni.edu.kelani.databinding.FragmentFacturacionBinding
 class FacturacionFragment : Fragment() {
     private lateinit var binding:FragmentFacturacionBinding
     private lateinit var viewModel: FacturaViewModel
+    private lateinit var viewModelDet: FacturaDetViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,14 +27,15 @@ class FacturacionFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentFacturacionBinding.inflate(layoutInflater)
+        viewModel = ViewModelProvider(this)[FacturaViewModel::class.java]
+        viewModelDet = ViewModelProvider(this)[FacturaDetViewModel::class.java]
 
-        val adapter = FacturaEncAdapter()
+        val adapter = FacturaEncAdapter(requireContext(),viewModel,viewModelDet)
         val recyclerView = binding.rvFacturas
 
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(context)
 
-        viewModel = ViewModelProvider(this)[FacturaViewModel::class.java]
         viewModel.listaFactura.observe(viewLifecycleOwner, Observer {
             fac->adapter.setDataFactura(fac)
         })

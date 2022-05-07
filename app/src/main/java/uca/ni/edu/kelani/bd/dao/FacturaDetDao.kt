@@ -17,6 +17,9 @@ interface FacturaDetDao {
     @Query("SELECT * FROM vw_FacturaDet WHERE id_factura = :id")
     fun getById(id : Int) : LiveData<List<vw_FacturaDet>>
 
+    @Query("Delete FROM FacturaDet WHERE id_factura = :id")
+    suspend fun deleteByFact(id : Int)
+
     @Update
     suspend fun update(clasificacion: FacturaDet)
 

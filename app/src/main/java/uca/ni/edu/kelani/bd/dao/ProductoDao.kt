@@ -17,7 +17,7 @@ interface ProductoDao {
     fun getAllRealData(): LiveData<List<vw_Producto>>
 
     @Query("SELECT * FROM Producto where estado<>3")
-    fun getAll(): List<Producto>
+    suspend fun getAll(): List<Producto>
 
     @Query("SELECT * FROM Producto WHERE id_producto = :id")
     suspend fun getById(id : Int) : Producto

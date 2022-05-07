@@ -18,4 +18,8 @@ class FacturaDetRepository (private val daoF: FacturaDetDao, var id:Int = 0){
     suspend fun delete(nac: FacturaDet){
         daoF.delete(nac)
     }
+
+    suspend fun deleteByFact(id:Int){
+        daoF.deleteByFact(id)
+    }
 }

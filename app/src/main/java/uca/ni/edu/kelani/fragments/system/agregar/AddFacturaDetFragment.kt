@@ -10,8 +10,10 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import kotlinx.android.synthetic.main.fragment_add_factura_det.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -32,6 +34,7 @@ class AddFacturaDetFragment : Fragment() {
     var precio = 0.0
     private lateinit var viewModel : FacturaDetViewModel
     private val args by navArgs<AddFacturaDetFragmentArgs>()
+    private lateinit var listaProductos:List<Producto>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -101,27 +104,26 @@ class AddFacturaDetFragment : Fragment() {
     }
 
     private fun initSpinners(){
-        val dbinstance = bdKealni.getDataBase(requireContext().applicationContext)
+        val dbinstance = bdKealni.getDataBase(requireContext())
         val dao: ProductoDao = dbinstance.productoDao()
-
         var listProductos: ArrayList<String> = arrayListOf("Seleccione...")
 
         try {
             CoroutineScope(Dispatchers.Main).launch {
-                val listaProductos:List<Producto> = dao.getAll()
+                listaProductos = dao.getAll()
 
                 if(listaProductos.isNotEmpty()){
                     listaProductos.forEach {
-                        listProductos.add("${it.id_producto}.  ${it.nombre_producto}")
+                        listProductos.add("${it.id_producto}/  ${it.nombre_producto}")
                     }
                 }
-
             }
+
         }catch (e:Exception){
             e.toString()
         }
 
-        val adapterC: ArrayAdapter<String> = ArrayAdapter<String>(requireContext().applicationContext,R.layout.sp_item, listProductos)
+        val adapterC: ArrayAdapter<String> = ArrayAdapter<String>(requireContext(),R.layout.sp_item, listProductos)
         binding.spProducto.adapter = adapterC
     }
 
@@ -129,29 +131,29 @@ class AddFacturaDetFragment : Fragment() {
         return if(full == "Seleccione..."){
             0
         }else{
-            val id = full.split(".")
+            val id = full.split("/")
             id[0].toInt()
         }
     }
 
     private fun getProducto(id:Int){
-        val dbinstance = bdKealni.getDataBase(requireContext().applicationContext)
-        val dao:FacturaDao = dbinstance.facturaDao()
-
-        CoroutineScope(Dispatchers.Main).launch {
-            val cl = dao.getProductoById(id)
-            precio = cl.precio
-            initTextView(precio)
+        if (listaProductos.isNotEmpty()){
+            listaProductos.forEach {
+                if (it.id_producto == id){
+                    precio = it.precio
+                    initTextView(precio)
+                }
+            }
         }
     }
 
     private fun initTextView(cl:Double){
         with(binding){
-            var subtotal = 0.0
             if (itCantidad.text.toString().isNotEmpty()){
-                subtotal = cl * itCantidad.text.toString().toInt()
+                var subtotal = cl * itCantidad.text.toString().toInt()
+                itSubtotal.setText("$subtotal")
             }
-            itSubtotal.setText("$subtotal")
+
         }
     }
 

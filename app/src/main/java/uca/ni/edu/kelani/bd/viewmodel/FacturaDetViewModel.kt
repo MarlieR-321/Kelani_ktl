@@ -33,6 +33,12 @@ class FacturaDetViewModel(application: Application): AndroidViewModel(applicatio
         }
     }
 
+    fun  deleteById(id:Int){
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.deleteByFact(id)
+        }
+    }
+
     fun actualizarFacturaDet(f: FacturaDet) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.update(f)
