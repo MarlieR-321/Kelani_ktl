@@ -18,6 +18,7 @@ import kotlinx.coroutines.launch
 import uca.ni.edu.kelani.bd.dao.bdKealni
 import uca.ni.edu.kelani.R
 import uca.ni.edu.kelani.bd.dao.FacturaDao
+import uca.ni.edu.kelani.bd.dao.ProductoDao
 import uca.ni.edu.kelani.bd.entidades.FacturaDet
 import uca.ni.edu.kelani.bd.entidades.Producto
 import uca.ni.edu.kelani.bd.viewmodel.FacturaDetViewModel
@@ -101,17 +102,17 @@ class AddFacturaDetFragment : Fragment() {
 
     private fun initSpinners(){
         val dbinstance = bdKealni.getDataBase(requireContext().applicationContext)
-        val dao: FacturaDao = dbinstance.facturaDao()
+        val dao: ProductoDao = dbinstance.productoDao()
 
         var listProductos: ArrayList<String> = arrayListOf("Seleccione...")
 
         try {
             CoroutineScope(Dispatchers.Main).launch {
-                val listaProductos:List<Producto> = dao.getProducto()
+                val listaProductos:List<Producto> = dao.getAll()
 
                 if(listaProductos.isNotEmpty()){
                     listaProductos.forEach {
-                        listProductos.add("${it.id_producto}/  ${it.nombre_producto}")
+                        listProductos.add("${it.id_producto}.  ${it.nombre_producto}")
                     }
                 }
 
@@ -128,7 +129,7 @@ class AddFacturaDetFragment : Fragment() {
         return if(full == "Seleccione..."){
             0
         }else{
-            val id = full.split("/")
+            val id = full.split(".")
             id[0].toInt()
         }
     }

@@ -35,13 +35,15 @@ class FacturacionDetFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentFactutacionDetBinding.inflate(inflater,container,false)
-        val adapter = FacturaDetAdapter()
+        viewModel = ViewModelProvider(this)[FacturaDetViewModel::class.java]
+
+
+        val adapter = FacturaDetAdapter(requireContext(),viewModel)
         val recyclerView = binding.rvFacturas
 
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(context)
 
-        viewModel = ViewModelProvider(this)[FacturaDetViewModel::class.java]
         viewModel.listarById(args.id).observe(viewLifecycleOwner, Observer {
                 fac->adapter.setDataFactura(fac)
         })

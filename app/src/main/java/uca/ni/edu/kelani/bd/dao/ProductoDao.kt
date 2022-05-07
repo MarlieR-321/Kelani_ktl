@@ -16,6 +16,9 @@ interface ProductoDao {
     @Query("SELECT * FROM vw_Producto order by id_producto desc")
     fun getAllRealData(): LiveData<List<vw_Producto>>
 
+    @Query("SELECT * FROM Producto where estado<>3")
+    fun getAll(): List<Producto>
+
     @Query("SELECT * FROM Producto WHERE id_producto = :id")
     suspend fun getById(id : Int) : Producto
 
