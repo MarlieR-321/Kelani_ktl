@@ -20,6 +20,7 @@
     <style name="Theme.Kelani.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/cream</item>
     </style>
 
     <style name="Theme.Kelani.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
