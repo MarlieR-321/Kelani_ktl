@@ -23,6 +23,7 @@ interface ClienteDao {
     @Update
     suspend fun update(cliente: Cliente)
 
+//Inutilizable el delete por cambiar el estado a 3
     @Delete
     suspend fun delete(cliente: Cliente)
 }

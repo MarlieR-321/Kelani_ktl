@@ -43,7 +43,7 @@ class UpDeClienteFragment : Fragment() {
             }
 
             delClient.setOnClickListener {
-                //EliminarCliente()
+                EliminarCliente()
             }
         }
         //Agregar menu
@@ -90,14 +90,30 @@ class UpDeClienteFragment : Fragment() {
     //Proximamente se desarrollara eliminar
     private fun EliminarCliente() {
         val alerta = AlertDialog.Builder(requireContext())
-        alerta.setPositiveButton("Si") { _, _ ->
+        alerta.setPositiveButton("Si") {_, _ ->
+
+            val nomb = binding.itNombCliente.text.toString()
+            val apell = binding.itAapellCliente.text.toString()
+            val telef = binding.itTelefCliente.text.toString()
+            val cedul = binding.itCedulaCliente.text.toString()
+            val dir = binding.itDireccionCliente.text.toString()
+
+                //Crear el objeto
+                val client = Cliente(args.currentCliente.id_cliente, nomb,apell,telef,cedul,dir,3)
+                //Eliminar
+                viewModel.eliminarCliente(client)
+                Toast.makeText(requireContext(), "Registro eliminado satisfactoriamente...",
+                    Toast.LENGTH_LONG).show()
+                findNavController().navigate(R.id.nav_clients)
+
+               /* _, _ ->
             viewModel.eliminarCliente(args.currentCliente)
             Toast.makeText(
                 requireContext(),
                 "Registro eliminado satisfactoriamente...",
                 Toast.LENGTH_LONG
             ).show()
-            findNavController().navigate(R.id.nav_clients)
+            findNavController().navigate(R.id.nav_clients)*/
         }
         alerta.setNegativeButton("No") { _, _ ->
             Toast.makeText(

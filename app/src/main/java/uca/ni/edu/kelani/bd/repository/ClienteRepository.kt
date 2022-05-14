@@ -16,6 +16,6 @@ class ClienteRepository(private val daoCl: ClienteDao) {
         daoCl.update(cli)
     }
     suspend fun deleteCliente(cli: Cliente){
-        daoCl.delete(cli)
+        daoCl.update(cli)
     }
 }

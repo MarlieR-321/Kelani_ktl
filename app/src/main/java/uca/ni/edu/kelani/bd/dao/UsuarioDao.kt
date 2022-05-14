@@ -10,10 +10,10 @@ interface UsuarioDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun  isert(usuario: Usuario)
 
-    @Query("SELECT * FROM Usuario")
+    @Query("SELECT * FROM Usuario where estado<>3")
     suspend fun getAll(): List<Usuario>
 
-    @Query("SELECT * FROM Usuario")
+    @Query("SELECT * FROM Usuario where estado<>3")
     fun getAllRealData(): LiveData<List<Usuario>>
 
     @Query("SELECT * FROM Usuario WHERE id_usuario = :id")
@@ -22,6 +22,7 @@ interface UsuarioDao {
     @Update
     suspend fun update(usuario: Usuario)
 
+    //Inutilizable el delete por cambiar el estado a 3
     @Delete
     suspend fun delete(usuario: Usuario)
 }

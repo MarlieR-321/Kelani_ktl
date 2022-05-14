@@ -44,7 +44,7 @@ class UpDeUsersFragment : Fragment() {
             }
 
             delUser.setOnClickListener {
-                //EliminarUsuario()
+                EliminarUsuario()
             }
         }
         //Agregar menu
@@ -91,13 +91,29 @@ class UpDeUsersFragment : Fragment() {
     private fun EliminarUsuario() {
         val alerta = AlertDialog.Builder(requireContext())
         alerta.setPositiveButton("Si") { _, _ ->
-            viewModel.eliminarUsuario(args.currentUsuario)
+
+            val nombRl = binding.itemNombRealUsuario.text.toString()
+            val nombUs = binding.itemNombUser.text.toString()
+            val pwd = binding.itemPasswordUser.text.toString()
+            val email = binding.itemEmailUser.text.toString()
+
+
+                //Crear el objeto
+                val usuar = Usuario(args.currentUsuario.id_usuario, nombUs,pwd,nombRl,email,3)
+                //Eliminar
+                viewModel.eliminarUsuario(usuar)
+                Toast.makeText(requireContext(), "Registro eliminado satisfactoriamente...",
+                    Toast.LENGTH_LONG).show()
+                findNavController().navigate(R.id.nav_users)
+
+
+            /*viewModel.eliminarUsuario(args.currentUsuario)
             Toast.makeText(
                 requireContext(),
                 "Registro eliminado satisfactoriamente...",
                 Toast.LENGTH_LONG
             ).show()
-            findNavController().navigate(R.id.nav_clients)
+            findNavController().navigate(R.id.nav_clients)*/
         }
         alerta.setNegativeButton("No") { _, _ ->
             Toast.makeText(
