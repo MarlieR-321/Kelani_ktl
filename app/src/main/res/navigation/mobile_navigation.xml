@@ -200,6 +200,9 @@
         <action
             android:id="@+id/action_upDeCategoriaFragment_to_nav_category"
             app:destination="@id/nav_category" />
+        <argument
+            android:name="currentCategoria"
+            app:argType="uca.ni.edu.kelani.bd.entidades.Categoria" />
     </fragment>
     <fragment
         android:id="@+id/upDelProductoFragment"

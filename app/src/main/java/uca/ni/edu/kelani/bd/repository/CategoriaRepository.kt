@@ -18,6 +18,6 @@ class CategoriaRepository(private val daoCat: CategoriaDao) {
         daoCat.update(cat)
     }
     suspend fun deleteCategory(cat: Categoria){
-        daoCat.delete(cat)
+        daoCat.update(cat)
     }
 }
