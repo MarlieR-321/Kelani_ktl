@@ -210,8 +210,8 @@
             android:id="@+id/action_upDelProductoFragment_to_nav_product"
             app:destination="@id/nav_product" />
         <argument
-            android:name="id"
-            app:argType="integer" />
+            android:name="currentProducto"
+            app:argType="uca.ni.edu.kelani.bd.entidades.views.vw_Producto" />
     </fragment>
     <fragment
         android:id="@+id/UpDeUnidadMedida"

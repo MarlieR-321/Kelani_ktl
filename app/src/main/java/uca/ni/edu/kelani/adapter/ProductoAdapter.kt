@@ -27,8 +27,8 @@ class ProductoAdapter(): RecyclerView.Adapter<ProductoAdapter.ProductoHolder>() 
                 itemCategoria.text = producto.nombre_categoria
                 itemCategoriaDescripcion.text = producto.descripcion_categoria
 
-                ivDetalles.setOnClickListener {
-                    val action = ProductosFragmentDirections.irUpDelProducto(producto.id_producto)
+                llProducto.setOnClickListener {
+                    val action = ProductosFragmentDirections.irUpDelProducto(producto)
                     it.findNavController().navigate(action)
                 }
             }
