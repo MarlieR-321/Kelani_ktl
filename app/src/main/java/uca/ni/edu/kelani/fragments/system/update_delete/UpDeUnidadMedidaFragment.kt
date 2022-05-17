@@ -35,7 +35,7 @@ class UpDeUnidadMedidaFragment : Fragment() {
             itNombMedida.setText(args.currentUnidadMedida.nombre_unidad)
             itDescMedida.setText(args.currentUnidadMedida.abreviatura)
 
-            btn_modUnidad.setOnClickListener {
+            btnModUnidad.setOnClickListener {
 
                 GuardarCambios()
             }
