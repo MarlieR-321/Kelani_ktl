@@ -131,9 +131,6 @@
             android:id="@+id/add_measure"
             app:destination="@id/agregarUnidadDeMedidaFragment" />
         <action
-            android:id="@+id/action_nav_unidadesM_to_UpDeUnidadMedida"
-            app:destination="@id/UpDeUnidadMedida" />
-        <action
             android:id="@+id/action_nav_unidadesM_to_upDeUnidadMedidaFragment"
             app:destination="@id/upDeUnidadMedidaFragment" />
     </fragment>
@@ -200,6 +197,9 @@
         <action
             android:id="@+id/action_upDeCategoriaFragment_to_nav_category"
             app:destination="@id/nav_category" />
+        <argument
+            android:name="currentCategoria"
+            app:argType="uca.ni.edu.kelani.bd.entidades.Categoria" />
     </fragment>
     <fragment
         android:id="@+id/upDelProductoFragment"
@@ -210,17 +210,8 @@
             android:id="@+id/action_upDelProductoFragment_to_nav_product"
             app:destination="@id/nav_product" />
         <argument
-            android:name="id"
-            app:argType="integer" />
-    </fragment>
-    <fragment
-        android:id="@+id/UpDeUnidadMedida"
-        android:name="uca.ni.edu.kelani.fragment_up_unidadmedida"
-        android:label="fragment_up_unidadmedida"
-        tools:layout="@layout/fragment_up_unidadmedida" >
-        <action
-            android:id="@+id/action_UpDeUnidadMedida_to_nav_unidadesM"
-            app:destination="@id/nav_unidadesM" />
+            android:name="currentProducto"
+            app:argType="uca.ni.edu.kelani.bd.entidades.views.vw_Producto" />
     </fragment>
     <fragment
         android:id="@+id/upDeUnidadMedidaFragment"
@@ -228,8 +219,11 @@
         android:label="fragment_up_unidadmedida"
         tools:layout="@layout/fragment_up_unidadmedida" >
         <action
-            android:id="@+id/action_upDeUnidadMedidaFragment_to_nav_unidadesM2"
+            android:id="@+id/action_upDeUnidadMedidaFragment_to_nav_unidadesM"
             app:destination="@id/nav_unidadesM" />
+        <argument
+            android:name="currentUnidadMedida"
+            app:argType="uca.ni.edu.kelani.bd.entidades.UnidadMedida" />
     </fragment>
 
 

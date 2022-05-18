@@ -62,7 +62,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <Button
-                android:id="@+id/btn_modClient"
+                android:id="@+id/btnModCategoria"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -74,7 +74,7 @@
                 android:layout_marginEnd="10sp"
                 />
             <Button
-                android:id="@+id/delClient"
+                android:id="@+id/delCategoria"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"

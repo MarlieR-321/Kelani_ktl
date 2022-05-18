@@ -3,17 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:id="@+id/ll_producto"
+    android:clickable="true"
     >
 
     <TextView
         android:id="@+id/item_IdProduct"
-        android:layout_width="50dp"
+        android:layout_width="21dp"
         android:layout_height="match_parent"
-        android:text="1"
+
         android:textAlignment="center"
+        android:textColor="@color/grey"
         android:textSize="64sp"
-        android:textStyle="bold"
-        android:textColor="@color/grey"/>
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -230,40 +232,6 @@
                 android:textColor="@color/grey"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="20dp"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="10sp">
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/ivDetalles"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="20dp"
-                android:backgroundTint="#434040"
-                android:contentDescription="btn editUser"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:srcCompat="?attr/actionModePasteDrawable"
-                app:tint="@android:color/white" />
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/ivDelete"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="20dp"
-                android:backgroundTint="#434040"
-                android:contentDescription="btn editUser"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:srcCompat="@drawable/delete"
-                app:tint="@android:color/white" />
-
         </LinearLayout>
 
     </LinearLayout>
