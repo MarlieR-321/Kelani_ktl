@@ -40,4 +40,9 @@ class UsuarioViewModel(application: Application): AndroidViewModel(application) 
             repository.deleteUsuario(us)
         }
     }
+    fun verificarUsuario(us: String, pwd: String){
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.verifiactionUsuario(us,pwd)
+        }
+    }
 }

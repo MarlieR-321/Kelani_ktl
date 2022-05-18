@@ -25,4 +25,9 @@ interface UsuarioDao {
     //Inutilizable el delete por cambiar el estado a 3
     @Delete
     suspend fun delete(usuario: Usuario)
+
+    //VERIFICACION DEL USUARIO
+    @Query("SELECT * FROM Usuario WHERE username= :usur AND pwd= :pwd AND estado<>3")
+    suspend fun getVerif(usur:String, pwd: String) : Usuario
+
 }
