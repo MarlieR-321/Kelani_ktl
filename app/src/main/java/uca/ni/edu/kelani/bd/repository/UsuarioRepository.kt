@@ -17,4 +17,9 @@ class UsuarioRepository(private val daoUs: UsuarioDao) {
     suspend fun deleteUsuario(use: Usuario){
         daoUs.update(use)
     }
+
+    suspend fun verifiactionUsuario(usur:String,pwd:String): Usuario{
+        return  daoUs.getVerif(usur,pwd)
+
+    }
 }

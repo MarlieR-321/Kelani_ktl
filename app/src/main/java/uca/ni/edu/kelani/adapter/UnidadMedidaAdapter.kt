@@ -7,9 +7,29 @@ import androidx.recyclerview.widget.RecyclerView
 import uca.ni.edu.kelani.R
 import uca.ni.edu.kelani.bd.entidades.UnidadMedida
 import uca.ni.edu.kelani.databinding.ItemUnidadmedidaBinding
+import uca.ni.edu.kelani.fragments.system.listar.UnidadmedidaFragmentDirections
 
 class UnidadMedidaAdapter (): RecyclerView.Adapter<UnidadMedidaAdapter.UnidadMedidaHolder>() {
     var lista: List<UnidadMedida> = emptyList()
+
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UnidadMedidaHolder {
+        val binding = ItemUnidadmedidaBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        return UnidadMedidaHolder(binding)
+    }
+
+    override fun onBindViewHolder(holder: UnidadMedidaAdapter.UnidadMedidaHolder, position: Int) {
+        holder.bind(
+            lista[position]
+        )
+    }
+    override fun getItemCount(): Int =lista.size
+
+    fun setDataUnidadMedida(um: List<UnidadMedida>) {
+        this.lista = um
+        notifyDataSetChanged()
+    }
+
 
     inner class UnidadMedidaHolder(val binding: ItemUnidadmedidaBinding): RecyclerView.ViewHolder(binding.root)
     {
@@ -22,28 +42,14 @@ class UnidadMedidaAdapter (): RecyclerView.Adapter<UnidadMedidaAdapter.UnidadMed
 
 
                 llUnidadMedida.setOnClickListener {
-                    it.findNavController().navigate(R.id.upDeUnidadMedidaFragment)
+                    val action =
+                        UnidadmedidaFragmentDirections.actionNavUnidadesMToUpDeUnidadMedidaFragment(um)
+                    it.findNavController().navigate(action)
                 }
 
             }
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UnidadMedidaHolder {
-        val binding = ItemUnidadmedidaBinding.inflate(LayoutInflater.from(parent.context),parent,false)
-        return UnidadMedidaHolder(binding)
-    }
-
-    fun setDataUnidadMedida(um: List<UnidadMedida>) {
-        this.lista = um
-        notifyDataSetChanged()
-    }
-
-    override fun onBindViewHolder(holder: UnidadMedidaAdapter.UnidadMedidaHolder, position: Int) {
-        holder.bind(
-            lista[position]
-        )
-    }
-
-    override fun getItemCount(): Int =lista.size
 }
+

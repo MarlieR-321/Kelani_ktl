@@ -13,10 +13,10 @@ interface UnidadMedidaDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(unidadMedida: UnidadMedida)
 
-    @Query("SELECT * FROM UnidadMedida")
+    @Query("SELECT * FROM UnidadMedida where estado<>3")
     suspend fun getAll(): List<UnidadMedida>
 
-    @Query("SELECT * FROM UnidadMedida")
+    @Query("SELECT * FROM UnidadMedida where estado<>3")
     fun getAllRealData(): LiveData<List<UnidadMedida>>
 
     @Query("SELECT * FROM UnidadMedida WHERE id_unidad = :id")

@@ -2,17 +2,21 @@ package uca.ni.edu.kelani.fragments.inicio
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import uca.ni.edu.kelani.R
+import uca.ni.edu.kelani.bd.entidades.Usuario
+import uca.ni.edu.kelani.bd.viewmodel.UsuarioViewModel
 import uca.ni.edu.kelani.databinding.ActivityInicioBinding
 
 class Inicio : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityInicioBinding
+    private lateinit var viewModel: UsuarioViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +30,12 @@ class Inicio : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
+        val user = Usuario(0, "JMendoza", "1234", "Jamitzel", "jamitzelMendozaKelani@gmail.com", 1)
+
+        viewModel = ViewModelProvider(this).get(UsuarioViewModel::class.java)
+        viewModel.agregarUsuario(user)
+
+
 
     }
 
@@ -34,4 +44,6 @@ class Inicio : AppCompatActivity() {
         return navController.navigateUp(appBarConfiguration)
                 || super.onSupportNavigateUp()
     }
+
+
 }
