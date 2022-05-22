@@ -204,7 +204,7 @@
     <fragment
         android:id="@+id/upDelProductoFragment"
         android:name="uca.ni.edu.kelani.fragments.system.update_delete.UpDelProductoFragment"
-        android:label="fragment_up_del_producto"
+        android:label="Actualización del Producto"
         tools:layout="@layout/fragment_up_del_producto" >
         <action
             android:id="@+id/action_upDelProductoFragment_to_nav_product"

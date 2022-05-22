@@ -98,7 +98,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
-                android:text="400 C$"
+                android:text="500 C$"
                 android:textColor="@color/grey"
                 android:layout_marginLeft="49dp"
                 android:layout_marginTop="10dp"/>
@@ -124,9 +124,36 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
-                android:text="500 C$"
+                android:text="400 C$"
                 android:textColor="@color/grey"
                 android:layout_marginLeft="54dp"
+                android:layout_marginTop="10dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/TxtGanancias"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="Ganancia: "
+                android:textStyle="bold"
+                android:textColor="@color/grey"
+                android:layout_marginTop="10dp"
+                />
+            <TextView
+                android:id="@+id/item_Ganancias"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="100 C$"
+                android:textColor="@color/grey"
+                android:layout_marginLeft="23dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="20dp"/>
         </LinearLayout>
