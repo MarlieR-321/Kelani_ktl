@@ -1,13 +1,19 @@
 package uca.ni.edu.kelani.bd.repository
 
-import androidx.lifecycle.LiveData
 import uca.ni.edu.kelani.bd.dao.FacturaDao
-import uca.ni.edu.kelani.bd.entidades.Cliente
 import uca.ni.edu.kelani.bd.entidades.Factura
 import uca.ni.edu.kelani.bd.entidades.views.vw_Factura
+import uca.ni.edu.kelani.network.Api
+import uca.ni.edu.kelani.network.service.FacturaService
 
-class FacturaRepository(private val daoF:FacturaDao) {
-    val listAllData: LiveData<List<vw_Factura>> = daoF.getAllRealData()
+class FacturaRepository(private val daoF:FacturaDao,
+                        private val facturaService: FacturaService = Api.facturaService) {
+
+    suspend fun getFactura() : List<vw_Factura> {
+        return facturaService.getVwFactura().map {
+            it.toVwFactura()
+        }
+    }
 
     suspend fun add(nac: Factura){
         daoF.insert(nac)

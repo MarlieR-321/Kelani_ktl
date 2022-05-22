@@ -36,9 +36,9 @@ class FacturacionFragment : Fragment() {
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(context)
 
-        viewModel.listaFactura.observe(viewLifecycleOwner, Observer {
+        viewModel.listaFactura.observe(viewLifecycleOwner){
             fac->adapter.setDataFactura(fac)
-        })
+        }
 
         return binding.root
     }

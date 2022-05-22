@@ -10,6 +10,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
 import uca.ni.edu.kelani.network.service.CategoriaService
+import uca.ni.edu.kelani.network.service.FacturaService
 
 object Api {
 
@@ -36,6 +37,9 @@ object Api {
 
     val categoriaService : CategoriaService =
         retrofit.create(CategoriaService::class.java)
+
+    val facturaService:FacturaService=
+        retrofit.create(FacturaService::class.java)
 
 
 
