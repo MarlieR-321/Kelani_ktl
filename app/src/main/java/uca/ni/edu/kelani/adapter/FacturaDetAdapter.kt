@@ -18,8 +18,8 @@ import uca.ni.edu.kelani.databinding.ItemFacturaDetalleBinding
 import uca.ni.edu.kelani.fragments.system.listar.FacturacionDetFragmentDirections
 import java.lang.Exception
 
-class FacturaDetAdapter(val context:Context, val viewModel: FacturaDetViewModel):RecyclerView.Adapter<FacturaDetAdapter.FacturaDetHolder>() {
-    var lista: List<vw_FacturaDet> = emptyList()
+class FacturaDetAdapter(var lista: ArrayList<vw_FacturaDet>, val context:Context, val viewModel: FacturaDetViewModel):RecyclerView.Adapter<FacturaDetAdapter.FacturaDetHolder>() {
+    //var lista: List<vw_FacturaDet> = emptyList()
 
     inner class FacturaDetHolder(val binding: ItemFacturaDetalleBinding):RecyclerView.ViewHolder(binding.root)
     {
@@ -53,7 +53,7 @@ class FacturaDetAdapter(val context:Context, val viewModel: FacturaDetViewModel)
         return FacturaDetHolder(binding)
     }
 
-    fun setDataFactura(f: List<vw_FacturaDet>) {
+    fun setDataFactura(f: ArrayList<vw_FacturaDet>) {
         this.lista = f
         notifyDataSetChanged()
     }

@@ -6,5 +6,5 @@ import uca.ni.edu.kelani.network.response.VwFacturaDetResponse
 interface FacturaDetService
 {
     @GET("fdetalle/listar")
-    fun getDetalles(): List<VwFacturaDetResponse>
+    suspend fun getDetalles(): List<VwFacturaDetResponse>
 }
