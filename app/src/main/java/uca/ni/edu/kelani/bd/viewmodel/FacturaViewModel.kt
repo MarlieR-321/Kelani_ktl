@@ -18,12 +18,11 @@ class FacturaViewModel(application: Application):AndroidViewModel(application)
 
         val listaFactura = MutableLiveData<List<vw_Factura>>()
 
-        private val repository:FacturaRepository
+        private val repository:FacturaRepository = FacturaRepository()
 
         init {
-            val facturaDao = bdKealni.getDataBase(application).facturaDao()
+            //val facturaDao = bdKealni.getDataBase(application).facturaDao()
 
-            repository = FacturaRepository(facturaDao)
             fetchFactura()
         }
 

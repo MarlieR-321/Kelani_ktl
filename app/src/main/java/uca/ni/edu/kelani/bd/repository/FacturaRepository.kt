@@ -6,8 +6,7 @@ import uca.ni.edu.kelani.bd.entidades.views.vw_Factura
 import uca.ni.edu.kelani.network.Api
 import uca.ni.edu.kelani.network.service.FacturaService
 
-class FacturaRepository(private val daoF:FacturaDao,
-                        private val facturaService: FacturaService = Api.facturaService) {
+class FacturaRepository(private val facturaService: FacturaService = Api.facturaService) {
 
     suspend fun getFactura() : List<vw_Factura> {
         return facturaService.getVwFactura().map {
