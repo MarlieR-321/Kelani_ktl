@@ -6,6 +6,7 @@ import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 import kotlinx.android.parcel.Parcelize
+import uca.ni.edu.kelani.network.response.FacturaResponse
 
 @Parcelize
 @Entity(tableName="Factura",
@@ -27,4 +28,7 @@ data class Factura(
     val total:Double,
     @ColumnInfo(name="estado")
     val estado:Int
-):Parcelable
+):Parcelable{
+    fun toFacturaResponse():FacturaResponse
+        = FacturaResponse(id_factura, estado, fecha, total, id_cliente, telefono, direccion)
+}

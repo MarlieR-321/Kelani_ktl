@@ -15,12 +15,11 @@ class FacturaRepository(private val daoF:FacturaDao,
         }
     }
 
-    suspend fun add(nac: Factura){
-        daoF.insert(nac)
+    suspend fun add(fac: Factura){
+        facturaService.saveFactura(fac.toFacturaResponse())
+        //daoF.insert(nac)
     }
-    suspend fun update(nac: Factura){
-        daoF.update(nac)
-    }
+
     suspend fun delete(nac: Factura){
         daoF.delete(nac)
     }
