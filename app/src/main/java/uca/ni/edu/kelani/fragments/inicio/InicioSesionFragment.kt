@@ -35,8 +35,9 @@ class InicioSesionFragment : Fragment() {
 
         binding.btIniciarSecion.setOnClickListener {
 
-            verificacionUsuario(binding.itemUsuario.text.toString(), binding.itemPassword.text.toString())
-
+            //verificacionUsuario(binding.itemUsuario.text.toString(), binding.itemPassword.text.toString())
+            val intent = Intent(activity, MainActivity::class.java)
+            startActivity(intent)
 
             //findNavController().navigate(R.id.action_InicioSesionFragment_to_PresentacionFragment)
         }

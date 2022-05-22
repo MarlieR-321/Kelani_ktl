@@ -4,12 +4,19 @@ import androidx.lifecycle.LiveData
 import uca.ni.edu.kelani.bd.dao.CategoriaDao
 
 import uca.ni.edu.kelani.bd.entidades.Categoria
+import uca.ni.edu.kelani.network.Api
+import uca.ni.edu.kelani.network.service.CategoriaService
 
 
+class CategoriaRepository(private val daoCat: CategoriaDao,
+                          private val categoriaService: CategoriaService = Api.categoriaService)
+{
 
-class CategoriaRepository(private val daoCat: CategoriaDao) {
-    val listAllData: LiveData<List<Categoria>> = daoCat.getAllRealData()
-
+    suspend fun getCategories() : List<Categoria> {
+        return categoriaService.getCategorias().map {
+            it.toCategoria()
+        }
+    }
     suspend fun addCategory(cat: Categoria){
         daoCat.insert(cat)
     }

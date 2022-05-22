@@ -33,9 +33,9 @@ class CategoriaFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(context)
 
         viewModel = ViewModelProvider(this)[CategoriaViewModel::class.java]
-        viewModel.listaCategoria.observe(viewLifecycleOwner, Observer {
-                cat->adapter.setDataCategoria(cat)
-        })
+        viewModel.listaCategoria.observe(viewLifecycleOwner) { cat ->
+            adapter.setDataCategoria(cat)
+        }
 
         return binding.root
     }

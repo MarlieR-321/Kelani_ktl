@@ -5,6 +5,7 @@ package uca.ni.edu.kelani.bd.viewmodel
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -15,7 +16,7 @@ import uca.ni.edu.kelani.bd.repository.CategoriaRepository
 
 class CategoriaViewModel (application: Application): AndroidViewModel(application)
     {
-        val listaCategoria: LiveData<List<Categoria>>
+        val listaCategoria = MutableLiveData<List<Categoria>>()
 
         private val repository: CategoriaRepository
 
@@ -23,10 +24,15 @@ class CategoriaViewModel (application: Application): AndroidViewModel(applicatio
             val categoriaDao = bdKealni.getDataBase(application).categoriatDao()
 
             repository = CategoriaRepository(categoriaDao)
-            listaCategoria = repository.listAllData
+            fetchCategories() // Fetch categories from the Server
 
         }
 
+        fun fetchCategories() {
+            viewModelScope.launch(Dispatchers.Default) {
+                listaCategoria.postValue(repository.getCategories())
+            }
+        }
         fun agregarCategoria(cat: Categoria) {
             viewModelScope.launch(Dispatchers.IO) {
                 repository.addCategory(cat)
