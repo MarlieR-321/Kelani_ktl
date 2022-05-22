@@ -1,8 +1,6 @@
 package uca.ni.edu.kelani.network.service
 
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
+import retrofit2.http.*
 import uca.ni.edu.kelani.network.response.FacturaResponse
 import uca.ni.edu.kelani.network.response.VwFacturaResponse
 
@@ -12,5 +10,8 @@ interface FacturaService {
 
     @POST("factura/add")
     suspend fun saveFactura(@Body factura: FacturaResponse)
+
+    @DELETE("factura/delete/{id}")
+    suspend fun deleteFactura( @Path("id") id:Int)
 
 }

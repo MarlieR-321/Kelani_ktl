@@ -21,7 +21,8 @@ class FacturaRepository(private val daoF:FacturaDao,
     }
 
     suspend fun delete(nac: Factura){
-        daoF.delete(nac)
+    facturaService.deleteFactura(nac.id_factura)
+    //daoF.delete(nac)
     }
 
 }
