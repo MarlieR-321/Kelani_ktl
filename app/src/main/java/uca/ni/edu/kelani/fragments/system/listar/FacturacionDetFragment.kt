@@ -29,7 +29,7 @@ class FacturacionDetFragment : Fragment() {
     private lateinit var binding: FragmentFactutacionDetBinding
     private val args by navArgs<FacturacionDetFragmentArgs>()
     private lateinit var viewModel: FacturaDetViewModel
-    private val listaID:ArrayList<vw_FacturaDet> = ArrayList<vw_FacturaDet>()
+    private val listaID:ArrayList<vw_FacturaDet> = ArrayList()
 
 
     override fun onCreateView(
@@ -39,17 +39,21 @@ class FacturacionDetFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentFactutacionDetBinding.inflate(inflater,container,false)
         viewModel = ViewModelProvider(this)[FacturaDetViewModel::class.java]
+        val adapter = FacturaDetAdapter(requireContext(),viewModel)
 
-        viewModel.listaFactura.value?.forEach {
-            if (it.id_factura==args.id){
-                listaID.add(it)
-               // Log.e("SI", "Entro el desgraciado")
-            }else{
-              //  Log.e("NO", "Entro el desgraciado ${args.id}")
+        viewModel.listaFactura.observe(viewLifecycleOwner) { list ->
+            list.forEach {
+                if (it.id_factura==args.id){
+                    listaID.add(it)
+                    Log.e("SI", "Entro el desgraciado")
+                }else{
+                    Log.e("NO", "Entro el desgraciado ${args.id}")
+                }
             }
+            adapter.setDataFactura(listaID)
         }
 
-        val adapter = FacturaDetAdapter(listaID, requireContext(),viewModel)
+
         val recyclerView = binding.rvFacturas
 
         recyclerView.adapter = adapter
@@ -66,5 +70,7 @@ class FacturacionDetFragment : Fragment() {
             val action = FacturacionDetFragmentDirections.facturaDetToAdd(args.id)
             it.findNavController().navigate(action)
         }
+
+
     }
 }
