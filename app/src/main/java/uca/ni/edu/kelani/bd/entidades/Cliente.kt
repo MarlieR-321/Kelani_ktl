@@ -5,6 +5,8 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.android.parcel.Parcelize
+import uca.ni.edu.kelani.network.response.ClienteResponse
+import uca.ni.edu.kelani.network.response.FacturaResponse
 
 @Parcelize
 @Entity(tableName="Cliente")
@@ -23,4 +25,7 @@ data class Cliente (
     var direccion:String,
     @ColumnInfo(name="estado")
     var estado: Int
-    ):Parcelable
+    ):Parcelable{
+    fun toClienteResponse(): ClienteResponse
+            = ClienteResponse(id_cliente, nombre, apellido, telefono, cedula, direccion, estado)
+    }
