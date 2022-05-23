@@ -32,6 +32,7 @@ class AddFacturaFragment : Fragment() {
     private lateinit var mDateSetListener: DatePickerDialog.OnDateSetListener
     private lateinit var viewModel : FacturaViewModel
     private lateinit var listaCliente: List<Cliente>
+    private var fecha:String =""
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -69,7 +70,7 @@ class AddFacturaFragment : Fragment() {
 
     private fun guardar(){
         with(binding){
-            val fecha = itFecha.text.toString()
+            val fechaEnv = fecha
             val ncliente = spCliente.selectedItem.toString()
             val telefono = itTelefono.text.toString()
             val direccion  = itDireccion.text.toString()
@@ -80,7 +81,7 @@ class AddFacturaFragment : Fragment() {
                 {
                     val id = getIdCliente(ncliente)
 
-                    val fc = Factura(0,fecha,id,telefono,direccion,0.0,1)
+                    val fc = Factura(0,fechaEnv,id,telefono,direccion,0.0,1)
                     viewModel.agregarFactura(fc)
 
                     findNavController().navigate(R.id.nav_facturar)
@@ -175,6 +176,7 @@ class AddFacturaFragment : Fragment() {
 
         mDateSetListener = DatePickerDialog.OnDateSetListener { datePicker, year, month, day ->
             binding.itFecha.setText("$day / ${month+1} / $year")
+            fecha="$year-${month+1}-$day"
         }
 
     }

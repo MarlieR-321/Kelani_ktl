@@ -36,7 +36,7 @@ class FacturaEncAdapter(val context: Context, val viewModel: FacturaViewModel, p
                     it.findNavController().navigate(action)
                 }
                 ivDelete.setOnClickListener {
-                    eliminarDets(fe.id_factura, initFactura(fe))
+                    eliminarDets(initFactura(fe))
                 }
             }
         }
@@ -69,10 +69,9 @@ class FacturaEncAdapter(val context: Context, val viewModel: FacturaViewModel, p
 
     override fun getItemCount(): Int =lista.size
 
-    private fun eliminarDets(id: Int,fc:Factura) {
+    private fun eliminarDets(fc:Factura) {
         val alerta = AlertDialog.Builder(context)
         alerta.setPositiveButton("Si") { _, _ ->
-            viewModelDet.deleteById(id)
             viewModel.eliminarFactura(fc)
             Toast.makeText(
                 context,
