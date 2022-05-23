@@ -19,8 +19,6 @@ class FacturaDetViewModel(application: Application): AndroidViewModel(applicatio
     private val repository: FacturaDetRepository = FacturaDetRepository()
     val listaFactura = MutableLiveData<List<vw_FacturaDet>>()
 
-    val facturaDao: FacturaDetDao = bdKealni.getDataBase(application).facturaDetDao()
-
     init {
         fetchFactura()
     }

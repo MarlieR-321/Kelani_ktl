@@ -142,7 +142,7 @@ class AddFacturaFragment : Fragment() {
                 listaCliente = repo.getClients()
 
                 if(listaCliente.isNotEmpty()){
-                    listaCliente!!.forEach {
+                    listaCliente.forEach {
                         listClientes.add("${it.id_cliente}-${it.nombre} ${it.apellido}")
                     }
                 }

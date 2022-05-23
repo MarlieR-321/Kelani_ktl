@@ -79,16 +79,16 @@ class AddFacturaDetFragment : Fragment() {
         val cantidad = binding.itCantidad.text.toString()
         val subtotal = binding.itSubtotal.text.toString()
 
-        if(nproducto != "Seleccione...")
+        if(nproducto != "a...")
         {
             if (cantidad.isNotEmpty()&&subtotal.isNotEmpty())
             {
-                val id = getIdProducto(nproducto)
-                val fd = FacturaDet(0,args.id,id, cantidad.toInt(), subtotal.toDouble(),1)
+                //val id = getIdProducto(nproducto)
+                val fd = FacturaDet(0,args.id,1, cantidad.toInt(), 28.3,1)
                 viewModel.agregarFacturaDet(fd)
 
-                val action = AddFacturaDetFragmentDirections.actionFrmFacturaDetFragmentToFacturacionDetFragment(args.id)
-                findNavController().navigate(action)
+                //val action = AddFacturaDetFragmentDirections.actionFrmFacturaDetFragmentToFacturacionDetFragment(args.id)
+                findNavController().navigate(R.id.nav_facturar)
                 Toast.makeText(requireContext(), "Registro guardado", Toast.LENGTH_LONG).show()
             }
             else
