@@ -1,4 +1,4 @@
-package uca.ni.edu.kelani.network.request
+package uca.ni.edu.kelani.network.requests
 
 import com.google.gson.annotations.Expose
 import kotlinx.serialization.KSerializer

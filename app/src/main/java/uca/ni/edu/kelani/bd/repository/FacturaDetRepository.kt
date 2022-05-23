@@ -9,8 +9,8 @@ import uca.ni.edu.kelani.network.Api
 import uca.ni.edu.kelani.network.service.FacturaDetService
 import uca.ni.edu.kelani.network.service.FacturaService
 
-class FacturaDetRepository (private val daoF: FacturaDetDao, var id:Int = 0,private val facturaDetService: FacturaDetService = Api.facturaDetService){
-    val listAllData: LiveData<List<vw_FacturaDet>> = daoF.getById(id)
+class FacturaDetRepository (private val facturaDetService: FacturaDetService = Api.facturaDetService){
+    //val listAllData: LiveData<List<vw_FacturaDet>> = daoF.getById(id)
 
      suspend fun getFacturaDet() : List<vw_FacturaDet> {
         return facturaDetService.getDetalles().map {
@@ -18,19 +18,13 @@ class FacturaDetRepository (private val daoF: FacturaDetDao, var id:Int = 0,priv
         }
     }
 
-
     suspend fun add(nac: FacturaDet){
-        daoF.insert(nac)
+        //daoF.insert(nac)
+        facturaDetService.addDetalle(nac.toRequest())
     }
 
-    suspend fun update(nac: FacturaDet){
-        daoF.update(nac)
-    }
     suspend fun delete(nac: FacturaDet){
-        daoF.delete(nac)
-    }
-
-    suspend fun deleteByFact(id:Int){
-        daoF.deleteByFact(id)
+        facturaDetService.deleteDetalle(nac.id_factura_det)
+        //daoF.delete(nac)
     }
 }

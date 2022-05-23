@@ -16,22 +16,15 @@ import uca.ni.edu.kelani.bd.repository.FacturaDetRepository
 
 class FacturaDetViewModel(application: Application): AndroidViewModel(application) {
 
-    private val repository: FacturaDetRepository
+    private val repository: FacturaDetRepository = FacturaDetRepository()
     val listaFactura = MutableLiveData<List<vw_FacturaDet>>()
 
     val facturaDao: FacturaDetDao = bdKealni.getDataBase(application).facturaDetDao()
 
     init {
-
-        repository = FacturaDetRepository(facturaDao)
         fetchFactura()
     }
 
-
-    fun listarById(id:Int):LiveData<List<vw_FacturaDet>>{
-        val repositoryList = FacturaDetRepository(facturaDao, id)
-        return repositoryList.listAllData
-    }
 
 
     fun fetchFactura() {
@@ -46,11 +39,6 @@ class FacturaDetViewModel(application: Application): AndroidViewModel(applicatio
         }
     }
 
-    fun  deleteById(id:Int){
-        viewModelScope.launch(Dispatchers.IO) {
-            repository.deleteByFact(id)
-        }
-    }
 
     fun eliminarFacturaDet(f: FacturaDet) {
         viewModelScope.launch(Dispatchers.IO) {
