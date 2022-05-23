@@ -22,6 +22,8 @@ import uca.ni.edu.kelani.bd.dao.ClienteDao
 import uca.ni.edu.kelani.bd.dao.FacturaDao
 import uca.ni.edu.kelani.bd.entidades.Cliente
 import uca.ni.edu.kelani.bd.entidades.Factura
+import uca.ni.edu.kelani.bd.repository.ClienteRepository
+import uca.ni.edu.kelani.bd.viewmodel.ClienteViewModel
 import uca.ni.edu.kelani.bd.viewmodel.FacturaViewModel
 import uca.ni.edu.kelani.databinding.FragmentAddFacturaBinding
 import java.util.*
@@ -101,8 +103,8 @@ class AddFacturaFragment : Fragment() {
     }
 
     private fun getCliente(id:Int){
-        if (listaCliente.isNotEmpty()){
-            listaCliente.forEach {
+        if (listaCliente!!.isNotEmpty()){
+            listaCliente!!.forEach {
                 if (it.id_cliente == id){
                     initTextView(it)
                 }
@@ -134,17 +136,13 @@ class AddFacturaFragment : Fragment() {
 
         try {
             CoroutineScope(Dispatchers.Main).launch {
-                listaCliente = dao.getAll()
+               // viewModelCliente.fetchClientes()
+                val repo = ClienteRepository(dao)
 
-                /*
-                *
-                * viewModel.listaFactura.observe(viewLifecycleOwner, Observer {
-                *   fac->adapter.setDataFactura(fac)
-                *  })
-                *
-                * */
+                listaCliente = repo.getClients()
+
                 if(listaCliente.isNotEmpty()){
-                    listaCliente.forEach {
+                    listaCliente!!.forEach {
                         listClientes.add("${it.id_cliente}-${it.nombre} ${it.apellido}")
                     }
                 }
