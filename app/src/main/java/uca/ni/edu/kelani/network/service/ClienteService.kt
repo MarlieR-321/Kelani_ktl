@@ -3,7 +3,6 @@ package uca.ni.edu.kelani.network.service
 import retrofit2.http.*
 import uca.ni.edu.kelani.network.requests.PostClienteRequest
 import uca.ni.edu.kelani.network.response.ClienteResponse
-import uca.ni.edu.kelani.network.response.FacturaResponse
 
 interface ClienteService {
 

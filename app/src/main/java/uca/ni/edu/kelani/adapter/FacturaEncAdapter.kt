@@ -78,6 +78,7 @@ class FacturaEncAdapter(val context: Context, val viewModel: FacturaViewModel, p
                 "Registro eliminado satisfactoriamente...",
                 Toast.LENGTH_LONG
             ).show()
+            viewModel.fetchFactura()
         }
         alerta.setNegativeButton("No") { _, _ ->
             Toast.makeText(
