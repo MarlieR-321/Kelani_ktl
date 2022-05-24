@@ -1,16 +1,18 @@
 package uca.ni.edu.kelani.adapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import uca.ni.edu.kelani.bd.entidades.views.vw_Producto
+import uca.ni.edu.kelani.bd.viewmodel.ProductoViewModel
 import uca.ni.edu.kelani.databinding.ItemFacturaBinding
 import uca.ni.edu.kelani.databinding.ItemProductosBinding
 import uca.ni.edu.kelani.fragments.system.listar.FacturacionFragmentDirections
 import uca.ni.edu.kelani.fragments.system.listar.ProductosFragmentDirections
 
-class ProductoAdapter(): RecyclerView.Adapter<ProductoAdapter.ProductoHolder>() {
+class ProductoAdapter(val context: Context, val viewModel: ProductoViewModel): RecyclerView.Adapter<ProductoAdapter.ProductoHolder>() {
     var lista: List<vw_Producto> = emptyList()
 
     inner class ProductoHolder(val binding: ItemProductosBinding): RecyclerView.ViewHolder(binding.root)
