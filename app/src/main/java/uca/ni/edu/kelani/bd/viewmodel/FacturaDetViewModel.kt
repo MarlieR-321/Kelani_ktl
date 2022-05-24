@@ -34,6 +34,7 @@ class FacturaDetViewModel(application: Application): AndroidViewModel(applicatio
     fun agregarFacturaDet(f: FacturaDet) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.add(f)
+            fetchFactura()
         }
     }
 
@@ -41,6 +42,7 @@ class FacturaDetViewModel(application: Application): AndroidViewModel(applicatio
     fun eliminarFacturaDet(f: FacturaDet) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.delete(f)
+            //fetchFactura()
         }
     }
 }

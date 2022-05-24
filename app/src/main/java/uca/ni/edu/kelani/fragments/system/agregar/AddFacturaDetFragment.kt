@@ -87,8 +87,8 @@ class AddFacturaDetFragment : Fragment() {
                 val fd = FacturaDet(0,args.id,1, cantidad.toInt(), 28.3,1)
                 viewModel.agregarFacturaDet(fd)
 
-                //val action = AddFacturaDetFragmentDirections.actionFrmFacturaDetFragmentToFacturacionDetFragment(args.id)
-                findNavController().navigate(R.id.nav_facturar)
+                val action = AddFacturaDetFragmentDirections.actionFrmFacturaDetFragmentToFacturacionDetFragment(args.id)
+                findNavController().navigate(action)
                 Toast.makeText(requireContext(), "Registro guardado", Toast.LENGTH_LONG).show()
             }
             else
