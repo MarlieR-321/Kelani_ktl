@@ -18,11 +18,10 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import uca.ni.edu.kelani.R
-import uca.ni.edu.kelani.bd.dao.FacturaDao
-import uca.ni.edu.kelani.bd.dao.ProductoDao
-import uca.ni.edu.kelani.bd.dao.UnidadMedidaDao
-import uca.ni.edu.kelani.bd.dao.bdKealni
+import uca.ni.edu.kelani.bd.dao.*
 import uca.ni.edu.kelani.bd.entidades.*
+import uca.ni.edu.kelani.bd.repository.CategoriaRepository
+import uca.ni.edu.kelani.bd.repository.UnidadMedidaRepository
 import uca.ni.edu.kelani.bd.viewmodel.FacturaViewModel
 import uca.ni.edu.kelani.bd.viewmodel.ProductoViewModel
 import uca.ni.edu.kelani.databinding.FragmentAddFacturaBinding
@@ -33,6 +32,8 @@ class AgregarProductosFragment : Fragment(){
 
     private lateinit var binding: FragmentAgregarProductosBinding
     private lateinit var viewModel : ProductoViewModel
+    private lateinit var listaUnidad: List<UnidadMedida>
+    private lateinit var listaCategoria: List<Categoria>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -47,7 +48,7 @@ class AgregarProductosFragment : Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        initSpinners()
+        //initSpinners()
         initSpinnersCategoria()
 
         binding.spUnidad.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
@@ -103,6 +104,7 @@ class AgregarProductosFragment : Fragment(){
 
                     val producto = Producto(0, idUnidad, abreviacion, idCategoria, descripcion_categoria, nombre, descripcion, precio.toDouble(), costo.toDouble(),1 )
                     viewModel.agregarProducto(producto)
+                    viewModel.fetchProducto()
 
                     findNavController().navigate(R.id.nav_product)
                 }
@@ -121,13 +123,22 @@ class AgregarProductosFragment : Fragment(){
     }
 
     private fun getUnidad(id:Int){
-        val dbinstance = bdKealni.getDataBase(requireContext().applicationContext)
+        /*val dbinstance = bdKealni.getDataBase(requireContext().applicationContext)
         val dao:ProductoDao = dbinstance.productoDao()
 
         CoroutineScope(Dispatchers.Main).launch {
             val unidad = dao.getUnidadById(id)
             initTextView(unidad)
+        }*/
+
+        if (listaUnidad.isNotEmpty()){
+            listaUnidad.forEach{
+                if (it.id_unidad == id){
+                    initTextView(it)
+                }
+            }
         }
+
     }
 
     private fun getIdUnidad(full:String):Int{
@@ -147,13 +158,17 @@ class AgregarProductosFragment : Fragment(){
 
     private fun initSpinners(){
         val dbinstance = bdKealni.getDataBase(requireContext().applicationContext)
-        val dao: ProductoDao = dbinstance.productoDao()
+        val dao: UnidadMedidaDao = dbinstance.unidadtDao()
 
         var listUnidad: ArrayList<String> = arrayListOf("Seleccione...")
 
         try {
             CoroutineScope(Dispatchers.Main).launch {
-                val listaUnidad:List<UnidadMedida> = dao.getUnidades()
+                //val listaUnidad:List<UnidadMedida> = dao.getUnidades()
+
+                val repo = UnidadMedidaRepository(dao)
+
+                //listaUnidad = repo.getUnidad()
 
                 if(listaUnidad.isNotEmpty()){
                     listaUnidad.forEach {
@@ -171,12 +186,20 @@ class AgregarProductosFragment : Fragment(){
     }
 
     private fun getCategoria(id:Int){
-        val dbinstance = bdKealni.getDataBase(requireContext().applicationContext)
+        /*val dbinstance = bdKealni.getDataBase(requireContext().applicationContext)
         val dao:ProductoDao = dbinstance.productoDao()
 
         CoroutineScope(Dispatchers.Main).launch {
             val categoria = dao.getCategoriaById(id)
-            initTextViewCategoria(categoria)
+            initTextViewCategoria(categoria)*/
+
+        if (listaCategoria.isNotEmpty()){
+            listaCategoria.forEach{
+                if (it.id_categoria == id){
+                    initTextViewCategoria(it)
+                }
+            }
+
         }
     }
 
@@ -197,13 +220,17 @@ class AgregarProductosFragment : Fragment(){
 
     private fun initSpinnersCategoria(){
         val dbinstance = bdKealni.getDataBase(requireContext().applicationContext)
-        val dao: ProductoDao = dbinstance.productoDao()
+        val dao: CategoriaDao = dbinstance.categoriatDao()
 
         var listCategoria: ArrayList<String> = arrayListOf("Seleccione...")
 
         try {
             CoroutineScope(Dispatchers.Main).launch {
-                val listaCategoria:List<Categoria> = dao.getCategoria()
+                //val listaCategoria:List<Categoria> = dao.getCategoria()
+
+                val repo = CategoriaRepository(dao)
+
+                listaCategoria = repo.getCategories()
 
                 if(listaCategoria.isNotEmpty()){
                     listaCategoria.forEach {

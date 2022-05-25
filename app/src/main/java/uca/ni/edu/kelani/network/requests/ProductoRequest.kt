@@ -43,4 +43,4 @@ data class ProductoRequest (
     @Expose
     val estado:Int
 
-        )
+)
