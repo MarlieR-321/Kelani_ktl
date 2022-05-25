@@ -138,7 +138,7 @@ class AddFacturaFragment : Fragment() {
         try {
             CoroutineScope(Dispatchers.Main).launch {
                // viewModelCliente.fetchClientes()
-                val repo = ClienteRepository(dao)
+                val repo = ClienteRepository()
 
                 listaCliente = repo.getClients()
 
