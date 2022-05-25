@@ -19,8 +19,6 @@ class FacturaDetViewModel(application: Application): AndroidViewModel(applicatio
     private val repository: FacturaDetRepository = FacturaDetRepository()
     val listaFactura = MutableLiveData<List<vw_FacturaDet>>()
 
-    val facturaDao: FacturaDetDao = bdKealni.getDataBase(application).facturaDetDao()
-
     init {
         fetchFactura()
     }
@@ -36,6 +34,7 @@ class FacturaDetViewModel(application: Application): AndroidViewModel(applicatio
     fun agregarFacturaDet(f: FacturaDet) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.add(f)
+            fetchFactura()
         }
     }
 
@@ -43,6 +42,7 @@ class FacturaDetViewModel(application: Application): AndroidViewModel(applicatio
     fun eliminarFacturaDet(f: FacturaDet) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.delete(f)
+            //fetchFactura()
         }
     }
 }

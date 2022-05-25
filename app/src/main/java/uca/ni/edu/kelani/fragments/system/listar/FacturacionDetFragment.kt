@@ -41,7 +41,9 @@ class FacturacionDetFragment : Fragment() {
         viewModel = ViewModelProvider(this)[FacturaDetViewModel::class.java]
         val adapter = FacturaDetAdapter(requireContext(),viewModel)
 
-        viewModel.listaFactura.observe(viewLifecycleOwner) { list ->
+        //viewModel.fetchFactura()
+
+        viewModel.listaFactura.observe(viewLifecycleOwner, Observer { list ->
             list.forEach {
                 if (it.id_factura==args.id){
                     listaID.add(it)
@@ -51,7 +53,7 @@ class FacturacionDetFragment : Fragment() {
                 }
             }
             adapter.setDataFactura(listaID)
-        }
+        })
 
 
         val recyclerView = binding.rvFacturas
@@ -62,7 +64,6 @@ class FacturacionDetFragment : Fragment() {
         return binding.root
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -72,5 +73,8 @@ class FacturacionDetFragment : Fragment() {
         }
 
 
+        binding.btnReturn.setOnClickListener {
+            it.findNavController().navigate(R.id.nav_facturar)
+        }
     }
 }

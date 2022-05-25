@@ -16,7 +16,7 @@ import uca.ni.edu.kelani.network.response.VwFacturaResponse
 
 class FacturaViewModel(application: Application):AndroidViewModel(application)
     {
-        val coroutineExceptionHandler = CoroutineExceptionHandler{_, throwable ->
+        private val coroutineExceptionHandler = CoroutineExceptionHandler{ _, throwable ->
             throwable.printStackTrace()
         }
 
