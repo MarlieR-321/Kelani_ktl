@@ -4,10 +4,6 @@ import com.google.gson.annotations.Expose
 import kotlinx.serialization.SerialName
 
  data class ClienteRequest (
-    @SerialName(value = "id_cliente")
-    @Expose
-    val id_cliente:Int,
-
     @SerialName(value = "nombre")
     @Expose
     val nombre:String,

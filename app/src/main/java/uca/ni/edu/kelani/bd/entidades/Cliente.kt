@@ -6,6 +6,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.android.parcel.Parcelize
 import uca.ni.edu.kelani.network.requests.ClienteRequest
+import uca.ni.edu.kelani.network.requests.ClienteUpRequest
 
 @Parcelize
 @Entity(tableName="Cliente")
@@ -28,5 +29,8 @@ data class Cliente (
     var estado: Int
     ):Parcelable{
     fun toClienteRequest(): ClienteRequest
-            = ClienteRequest(id_cliente, nombre, apellido, telefono, cedula, direccion, email, estado)
+            = ClienteRequest(nombre, apellido, telefono, cedula, direccion, email, estado)
+
+    fun toClienteUpRequest(): ClienteUpRequest
+            = ClienteUpRequest(id_cliente, nombre, apellido, telefono, cedula, direccion, email, estado)
     }

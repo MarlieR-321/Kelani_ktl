@@ -37,6 +37,7 @@ class UpDeClienteFragment : Fragment() {
             itTelefCliente.setText(args.currentCliente.telefono)
             itCedulaCliente.setText(args.currentCliente.cedula)
             itDireccionCliente.setText(args.currentCliente.direccion)
+            itEmailCliente.setText(args.currentCliente.email)
 
             btnModClient.setOnClickListener {
                 GuardarCambios()

@@ -1,6 +1,5 @@
 package uca.ni.edu.kelani.network.response
 
-import androidx.room.ColumnInfo
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import uca.ni.edu.kelani.bd.entidades.Usuario

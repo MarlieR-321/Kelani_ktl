@@ -41,8 +41,8 @@ object Api {
     val clienteService:ClienteService=
         retrofit.create(ClienteService::class.java)
 
-    val usuarioService:ClienteService=
-        retrofit.create(ClienteService::class.java)
+    val usuarioService:UsuarioService=
+        retrofit.create(UsuarioService::class.java)
 
     val productoService:ProductoService=
         retrofit.create(ProductoService::class.java)

@@ -1,26 +1,24 @@
 package uca.ni.edu.kelani.network.requests
 
-import com.google.gson.annotations.Expose
 import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
+import uca.ni.edu.kelani.bd.entidades.Usuario
 
-data class UsuarioRequest(
+@Serializable
+data class UsuarioUpRequest (
+    @SerialName(value = "id_cliente")
+    val id_cliente:Int,
     @SerialName(value = "username")
-    @Expose
     val username:String,
-
     @SerialName(value = "pwd")
-    @Expose
     val pwd:String,
-
     @SerialName(value = "nombre_real")
-    @Expose
     val nombre_real:String,
-
     @SerialName(value = "email")
-    @Expose
     val email:String,
-
     @SerialName(value = "estado")
-    @Expose
     val estado: Int
-)
+    ){
+    fun toUsuario() : Usuario =
+        Usuario(id_cliente, username, pwd, nombre_real, email, estado)
+}
