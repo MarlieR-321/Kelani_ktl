@@ -22,9 +22,10 @@ class ProductoRepository(private val productoService: ProductoService = Api.prod
         //daoP.insert(producto)
     }
 
-    /*suspend fun update(producto: Producto){
-    daoP.update(producto)
-    }*/
+    suspend fun update(producto: Producto){
+        productoService.updateProducto(producto.toProductoRequest())
+        //daoP.update(producto)
+    }
 
     suspend fun delete(producto: Producto){
         productoService.deleteProducto(producto.id_producto)

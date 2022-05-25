@@ -28,7 +28,7 @@ data class Vw_ProductoResponse (
     val nombre_categoria: String,
     @SerialName(value = "descripcion_categoria")
     val descripcion_categoria: String
-        )
+)
 {
     fun toVwProducto() : vw_Producto =
         vw_Producto(id_producto,nombre_producto,descripcion,precio,costo,id_unidad,nombre_unidad,abreviacion,id_categoria,nombre_categoria, descripcion_categoria)

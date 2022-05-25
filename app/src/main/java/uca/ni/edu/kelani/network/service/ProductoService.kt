@@ -11,6 +11,9 @@ interface ProductoService {
     @POST("producto/add")
     suspend fun saveProducto(@Body producto: ProductoRequest): ProductoRequest
 
+    @PUT("producto/edit")
+    suspend fun updateProducto(@Body producto: ProductoRequest)
+
     @DELETE("producto/delete/{id}")
     suspend fun deleteProducto( @Path("id")id:Int)
 }
