@@ -4,17 +4,14 @@ import retrofit2.http.*
 import uca.ni.edu.kelani.network.requests.ClienteRequest
 import uca.ni.edu.kelani.network.response.ClienteResponse
 
-interface ClienteService {
+interface UsuarioService {
 
-    @GET("cliente/listar")
+    @GET("usuario/listar")
     suspend fun getCliente() : List<ClienteResponse>
 
-    @POST("cliente/add")
+    @POST("usuario/add")
     suspend fun saveCliente(@Body cliente: ClienteRequest)
 
-    @PUT("cliente/edit/{id}")
-    suspend fun updateCliente(@Body cliente: ClienteRequest)
-
-    @DELETE("cliente/delete/{id}")
+    @DELETE("usuario/delete/{id}")
     suspend fun deleteCliente( @Path("id") id:Int)
 }

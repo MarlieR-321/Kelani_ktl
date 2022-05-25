@@ -1,5 +1,6 @@
 package uca.ni.edu.kelani.adapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.findNavController
@@ -7,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import uca.ni.edu.kelani.R
 import uca.ni.edu.kelani.bd.entidades.Cliente
 import uca.ni.edu.kelani.bd.entidades.views.vw_Factura
+import uca.ni.edu.kelani.bd.viewmodel.ClienteViewModel
+import uca.ni.edu.kelani.bd.viewmodel.FacturaViewModel
 import uca.ni.edu.kelani.databinding.ItemClienteBinding
 import uca.ni.edu.kelani.fragments.system.listar.ClienteFragmentDirections
 

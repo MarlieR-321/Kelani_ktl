@@ -56,13 +56,15 @@ class UpDeClienteFragment : Fragment() {
         val telef = binding.itTelefCliente.text.toString()
         val cedul = binding.itCedulaCliente.text.toString()
         val dir = binding.itDireccionCliente.text.toString()
+        val email = binding.itEmailCliente.text.toString()
+
 
         if(nomb.isNotEmpty() && apell.isNotEmpty() && telef.isNotEmpty() && cedul.isNotEmpty() && dir.isNotEmpty())
         {
             //Crear el objeto
-            val client = Cliente(args.currentCliente.id_cliente, nomb,apell,telef,cedul,dir,2)
+            val client = Cliente(args.currentCliente.id_cliente, nomb,apell,telef,cedul,dir,email,2)
             //Actualizar
-            viewModel.actualizarCliente(client)
+            viewModel.updateCliente(client)
             Toast.makeText(requireContext(), "Registro actualizado",
                 Toast.LENGTH_LONG).show()
             findNavController().navigate(R.id.nav_clients)
@@ -97,9 +99,10 @@ class UpDeClienteFragment : Fragment() {
             val telef = binding.itTelefCliente.text.toString()
             val cedul = binding.itCedulaCliente.text.toString()
             val dir = binding.itDireccionCliente.text.toString()
+            val email = binding.itEmailCliente.text.toString()
 
                 //Crear el objeto
-                val client = Cliente(args.currentCliente.id_cliente, nomb,apell,telef,cedul,dir,3)
+                val client = Cliente(args.currentCliente.id_cliente, nomb,apell,telef,cedul,dir,email,3)
                 //Eliminar
                 viewModel.eliminarCliente(client)
                 Toast.makeText(requireContext(), "Registro eliminado satisfactoriamente...",

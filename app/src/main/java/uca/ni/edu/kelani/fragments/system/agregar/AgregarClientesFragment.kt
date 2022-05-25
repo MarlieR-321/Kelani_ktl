@@ -37,11 +37,12 @@ class AgregarClientesFragment : Fragment() {
         val telef = binding.itemTelefClient.text.toString()
         val cedul = binding.itemCedulaClient.text.toString()
         val dir = binding.itemDireccionClient.text.toString()
+        val email = binding.itemEmail.text.toString()
 
         if (nomb.isNotEmpty() && apell.isNotEmpty() && telef.isNotEmpty() && cedul.isNotEmpty() && dir.isNotEmpty())
         {
             //Crear objeto
-            val client = Cliente(0,nomb,apell,telef,cedul,dir,1)
+            val client = Cliente(0,nomb,apell,telef,cedul,dir,email,1)
 
             //Agregar nuevo usuario
             viewModel.agregarCliente(client)

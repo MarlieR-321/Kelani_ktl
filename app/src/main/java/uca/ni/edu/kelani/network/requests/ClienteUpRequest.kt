@@ -1,13 +1,13 @@
-package uca.ni.edu.kelani.network.response
+package uca.ni.edu.kelani.network.requests
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import uca.ni.edu.kelani.bd.entidades.Cliente
 
 @Serializable
-data class ClienteResponse (
+data class ClienteUpRequest(
     @SerialName(value = "id_cliente")
-    val id_cliente:Int,
+    val id_cliente:Int = ,
     @SerialName(value = "nombre")
     val nombre:String,
     @SerialName(value = "apellido")
