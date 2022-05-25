@@ -85,6 +85,7 @@ class AddFacturaFragment : Fragment() {
 
                     val fc = Factura(0,fechaEnv,id,telefono,direccion,0.0,1)
                     viewModel.agregarFactura(fc)
+                    viewModel.fetchFactura()
 
                     findNavController().navigate(R.id.nav_facturar)
                 }

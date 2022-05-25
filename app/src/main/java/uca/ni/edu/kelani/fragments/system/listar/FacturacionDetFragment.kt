@@ -43,7 +43,7 @@ class FacturacionDetFragment : Fragment() {
 
         //viewModel.fetchFactura()
 
-        viewModel.listaFactura.observe(viewLifecycleOwner) { list ->
+        viewModel.listaFactura.observe(viewLifecycleOwner, Observer { list ->
             list.forEach {
                 if (it.id_factura==args.id){
                     listaID.add(it)
@@ -53,7 +53,7 @@ class FacturacionDetFragment : Fragment() {
                 }
             }
             adapter.setDataFactura(listaID)
-        }
+        })
 
 
         val recyclerView = binding.rvFacturas

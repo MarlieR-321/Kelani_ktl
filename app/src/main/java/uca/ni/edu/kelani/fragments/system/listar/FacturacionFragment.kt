@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -35,9 +36,9 @@ class FacturacionFragment : Fragment() {
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(context)
 
-        viewModel.listaFactura.observe(viewLifecycleOwner){
+        viewModel.listaFactura.observe(viewLifecycleOwner, Observer{
             adapter.setDataFactura(it)
-        }
+        })
 
         return binding.root
     }
