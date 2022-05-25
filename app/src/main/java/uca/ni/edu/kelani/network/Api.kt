@@ -9,10 +9,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
-import uca.ni.edu.kelani.network.service.CategoriaService
-import uca.ni.edu.kelani.network.service.ClienteService
-import uca.ni.edu.kelani.network.service.FacturaDetService
-import uca.ni.edu.kelani.network.service.FacturaService
+import uca.ni.edu.kelani.network.service.*
 
 object Api {
 
@@ -48,5 +45,8 @@ object Api {
 
     val clienteService:ClienteService=
         retrofit.create(ClienteService::class.java)
+
+    val productoService:ProductoService=
+        retrofit.create(ProductoService::class.java)
 
 }

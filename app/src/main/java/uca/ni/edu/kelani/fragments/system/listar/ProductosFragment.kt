@@ -28,17 +28,18 @@ class ProductosFragment : Fragment(){
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentProductosBinding.inflate(layoutInflater)
+        viewModel = ViewModelProvider(this)[ProductoViewModel::class.java]
 
-        val adapter = ProductoAdapter()
+        val adapter = ProductoAdapter(requireContext(),viewModel)
         val recyclerView = binding.rvProductos
 
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(context)
 
-        viewModel = ViewModelProvider(this)[ProductoViewModel::class.java]
-        viewModel.listaProducto.observe(viewLifecycleOwner, Observer {
+
+        viewModel.listaProducto.observe(viewLifecycleOwner) {
                 product->adapter.setDataProducto(product)
-        })
+        }
 
         return binding.root
     }

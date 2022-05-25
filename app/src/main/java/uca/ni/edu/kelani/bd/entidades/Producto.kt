@@ -6,6 +6,7 @@ import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 import kotlinx.android.parcel.Parcelize
+import uca.ni.edu.kelani.network.requests.ProductoRequest
 
 @Parcelize
 @Entity(tableName="Producto",
@@ -35,3 +36,8 @@ data class Producto (
     @ColumnInfo(name="estado")
     val estado:Int
         ):Parcelable
+
+{
+    fun toProductoRequest(): ProductoRequest =
+        ProductoRequest(nombre_producto,descripcion,precio,costo,id_unidad,abreviacion,id_categoria,descripcion_categoria,estado)
+}
