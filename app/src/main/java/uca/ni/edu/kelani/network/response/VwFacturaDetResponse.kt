@@ -23,6 +23,6 @@ data class VwFacturaDetResponse(
     val subtotal:Double
 ){
     fun toVwFacturaDet() : vw_FacturaDet =
-        vw_FacturaDet(id_fac_detalle,id_producto,id_factura,producto,precio,cantidad,subtotal)
+            vw_FacturaDet(id_fac_detalle,id_producto,id_factura,producto,precio,cantidad,subtotal)
 
 }

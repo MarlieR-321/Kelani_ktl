@@ -23,6 +23,9 @@ import uca.ni.edu.kelani.bd.dao.FacturaDao
 import uca.ni.edu.kelani.bd.dao.ProductoDao
 import uca.ni.edu.kelani.bd.entidades.FacturaDet
 import uca.ni.edu.kelani.bd.entidades.Producto
+import uca.ni.edu.kelani.bd.entidades.views.vw_Producto
+import uca.ni.edu.kelani.bd.repository.ClienteRepository
+import uca.ni.edu.kelani.bd.repository.ProductoRepository
 import uca.ni.edu.kelani.bd.viewmodel.FacturaDetViewModel
 import uca.ni.edu.kelani.databinding.FragmentAddFacturaDetBinding
 import java.util.ArrayList
@@ -34,7 +37,7 @@ class AddFacturaDetFragment : Fragment() {
     var precio = 0.0
     private lateinit var viewModel : FacturaDetViewModel
     private val args by navArgs<AddFacturaDetFragmentArgs>()
-    private lateinit var listaProductos:List<Producto>
+    private lateinit var listaProductos:List< vw_Producto>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -79,12 +82,12 @@ class AddFacturaDetFragment : Fragment() {
         val cantidad = binding.itCantidad.text.toString()
         val subtotal = binding.itSubtotal.text.toString()
 
-        if(nproducto != "a...")
+        if(nproducto != "Seleccione...")
         {
             if (cantidad.isNotEmpty()&&subtotal.isNotEmpty())
             {
-                //val id = getIdProducto(nproducto)
-                val fd = FacturaDet(0,args.id,1, cantidad.toInt(), 28.3,1)
+                val id = getIdProducto(nproducto)
+                val fd = FacturaDet(0,args.id,id, cantidad.toInt(), subtotal.toDouble(),1)
                 viewModel.agregarFacturaDet(fd)
 
                 val action = AddFacturaDetFragmentDirections.actionFrmFacturaDetFragmentToFacturacionDetFragment(args.id)
@@ -104,17 +107,18 @@ class AddFacturaDetFragment : Fragment() {
     }
 
     private fun initSpinners(){
-        val dbinstance = bdKealni.getDataBase(requireContext())
-        val dao: ProductoDao = dbinstance.productoDao()
+
+
         var listProductos: ArrayList<String> = arrayListOf("Seleccione...")
 
         try {
-            CoroutineScope(Dispatchers.Main).launch {
-                listaProductos = dao.getAll()
+            CoroutineScope(Dispatchers.Default).launch {
+                val repo = ProductoRepository()
+                listaProductos = repo.getProducto()
 
                 if(listaProductos.isNotEmpty()){
                     listaProductos.forEach {
-                        listProductos.add("${it.id_producto}/  ${it.nombre_producto}")
+                        listProductos.add("${it.id_producto}.  ${it.nombre_producto}")
                     }
                 }
             }
@@ -131,7 +135,7 @@ class AddFacturaDetFragment : Fragment() {
         return if(full == "Seleccione..."){
             0
         }else{
-            val id = full.split("/")
+            val id = full.split(".")
             id[0].toInt()
         }
     }
