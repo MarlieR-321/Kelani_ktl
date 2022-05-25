@@ -1,11 +1,7 @@
 package uca.ni.edu.kelani.bd.repository
 
-import androidx.lifecycle.LiveData
-import uca.ni.edu.kelani.bd.dao.UsuarioDao
-import uca.ni.edu.kelani.bd.entidades.Cliente
 import uca.ni.edu.kelani.bd.entidades.Usuario
 import uca.ni.edu.kelani.network.Api
-import uca.ni.edu.kelani.network.service.ClienteService
 import uca.ni.edu.kelani.network.service.UsuarioService
 
 class UsuarioRepository(private val usuarioService: UsuarioService = Api.usuarioService)
@@ -21,7 +17,7 @@ class UsuarioRepository(private val usuarioService: UsuarioService = Api.usuario
         usuarioService.saveUsuario(use.toUsuarioRequest())
     }
     suspend fun updateUsuario(use: Usuario){
-        usuarioService.updateUsuario(use.toUsuarioRequest())
+        usuarioService.updateUsuario(use.toUsuarioUpRequest())
     }
     suspend fun deleteUsuario(use: Usuario){
         usuarioService.deleteUsuario(use.id_usuario)

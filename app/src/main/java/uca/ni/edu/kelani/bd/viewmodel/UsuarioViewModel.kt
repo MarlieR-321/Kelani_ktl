@@ -45,7 +45,7 @@ class UsuarioViewModel(application: Application): AndroidViewModel(application) 
     }
 
     fun actualizarUsuario(us: Usuario) {
-        viewModelScope.launch(Dispatchers.Default + coroutineExceptionHandler) {
+        viewModelScope.launch(Dispatchers.Default) {
             repository.updateUsuario(us)
         }
     }

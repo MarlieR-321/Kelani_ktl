@@ -4,6 +4,7 @@ import retrofit2.http.*
 import uca.ni.edu.kelani.network.requests.ClienteRequest
 import uca.ni.edu.kelani.network.requests.ClienteUpRequest
 import uca.ni.edu.kelani.network.requests.UsuarioRequest
+import uca.ni.edu.kelani.network.requests.UsuarioUpRequest
 import uca.ni.edu.kelani.network.response.ClienteResponse
 import uca.ni.edu.kelani.network.response.UsuarioResponse
 
@@ -16,7 +17,7 @@ interface UsuarioService {
     suspend fun saveUsuario(@Body usuario: UsuarioRequest)
 
     @PUT("usuario/edit")
-    suspend fun updateUsuario(@Body usuario: UsuarioRequest)
+    suspend fun updateUsuario(@Body usuario: UsuarioUpRequest)
 
     @DELETE("usuario/delete/{id}")
     suspend fun deleteUsuario( @Path("id") id:Int)

@@ -29,14 +29,6 @@ class Inicio : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_inicio)
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
-
-        val user = Usuario(0, "JMendoza", "1234", "Jamitzel", "jamitzelMendozaKelani@gmail.com", 1)
-
-        viewModel = ViewModelProvider(this).get(UsuarioViewModel::class.java)
-        viewModel.agregarUsuario(user)
-
-
-
     }
 
     override fun onSupportNavigateUp(): Boolean {

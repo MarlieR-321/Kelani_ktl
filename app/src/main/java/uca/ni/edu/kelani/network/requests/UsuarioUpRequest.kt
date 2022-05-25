@@ -6,8 +6,8 @@ import uca.ni.edu.kelani.bd.entidades.Usuario
 
 @Serializable
 data class UsuarioUpRequest (
-    @SerialName(value = "id_cliente")
-    val id_cliente:Int,
+    @SerialName(value = "id_usuario")
+    val id_usuario:Int,
     @SerialName(value = "username")
     val username:String,
     @SerialName(value = "pwd")
@@ -20,5 +20,5 @@ data class UsuarioUpRequest (
     val estado: Int
     ){
     fun toUsuario() : Usuario =
-        Usuario(id_cliente, username, pwd, nombre_real, email, estado)
+        Usuario(id_usuario, username, pwd, nombre_real, email, estado)
 }

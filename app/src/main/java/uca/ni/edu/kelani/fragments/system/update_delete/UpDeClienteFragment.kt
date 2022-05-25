@@ -95,7 +95,7 @@ class UpDeClienteFragment : Fragment() {
         val alerta = AlertDialog.Builder(requireContext())
         alerta.setPositiveButton("Si") {_, _ ->
 
-            val nomb = binding.itNombCliente.text.toString()
+            /*val nomb = binding.itNombCliente.text.toString()
             val apell = binding.itAapellCliente.text.toString()
             val telef = binding.itTelefCliente.text.toString()
             val cedul = binding.itCedulaCliente.text.toString()
@@ -108,16 +108,16 @@ class UpDeClienteFragment : Fragment() {
                 viewModel.eliminarCliente(client)
                 Toast.makeText(requireContext(), "Registro eliminado satisfactoriamente...",
                     Toast.LENGTH_LONG).show()
-                findNavController().navigate(R.id.nav_clients)
+                findNavController().navigate(R.id.nav_clients)*/
 
-               /* _, _ ->
+
             viewModel.eliminarCliente(args.currentCliente)
             Toast.makeText(
                 requireContext(),
                 "Registro eliminado satisfactoriamente...",
                 Toast.LENGTH_LONG
             ).show()
-            findNavController().navigate(R.id.nav_clients)*/
+            findNavController().navigate(R.id.nav_clients)
         }
         alerta.setNegativeButton("No") { _, _ ->
             Toast.makeText(
