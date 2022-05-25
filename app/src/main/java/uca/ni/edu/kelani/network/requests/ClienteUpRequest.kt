@@ -7,7 +7,7 @@ import uca.ni.edu.kelani.bd.entidades.Cliente
 @Serializable
 data class ClienteUpRequest(
     @SerialName(value = "id_cliente")
-    val id_cliente:Int = ,
+    val id_cliente:Int,
     @SerialName(value = "nombre")
     val nombre:String,
     @SerialName(value = "apellido")
