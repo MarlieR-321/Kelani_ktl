@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.359" />
 
-    <Button
+    <!--<Button
         android:id="@+id/button_second"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -29,5 +29,5 @@
         app:layout_constraintStart_toStartOf="parent"
         android:backgroundTint="#63401A"
         app:layout_constraintTop_toBottomOf="@+id/imgLogoPasteleria"
-        app:layout_constraintVertical_bias="0.407" />
+        app:layout_constraintVertical_bias="0.407" />-->
 </androidx.constraintlayout.widget.ConstraintLayout>
