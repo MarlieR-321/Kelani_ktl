@@ -5,9 +5,9 @@ import uca.ni.edu.kelani.bd.entidades.Categoria
 
 class CategoriaUpRequest (
 
-    @SerialName(value = "id_cliente")
+    @SerialName(value = "id_categoria")
     val id_categoria:Int,
-    @SerialName(value = "nombre")
+    @SerialName(value = "nombre_categoria")
     val nombre_categoria :String,
     @SerialName(value = "descripcion")
     val descripcion:String,

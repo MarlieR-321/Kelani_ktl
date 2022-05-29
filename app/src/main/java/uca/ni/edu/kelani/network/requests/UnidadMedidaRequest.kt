@@ -12,6 +12,7 @@ val nombre_unidad :String,
 @SerialName(value = "abreviatura")
 @Expose
 val abreviatura :String,
+
 @SerialName(value = "estado")
 @Expose
 val estado: Int
