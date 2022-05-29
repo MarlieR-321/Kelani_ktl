@@ -3,41 +3,55 @@ package uca.ni.edu.kelani.bd.viewmodel
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import uca.ni.edu.kelani.bd.dao.bdKealni
+import uca.ni.edu.kelani.bd.entidades.Cliente
 import uca.ni.edu.kelani.bd.entidades.UnidadMedida
+import uca.ni.edu.kelani.bd.repository.ClienteRepository
 import uca.ni.edu.kelani.bd.repository.UnidadMedidaRepository
 
 class UnidadMedidaViewModel (application: Application): AndroidViewModel(application) {
-    val listaUnidadMedida: LiveData<List<UnidadMedida>>
+    val coroutineExceptionHandler = CoroutineExceptionHandler { _, throwable ->
+        throwable.printStackTrace()
+    }
+    //val listaUnidad: LiveData<List<UnidadMedida>>
 
-    private val repository: UnidadMedidaRepository
+    val listaUnidadMedida = MutableLiveData<List<UnidadMedida>>()
+
+    private val repository: UnidadMedidaRepository = UnidadMedidaRepository()
 
     init {
-        val unidadMedidaDao = bdKealni.getDataBase(application).unidadtDao()
 
-        repository = UnidadMedidaRepository(unidadMedidaDao)
-        listaUnidadMedida = repository.listAllData
+        //listaUnidadMedida = repository.listAllData
+        fetchUnidad()// Fetch Unidad from the Server
 
     }
 
+    fun fetchUnidad() {
+        viewModelScope.launch(Dispatchers.Default) {
+            listaUnidadMedida.postValue(repository.getUnity())
+        }
+    }
+
     fun agregarMedida(um: UnidadMedida) {
-        viewModelScope.launch(Dispatchers.IO) {
-            repository.addMeasure(um)
+        viewModelScope.launch(Dispatchers.Default + coroutineExceptionHandler) {
+            repository.addUnity(um)
         }
     }
 
     fun actualizarMedida(um: UnidadMedida) {
-        viewModelScope.launch(Dispatchers.IO) {
-            repository.updateMeasure(um)
+        viewModelScope.launch(Dispatchers.Default + coroutineExceptionHandler) {
+            repository.updateUnity(um)
         }
     }
 
     fun eliminarMedida(um: UnidadMedida) {
-        viewModelScope.launch(Dispatchers.IO) {
-            repository.deleteMeasure(um)
+        viewModelScope.launch(Dispatchers.Default) {
+            repository.deleteUnity(um)
         }
     }
 }

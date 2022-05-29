@@ -1,6 +1,7 @@
 package uca.ni.edu.kelani.bd.repository
 
 import androidx.lifecycle.LiveData
+import retrofit2.http.*
 import uca.ni.edu.kelani.bd.dao.CategoriaDao
 
 import uca.ni.edu.kelani.bd.entidades.Categoria
@@ -8,8 +9,7 @@ import uca.ni.edu.kelani.network.Api
 import uca.ni.edu.kelani.network.service.CategoriaService
 
 
-class CategoriaRepository(private val daoCat: CategoriaDao,
-                          private val categoriaService: CategoriaService = Api.categoriaService)
+class CategoriaRepository(private val  categoriaService: CategoriaService = Api.categoriaService)
 {
 
     suspend fun getCategories() : List<Categoria> {
@@ -18,13 +18,13 @@ class CategoriaRepository(private val daoCat: CategoriaDao,
         }
     }
     suspend fun addCategory(cat: Categoria){
-        daoCat.insert(cat)
+        categoriaService.saveCategory( cat.toCategoryRequest())
     }
 
     suspend fun updateCategory(cat: Categoria){
-        daoCat.update(cat)
+        categoriaService.updateCategory( cat.toCategoryUpRequest())
     }
     suspend fun deleteCategory(cat: Categoria){
-        daoCat.update(cat)
+        categoriaService.deleteCategory(cat.id_categoria)
     }
 }

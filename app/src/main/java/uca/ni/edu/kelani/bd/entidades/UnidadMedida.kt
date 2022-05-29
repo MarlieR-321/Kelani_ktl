@@ -5,6 +5,10 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.android.parcel.Parcelize
+import uca.ni.edu.kelani.network.requests.ClienteRequest
+import uca.ni.edu.kelani.network.requests.ClienteUpRequest
+import uca.ni.edu.kelani.network.requests.UnidadMedidaRequest
+import uca.ni.edu.kelani.network.requests.UnidadMedidaUpRequest
 
 @Parcelize
 @Entity(tableName="UnidadMedida")
@@ -17,4 +21,10 @@ data class UnidadMedida(
     val abreviatura:String,
     @ColumnInfo(name="estado")
     val estado:Int
-):Parcelable
+):Parcelable{
+    fun toUnityRequest(): UnidadMedidaRequest
+            = UnidadMedidaRequest(nombre_unidad, abreviatura, estado)
+
+    fun toUnityUpRequest(): UnidadMedidaUpRequest
+            = UnidadMedidaUpRequest(id_unidad, nombre_unidad,abreviatura, estado)
+}

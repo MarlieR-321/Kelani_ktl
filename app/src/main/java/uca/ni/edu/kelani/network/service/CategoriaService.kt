@@ -1,7 +1,9 @@
 package uca.ni.edu.kelani.network.service
 
 import retrofit2.http.*
-import uca.ni.edu.kelani.network.requests.PostCategoriaRequest
+import uca.ni.edu.kelani.network.requests.CategoriaRequest
+import uca.ni.edu.kelani.network.requests.CategoriaUpRequest
+import uca.ni.edu.kelani.network.requests.ClienteUpRequest
 import uca.ni.edu.kelani.network.response.CategoriaResponse
 
 interface CategoriaService {
@@ -10,7 +12,11 @@ interface CategoriaService {
     suspend fun getCategorias() : List<CategoriaResponse>
 
     @POST("categoria/add")
-    suspend fun addCategory(@Body categoriaRequest: PostCategoriaRequest)
+    suspend fun saveCategory(@Body categoria: CategoriaRequest)
+
+
+    @PUT("categoria/edit")
+    suspend fun updateCategory(@Body categoria: CategoriaUpRequest)
 
     @GET("categoria/delete/{id}")
     suspend fun deleteCategory( @Path("id") id:Int)

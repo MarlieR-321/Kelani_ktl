@@ -47,4 +47,7 @@ object Api {
     val productoService:ProductoService=
         retrofit.create(ProductoService::class.java)
 
+    val unidadMedidaService : UnidadMedidaService =
+        retrofit.create(UnidadMedidaService::class.java)
+
 }
