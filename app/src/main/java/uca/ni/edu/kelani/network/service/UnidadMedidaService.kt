@@ -17,7 +17,7 @@ interface UnidadMedidaService {
     @POST("unidadMedida/add")
     suspend fun saveUnity(@Body  unidadMedida: UnidadMedidaRequest)
 
-    @PUT("unidadMedida/edit")
+    @POST("unidadMedida/add")
     suspend fun updateUnity(@Body unidadMedida:  UnidadMedidaUpRequest)
 
     @DELETE("unidadMedida/delete/{id}")

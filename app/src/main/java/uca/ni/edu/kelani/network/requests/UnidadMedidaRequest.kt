@@ -7,7 +7,7 @@ class UnidadMedidaRequest(
 
 @SerialName(value = "nombre_unidad")
 @Expose
-val nombre_unidad :String,
+val nombre :String,
 
 @SerialName(value = "abreviatura")
 @Expose

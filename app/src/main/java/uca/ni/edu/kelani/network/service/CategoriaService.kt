@@ -15,9 +15,9 @@ interface CategoriaService {
     suspend fun saveCategory(@Body categoria: CategoriaRequest)
 
 
-    @PUT("categoria/edit")
+    @POST("categoria/add")
     suspend fun updateCategory(@Body categoria: CategoriaUpRequest)
 
-    @GET("categoria/delete/{id}")
+    @DELETE("categoria/delete/{id}")
     suspend fun deleteCategory( @Path("id") id:Int)
 }

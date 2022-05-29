@@ -8,13 +8,13 @@ class UnidadMedidaResponse (
     @SerialName(value = "id_unidad")
     val id_unidad:Int,
     @SerialName(value = "nombre")
-    val nombre_unidad :String,
+    val nombre :String,
     @SerialName(value = "abreviatura")
     val abreviatura:String,
     @SerialName(value = "estado")
     val estado: Int
 ){
     fun toUnity() : UnidadMedida =
-        UnidadMedida(id_unidad, nombre_unidad,abreviatura , estado)
+        UnidadMedida(id_unidad, nombre,abreviatura , estado)
 }
 
