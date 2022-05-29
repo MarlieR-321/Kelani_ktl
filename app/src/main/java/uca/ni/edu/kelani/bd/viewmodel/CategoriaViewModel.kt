@@ -18,12 +18,12 @@ class CategoriaViewModel (application: Application): AndroidViewModel(applicatio
     {
         val listaCategoria = MutableLiveData<List<Categoria>>()
 
-        private val repository: CategoriaRepository
+        private val repository: CategoriaRepository = CategoriaRepository()
 
         init {
-            val categoriaDao = bdKealni.getDataBase(application).categoriatDao()
+            //val categoriaDao = bdKealni.getDataBase(application).categoriatDao()
 
-            repository = CategoriaRepository(categoriaDao)
+            //repository = CategoriaRepository(categoriaDao)
             fetchCategories() // Fetch categories from the Server
 
         }

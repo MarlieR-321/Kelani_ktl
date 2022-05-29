@@ -166,9 +166,9 @@ class AgregarProductosFragment : Fragment(){
             CoroutineScope(Dispatchers.Main).launch {
                 //val listaUnidad:List<UnidadMedida> = dao.getUnidades()
 
-                val repo = UnidadMedidaRepository(dao)
+                val repo = UnidadMedidaRepository()
 
-                //listaUnidad = repo.getUnidad()
+                listaUnidad = repo.getUnity()
 
                 if(listaUnidad.isNotEmpty()){
                     listaUnidad.forEach {
@@ -228,7 +228,7 @@ class AgregarProductosFragment : Fragment(){
             CoroutineScope(Dispatchers.Main).launch {
                 //val listaCategoria:List<Categoria> = dao.getCategoria()
 
-                val repo = CategoriaRepository(dao)
+                val repo = CategoriaRepository()
 
                 listaCategoria = repo.getCategories()
 

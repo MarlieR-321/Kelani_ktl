@@ -15,7 +15,7 @@ import uca.ni.edu.kelani.network.requests.CategoriaUpRequest
 data class Categoria(
     @PrimaryKey(autoGenerate = true)
     var id_categoria : Int,
-    @ColumnInfo(name="nombre")
+    @ColumnInfo(name="nombre_categoria")
     var nombre_categoria:String,
     @ColumnInfo(name="descripcion")
     var descripcion:String,
