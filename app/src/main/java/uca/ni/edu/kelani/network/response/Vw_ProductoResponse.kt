@@ -9,7 +9,7 @@ data class Vw_ProductoResponse (
     @SerialName(value = "id_producto")
     val id_producto: Int,
     @SerialName(value = "nombre_producto")
-    val nombre_producto: String,
+    val nombre: String,
     @SerialName(value = "descripcion")
     val descripcion: String,
     @SerialName(value = "precio")
@@ -31,5 +31,5 @@ data class Vw_ProductoResponse (
 )
 {
     fun toVwProducto() : vw_Producto =
-        vw_Producto(id_producto,nombre_producto,descripcion,precio,costo,id_unidad,nombre_unidad,abreviacion,id_categoria,nombre_categoria, descripcion_categoria)
+        vw_Producto(id_producto,nombre,descripcion,precio,costo,id_unidad,nombre_unidad,abreviacion,id_categoria,nombre_categoria, descripcion_categoria)
 }

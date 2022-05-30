@@ -23,7 +23,7 @@ class ProductoRepository(private val productoService: ProductoService = Api.prod
     }
 
     suspend fun update(producto: Producto){
-        productoService.updateProducto(producto.toProductoRequest())
+        productoService.updateProducto(producto.toProductoUpRequest())
         //daoP.update(producto)
     }
 

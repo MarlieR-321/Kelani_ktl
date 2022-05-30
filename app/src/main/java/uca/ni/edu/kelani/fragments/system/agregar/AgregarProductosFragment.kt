@@ -48,7 +48,7 @@ class AgregarProductosFragment : Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //initSpinners()
+        initSpinners()
         initSpinnersCategoria()
 
         binding.spUnidad.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
@@ -102,7 +102,7 @@ class AgregarProductosFragment : Fragment(){
                     val idUnidad = getIdUnidad(unidad)
                     val idCategoria = getIdCategoria(categoria)
 
-                    val producto = Producto(0, idUnidad, abreviacion, idCategoria, descripcion_categoria, nombre, descripcion, precio.toDouble(), costo.toDouble(),1 )
+                    val producto = Producto(0, idUnidad, idCategoria, nombre, descripcion, precio.toDouble(), costo.toDouble(), 1 )
                     viewModel.agregarProducto(producto)
                     viewModel.fetchProducto()
 

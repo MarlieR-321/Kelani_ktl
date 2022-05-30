@@ -18,7 +18,7 @@ import uca.ni.edu.kelani.bd.repository.ProductoRepository
 
 class ProductoViewModel (application: Application): AndroidViewModel(application) {
 
-    val coroutineExceptionHandler = CoroutineExceptionHandler{_, throwable ->
+    private val coroutineExceptionHandler = CoroutineExceptionHandler{ _, throwable ->
         throwable.printStackTrace()
     }
 
@@ -42,15 +42,15 @@ class ProductoViewModel (application: Application): AndroidViewModel(application
     }
 
     fun agregarProducto(producto: Producto){
-        viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch(Dispatchers.Default + coroutineExceptionHandler) {
             repository.add(producto)
         }
 
     }
 
     fun actualizarProducto(producto: Producto) {
-        viewModelScope.launch(Dispatchers.IO) {
-            repository.add(producto)
+        viewModelScope.launch(Dispatchers.Default + coroutineExceptionHandler) {
+            repository.update(producto)
         }
     }
 

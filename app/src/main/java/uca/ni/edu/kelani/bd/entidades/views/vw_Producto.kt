@@ -5,10 +5,10 @@ import androidx.room.DatabaseView
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-@DatabaseView("select p.id_producto, p.nombre_producto, p.descripcion, p.precio, p.costo, um.id_unidad, um.nombre_unidad as nombre_unidad, um.abreviatura, c.id_categoria, c.nombre_categoria, c.descripcion as descripcion_categoria from Producto p inner join UnidadMedida um on p.id_unidad=um.id_unidad inner join Categoria c on p.id_categoria=c.id_categoria;")
+@DatabaseView("select p.id_producto, p.nombre, p.descripcion, p.precio, p.costo, um.id_unidad, um.nombre_unidad as nombre_unidad, um.abreviatura, c.id_categoria, c.nombre_categoria, c.descripcion as descripcion_categoria from Producto p inner join UnidadMedida um on p.id_unidad=um.id_unidad inner join Categoria c on p.id_categoria=c.id_categoria;")
 data class vw_Producto(
     val id_producto:Int,
-    val nombre_producto:String,
+    val nombre:String,
     val descripcion:String,
     val precio:Double,
     val costo:Double,

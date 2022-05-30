@@ -23,6 +23,8 @@ import uca.ni.edu.kelani.bd.dao.bdKealni
 import uca.ni.edu.kelani.bd.entidades.Categoria
 import uca.ni.edu.kelani.bd.entidades.Producto
 import uca.ni.edu.kelani.bd.entidades.UnidadMedida
+import uca.ni.edu.kelani.bd.repository.CategoriaRepository
+import uca.ni.edu.kelani.bd.repository.UnidadMedidaRepository
 import uca.ni.edu.kelani.bd.viewmodel.ProductoViewModel
 import uca.ni.edu.kelani.databinding.FragmentAgregarProductosBinding
 import uca.ni.edu.kelani.databinding.FragmentUpDelProductoBinding
@@ -34,6 +36,8 @@ class UpDelProductoFragment : Fragment() {
     lateinit var binding: FragmentUpDelProductoBinding
     private val args by navArgs<UpDelProductoFragmentArgs>()
     private lateinit var viewModel: ProductoViewModel
+    private lateinit var listaUnidad: List<UnidadMedida>
+    private lateinit var listaCategoria: List<Categoria>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,7 +48,7 @@ class UpDelProductoFragment : Fragment() {
         binding = FragmentUpDelProductoBinding.inflate(layoutInflater)
         viewModel = ViewModelProvider(this).get(ProductoViewModel::class.java)
         with(binding){
-            itNombreProducto.setText(args.currentProducto.nombre_producto)
+            itNombreProducto.setText(args.currentProducto.nombre)
             itDescripcionProducto.setText(args.currentProducto.descripcion)
             itPrecioProducto.setText(args.currentProducto.precio.toString())
             itCostoProducto.setText(args.currentProducto.costo.toString())
@@ -109,12 +113,12 @@ class UpDelProductoFragment : Fragment() {
     }
 
     private fun getUnidad(id:Int){
-        val dbinstance = bdKealni.getDataBase(requireContext().applicationContext)
-        val dao: ProductoDao = dbinstance.productoDao()
-
-        CoroutineScope(Dispatchers.Main).launch {
-            val unidad = dao.getUnidadById(id)
-            initTextView(unidad)
+        if (listaUnidad.isNotEmpty()){
+            listaUnidad.forEach{
+                if (it.id_unidad == id){
+                    initTextView(it)
+                }
+            }
         }
     }
 
@@ -141,7 +145,11 @@ class UpDelProductoFragment : Fragment() {
 
         try {
             CoroutineScope(Dispatchers.Main).launch {
-                val listaUnidad:List<UnidadMedida> = dao.getUnidades()
+                //val listaUnidad:List<UnidadMedida> = dao.getUnidades()
+
+                val repo = UnidadMedidaRepository()
+
+                listaUnidad = repo.getUnity()
 
                 if(listaUnidad.isNotEmpty()){
                     listaUnidad.forEach {
@@ -154,18 +162,18 @@ class UpDelProductoFragment : Fragment() {
             e.toString()
         }
 
-        val adapterU: ArrayAdapter<String> = ArrayAdapter<String>(requireContext().applicationContext,
-            R.layout.sp_item, listUnidad)
+        val adapterU: ArrayAdapter<String> = ArrayAdapter<String>(requireContext().applicationContext,R.layout.sp_item, listUnidad)
         binding.spUnidad.adapter = adapterU
     }
 
     private fun getCategoria(id:Int){
-        val dbinstance = bdKealni.getDataBase(requireContext().applicationContext)
-        val dao: ProductoDao = dbinstance.productoDao()
+        if (listaCategoria.isNotEmpty()){
+            listaCategoria.forEach{
+                if (it.id_categoria == id){
+                    initTextViewCategoria(it)
+                }
+            }
 
-        CoroutineScope(Dispatchers.Main).launch {
-            val categoria = dao.getCategoriaById(id)
-            initTextViewCategoria(categoria)
         }
     }
 
@@ -192,7 +200,11 @@ class UpDelProductoFragment : Fragment() {
 
         try {
             CoroutineScope(Dispatchers.Main).launch {
-                val listaCategoria:List<Categoria> = dao.getCategoria()
+                //val listaCategoria:List<Categoria> = dao.getCategoria()
+
+                val repo = CategoriaRepository()
+
+                listaCategoria = repo.getCategories()
 
                 if(listaCategoria.isNotEmpty()){
                     listaCategoria.forEach {
@@ -205,8 +217,7 @@ class UpDelProductoFragment : Fragment() {
             e.toString()
         }
 
-        val adapterC: ArrayAdapter<String> = ArrayAdapter<String>(requireContext().applicationContext,
-            R.layout.sp_item, listCategoria)
+        val adapterC: ArrayAdapter<String> = ArrayAdapter<String>(requireContext().applicationContext,R.layout.sp_item, listCategoria)
         binding.spCategoria.adapter = adapterC
     }
 
@@ -228,7 +239,7 @@ class UpDelProductoFragment : Fragment() {
                     val idUnidad = getIdUnidad(unidad)
                     val idCategoria = getIdCategoria(categoria)
 
-                    val producto = Producto(args.currentProducto.id_producto, idUnidad, abreviacion, idCategoria, descripcion_categoria, nombreProducto, descripcionProducto, precioProducto.toDouble(), costoProducto.toDouble(),2 )
+                    val producto = Producto(args.currentProducto.id_producto, idUnidad, idCategoria, nombreProducto, descripcionProducto, precioProducto.toDouble(), costoProducto.toDouble(), 2)
                     viewModel.actualizarProducto(producto)
                     Toast.makeText(requireContext(), "Producto actualizado", Toast.LENGTH_SHORT).show()
                     findNavController().navigate(R.id.nav_product)
@@ -265,7 +276,7 @@ class UpDelProductoFragment : Fragment() {
             val idUnidad = getIdUnidad(unidad)
             val idCategoria = getIdCategoria(categoria)
 
-            val producto = Producto(args.currentProducto.id_producto, idUnidad, abreviacion, idCategoria, descripcion_categoria, nombreProducto, descripcionProducto, precioProducto.toDouble(), costoProducto.toDouble(),3 )
+            val producto = Producto(args.currentProducto.id_producto, idUnidad, idCategoria, nombreProducto, descripcionProducto, precioProducto.toDouble(), costoProducto.toDouble(), 3)
 
             viewModel.eliminarProducto(producto)
             Toast.makeText(requireContext(), "Producto eliminado satisfactoriamente...", Toast.LENGTH_SHORT).show()
@@ -275,8 +286,8 @@ class UpDelProductoFragment : Fragment() {
         alerta.setNegativeButton("No"){_, _ ->
             Toast.makeText(requireContext(), "Producto no eliminado", Toast.LENGTH_SHORT).show()
         }
-        alerta.setTitle("¿Desea eliminar ${args.currentProducto.nombre_producto}?")
-        alerta.setMessage("¿Esta seguro de eliminar ${args.currentProducto.nombre_producto}?")
+        alerta.setTitle("¿Desea eliminar ${args.currentProducto.nombre}?")
+        alerta.setMessage("¿Esta seguro de eliminar ${args.currentProducto.nombre}?")
         alerta.create().show()
 
     }

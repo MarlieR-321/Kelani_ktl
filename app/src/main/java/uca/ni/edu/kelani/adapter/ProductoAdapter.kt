@@ -20,7 +20,7 @@ class ProductoAdapter(val context: Context, val viewModel: ProductoViewModel): R
         fun bind(producto: vw_Producto){
 
             with(binding){
-                itemNombProducto.text = producto.nombre_producto
+                itemNombProducto.text = producto.nombre
                 itemDescripcion.text = producto.descripcion
                 itemPrecio.text = producto.precio.toString()
                 itemCosto.text = producto.costo.toString()

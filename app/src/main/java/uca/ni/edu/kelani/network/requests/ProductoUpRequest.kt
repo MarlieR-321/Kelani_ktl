@@ -3,9 +3,13 @@ package uca.ni.edu.kelani.network.requests
 import com.google.gson.annotations.Expose
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
+import uca.ni.edu.kelani.bd.entidades.Producto
 
 @Serializable
-data class ProductoRequest (
+data class ProductoUpRequest (
+
+    @SerialName(value = "id_producto")
+    val id_producto:Int,
 
     @SerialName(value="nombre")
     @Expose
@@ -35,4 +39,7 @@ data class ProductoRequest (
     @Expose
     val estado:Int
 
-)
+){
+    fun toProducto() : Producto =
+        Producto(id_producto, id_unidad, id_categoria, nombre, descripcion, precio, costo, estado)
+}

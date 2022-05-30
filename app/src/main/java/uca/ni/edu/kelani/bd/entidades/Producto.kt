@@ -7,6 +7,7 @@ import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 import kotlinx.android.parcel.Parcelize
 import uca.ni.edu.kelani.network.requests.ProductoRequest
+import uca.ni.edu.kelani.network.requests.ProductoUpRequest
 
 @Parcelize
 @Entity(tableName="Producto",
@@ -19,14 +20,10 @@ data class Producto (
     val id_producto:Int,
     @ColumnInfo(name="id_unidad")
     val id_unidad:Int,
-    @ColumnInfo(name="abreviacion")
-    val abreviacion:String,
     @ColumnInfo(name="id_categoria")
     val id_categoria:Int,
-    @ColumnInfo(name="descripcion_categoria")
-    val descripcion_categoria:String,
-    @ColumnInfo(name="nombre_producto")
-    val nombre_producto:String,
+    @ColumnInfo(name="nombre")
+    val nombre:String,
     @ColumnInfo(name="descripcion")
     val descripcion:String,
     @ColumnInfo(name="precio")
@@ -39,5 +36,9 @@ data class Producto (
 
 {
     fun toProductoRequest(): ProductoRequest =
-        ProductoRequest(nombre_producto,descripcion,precio,costo,id_unidad,abreviacion,id_categoria,descripcion_categoria,estado)
+        ProductoRequest(nombre, descripcion, precio, costo, id_unidad, id_categoria, estado )
+
+    fun toProductoUpRequest(): ProductoUpRequest =
+        ProductoUpRequest(id_producto,nombre, descripcion, precio, costo, id_unidad, id_categoria, estado )
 }
+
