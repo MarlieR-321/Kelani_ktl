@@ -46,19 +46,19 @@ class InicioSesionFragment : Fragment() {
         binding.btIniciarSecion.setOnClickListener {
 
 
-/*
+
             if (verificacionUsuario(binding.itemUsuario.text.toString(), binding.itemPassword.text.toString()))
             {
                 val intent = Intent(activity, MainActivity::class.java)
                 Toast.makeText(requireContext(), "Bienvenido", Toast.LENGTH_LONG).show()
                 startActivity(intent)
             }
-*/
 
 
-            val intent = Intent(activity, MainActivity::class.java)
+
+            /*val intent = Intent(activity, MainActivity::class.java)
             startActivity(intent)
-
+*/
             //findNavController().navigate(R.id.action_InicioSesionFragment_to_PresentacionFragment)
         }
     }
