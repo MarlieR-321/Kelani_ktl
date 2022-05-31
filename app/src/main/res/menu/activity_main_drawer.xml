@@ -30,10 +30,5 @@
             android:id="@+id/nav_users"
             android:icon="@drawable/users"
             android:title="Usuarios" />
-
-        <item
-            android:id="@+id/nav_loses"
-            android:icon="@drawable/money"
-            android:title="Reporte" />
     </group>
 </menu>

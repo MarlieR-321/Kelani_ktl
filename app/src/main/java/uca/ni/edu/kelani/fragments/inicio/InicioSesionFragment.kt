@@ -53,20 +53,8 @@ class InicioSesionFragment : Fragment() {
                 Toast.makeText(requireContext(), "Bienvenido", Toast.LENGTH_LONG).show()
                 startActivity(intent)
             }
-
-
-
-            /*val intent = Intent(activity, MainActivity::class.java)
-            startActivity(intent)
-*/
-            //findNavController().navigate(R.id.action_InicioSesionFragment_to_PresentacionFragment)
         }
     }
-
-    /*override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }*/
 
      fun verificacionUsuario(usur:String, pwd:String): Boolean {
 

@@ -55,7 +55,6 @@ class MainActivity : AppCompatActivity() {
             R.id.nav_clients,
             R.id.nav_category,
             R.id.nav_product,
-            R.id.nav_loses,
             R.id.nav_users,
             R.id.nav_facturar
         ), drawerLayout)
